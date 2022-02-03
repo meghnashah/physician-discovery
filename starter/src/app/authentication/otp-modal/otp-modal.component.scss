@@ -1,0 +1,29 @@
+::ng-deep{
+    .otp--sec{
+        .mat-form-field{
+            .mat-form-field-flex{
+                min-height: 110px !important;
+                padding: 0 !important;
+                text-align: center;
+                color: #282a2b;                   
+                border-right: none;
+                border-radius: 0 !important; 
+                .mat-form-field-infix{
+                    width: auto !important;
+                }
+                .mat-input-element{
+                    font-size: 30px !important;
+                }
+                
+            } 
+            &:last-child{
+                .mat-form-field-flex{
+                    .mat-form-field-infix{
+                        border-right: 1px solid #cbd5e1;
+                    }
+                }
+               
+            }
+        }               
+    }
+}
