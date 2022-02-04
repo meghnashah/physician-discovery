@@ -4,9 +4,7 @@
     <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed">
       <ul class="pull-left collapse-menu-icon">
         <li>
-          <button mat-icon-button class="sidemenu-collapse">
-            <mat-icon>menu</mat-icon>
-          </button>
+          <img src="assets/images/pages/full-logo.png" />
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -42,6 +40,9 @@
               All Notifications</a>
           </div>
         </li>
+        <li>
+          <span>Ella John</span>
+        </li>
         <!-- #END# Notifications-->
         <li class="nav-item user_profile" ngbDropdown>
           <a href="#" onClick="return false;" ngbDropdownToggle role="button" class="nav-notification-icons pt-0">
@@ -57,16 +58,12 @@
                         <mat-icon aria-hidden="false" class="mr-2">person</mat-icon>Profile
                       </a>
                     </li>
-                    <li>
+                    <li class="managment">
                       <a href="#" onClick="return false;">
-                        <mat-icon aria-hidden="false" class="mr-2">feedback</mat-icon>Feedback
+                        <mat-icon aria-hidden="false" class="mr-2">calendar_today</mat-icon>Scheduler Management
                       </a>
                     </li>
-                    <li>
-                      <a href="#" onClick="return false;">
-                        <mat-icon aria-hidden="false" class="mr-2">help</mat-icon>Help
-                      </a>
-                    </li>
+                    
                     <li>
                       <a href="javascript:void(0);" (click)="logout()">
                         <mat-icon aria-hidden="false" class="mr-2">power_settings_new</mat-icon>Logout
@@ -78,12 +75,7 @@
             </div>
           </div>
         </li>
-        <!-- #END# Tasks -->
-        <li class="pull-right">
-          <button mat-icon-button (click)="toggleRightSidebar()" class="nav-notification-icons js-right-sidebar">
-            <mat-icon id="settingBtn">settings</mat-icon>
-          </button>
-        </li>
+        
       </ul>
     </div>
   </div>
