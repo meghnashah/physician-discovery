@@ -10,9 +10,14 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { NgApexchartsModule } from "ng-apexcharts";
+import { ProfileComponent } from './profile/profile.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input'; 
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
-  declarations: [MainComponent, Dashboard2Component],
+  declarations: [MainComponent, Dashboard2Component, ProfileComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -23,6 +28,11 @@ import { NgApexchartsModule } from "ng-apexcharts";
     MatButtonModule,
     MatMenuModule,
     MatTooltipModule,
+    MatFormFieldModule,
+    MatTabsModule, 
+    MatInputModule,
+    MatCheckboxModule
   ],
+
 })
 export class DashboardModule {}

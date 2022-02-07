@@ -5,6 +5,8 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { MainComponent } from "./main/main.component";
 import { Dashboard2Component } from "./dashboard2/dashboard2.component";
+import { ProfileComponent } from "./profile/profile.component";
+
 const routes: Routes = [
   {
     path: "",
@@ -14,6 +16,10 @@ const routes: Routes = [
   {
     path: "main",
     component: MainComponent,
+  },
+  {
+    path: "profile",
+    component: ProfileComponent,
   },
   {
     path: "dashboard2",
