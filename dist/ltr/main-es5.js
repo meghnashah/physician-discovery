@@ -362,7 +362,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "mat-icon");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "notifications_none");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "notifications_active");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
