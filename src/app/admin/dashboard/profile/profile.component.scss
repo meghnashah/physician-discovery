@@ -20,3 +20,36 @@
       }
     }
   }
+  .contact-grid{
+    .bg-profile{
+      background-color: #005a97;
+    }
+    .user-img{
+      box-shadow:  none !important;
+    }
+    .password{
+      text-align: right !important;
+      margin-right: 40px;
+      color: #005a97;
+    }
+  
+   
+  }
+  .project_widget{
+    .abt-header{
+      padding-bottom: 0px !important;
+    }
+    .abt-body{
+      padding-top: 0px !important;
+    }
+    .license-row{
+      margin-top: 3rem !important;
+    }
+  }
+  .hr{
+    margin-top: 0rem !important;
+  }
+  
+  .mat-tab-label, .mat-tab-link {
+    color: rgba(0,0,0,.87);
+}
