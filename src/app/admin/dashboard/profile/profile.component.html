@@ -117,7 +117,12 @@
                                 <br>
                                 <p class="text-muted">New York</p>
                               </div>
-                            
+
+                              <div class="col-md-3 col-6 b-r">
+                               <mat-icon class="delete-icon">delete</mat-icon>
+                                <br>
+                                <p class="add-number">+ Add Number</p>
+                              </div>
                              
                             </div>
                             
@@ -139,6 +144,105 @@
                               </div>
                             </div>
                           </div>
+
+                          <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="project_widget">
+                              <div class="col-md-6 col-6 b-r">
+                              <button mat-flat-button color="primary" class="edit-info-btn"   >
+                                Edit Information
+                              </button>
+                              </div>
+                              </div>
+                         
+                          </div>
+
+                          <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="project_widget">
+                              <div class="header">
+                                <h2><strong>Personal Info Edit</strong></h2>
+                              </div>
+                             </div> 
+                          </div>
+
+                        
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                              <div class="project_widget">
+                                 
+                                <div class="body">
+                                  <div class="row">
+                                    <div class="col-md-6 col-6 b-r">
+                                    
+                                      <mat-form-field   class="example-full-width" appearance="fill"> 
+                                        <input matInput #input maxlength="10" placeholder="First Name">
+                                      
+                                      </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6 col-6 b-r"> 
+                                      <mat-form-field   class="example-full-width" appearance="fill"> 
+                                        <input matInput #input maxlength="10" placeholder="Last Name">
+                                        
+                                      </mat-form-field>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-md-6 col-6 b-r">
+                                      <section class="example-section">
+                                      <label class="example-margin">Gender</label>
+                                      <mat-radio-group [(ngModel)]="labelPosition">
+                                        <mat-radio-button class="example-margin" value="after">male</mat-radio-button>
+                                        <mat-radio-button class="example-margin" value="before">female
+                                        </mat-radio-button>
+                                      </mat-radio-group>
+                                      </section>
+                                    </div>
+                                    <div class="col-md-6 col-6 b-r"> 
+                                      <mat-form-field   class="example-full-width" appearance="fill"> 
+                                        <input matInput #input maxlength="10" placeholder="Date of Birth">
+                                        
+                                      </mat-form-field>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-md-6 col-6 b-r">
+                                    
+                                      <mat-form-field   class="example-full-width" appearance="fill"> 
+                                        <input matInput #input maxlength="10" placeholder="First Name">
+                                      
+                                      </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6 col-6 b-r"> 
+                                      <mat-form-field   class="example-full-width" appearance="fill"> 
+                                        <input matInput #input maxlength="10" placeholder="Last Name">
+                                        
+                                      </mat-form-field>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-md-6 col-6 b-r">
+                                    
+                                      <mat-form-field   class="example-full-width" appearance="fill"> 
+                                        <input matInput #input maxlength="10" placeholder="First Name">
+                                      
+                                      </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6 col-6 b-r"> 
+                                      <mat-form-field   class="example-full-width" appearance="fill"> 
+                                        <input matInput #input maxlength="10" placeholder="Last Name">
+                                        
+                                      </mat-form-field>
+                                    </div>
+                                  </div>
+
+
+                                </div>
+                                </div> 
+                            </div>
+                          
+                           
+
 
                     </mat-tab>
 
@@ -167,6 +271,9 @@
                 </mat-tab-group>
         </div>
           </div>
+
+
+
           </div>
           
       </section>

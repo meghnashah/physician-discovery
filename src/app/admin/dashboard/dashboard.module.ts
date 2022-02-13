@@ -15,6 +15,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input'; 
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from "@angular/material/radio";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [MainComponent, Dashboard2Component, ProfileComponent],
@@ -31,7 +33,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatFormFieldModule,
     MatTabsModule, 
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 
 })

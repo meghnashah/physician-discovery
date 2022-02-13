@@ -45,6 +45,18 @@
     .license-row{
       margin-top: 3rem !important;
     }
+    .edit-info-btn{
+      background-color: #005a97 ;
+      margin-bottom: 10%;
+    }
+    .delete-icon{
+      color: #7a7a7a;
+      float: right ;
+    }
+    .add-number{
+      color: #005a97;
+      float: right ;
+    }
   }
   .hr{
     margin-top: 0rem !important;
@@ -52,4 +64,14 @@
   
   .mat-tab-label, .mat-tab-link {
     color: rgba(0,0,0,.87);
+}
+
+.text-muted{
+  color: #242634 !important;
+}
+::ng-deep .mat-flat-button{
+  background-color: #005a97;
+}
+::ng-deep  .mat-tab-group.mat-primary .mat-ink-bar{
+  background-color: #005a97;
 }
