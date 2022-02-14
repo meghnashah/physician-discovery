@@ -51,6 +51,7 @@ export class MainComponent implements OnInit {
 
   public areaChartOptions: Partial<ChartOptions>;
   public barChartOptions: Partial<ChartOptions>;
+  showform : boolean = false ;
   constructor() {}
   ngOnInit() {
     this.smallChart1();
@@ -60,6 +61,12 @@ export class MainComponent implements OnInit {
     this.chart1();
     this.chart2();
   }
+
+  
+  skipFuction() {
+    this.showform = true
+  }
+
 
   private smallChart1() {
     this.cardChart1 = {

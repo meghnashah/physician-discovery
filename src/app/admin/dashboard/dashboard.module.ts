@@ -17,9 +17,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from "@angular/material/radio";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ChangePasswordModalComponent } from './profile/change-password-modal/change-password-modal.component';
+import { ChangeEmailModalComponent } from './profile/change-email-modal/change-email-modal.component';
+import { ChangePasswordSuccessModalComponent } from './profile/change-password-success-modal/change-password-success-modal.component';
 
 @NgModule({
-  declarations: [MainComponent, Dashboard2Component, ProfileComponent],
+  declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

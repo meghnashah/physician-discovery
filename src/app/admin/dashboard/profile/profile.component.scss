@@ -65,6 +65,10 @@
   .mat-tab-label, .mat-tab-link {
     color: rgba(0,0,0,.87);
 }
+.change-email-text{
+  float: right;
+  color: #005a97;
+}
 
 .text-muted{
   color: #242634 !important;
@@ -74,4 +78,11 @@
 }
 ::ng-deep  .mat-tab-group.mat-primary .mat-ink-bar{
   background-color: #005a97;
+}
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+  border-color: #005a97;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle{
+  background-color: #005a97
 }
