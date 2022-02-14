@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ChangePasswordModalComponent } from './profile/change-password-modal/change-password-modal.component';
 import { ChangeEmailModalComponent } from './profile/change-email-modal/change-email-modal.component';
 import { ChangePasswordSuccessModalComponent } from './profile/change-password-success-modal/change-password-success-modal.component';
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent],
@@ -39,7 +40,8 @@ import { ChangePasswordSuccessModalComponent } from './profile/change-password-s
     MatCheckboxModule,
     MatRadioModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
 
 })
