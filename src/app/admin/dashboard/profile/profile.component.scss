@@ -81,6 +81,43 @@
 .text-muted{
   color: #242634 !important;
 }
+.delete-img-icon{
+float: right;
+font-size: 17px;
+}
+.img-name{
+  font-size: 13px;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  margin-top: 1rem;
+}
+.img-thumbnail{ 
+  border: none;  
+ border-radius: none;
+}
+.next-col{
+  margin-left: 12px;
+}
+.img-col{
+  border-radius: 4px;
+  border: solid 1px #e0e0e0;
+  background-color: #fff;
+}
+.upload-img{
+  border: dotted 1px #005a97;
+  border-radius: 4px;
+  text-align: center;
+}
+.file-upload-icon{
+color: #005a97;
+font-size: 42px;
+margin-top: 3rem;
+}
+
+.add-img-text{
+  font-size: 14px;
+  color: #005a97;
+}
 ::ng-deep .mat-flat-button{
   background-color: #005a97;
 }

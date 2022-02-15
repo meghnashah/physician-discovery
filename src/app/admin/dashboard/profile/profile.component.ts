@@ -15,11 +15,21 @@ export class ProfileComponent implements OnInit {
   doctors: any;
   constructor(public dialog: MatDialog,) { }
   showform : boolean = false ;
+  uploadImg : boolean = false;
+  deleteImg : boolean = false;
   ngOnInit(): void {
   }
 
   editInfo() {
-    this.showform = true
+    this.showform = true;
+  } 
+
+  uploadImageFuc(){
+    this.uploadImg =true ;
+  }
+
+  deleteImageFuc(){
+    this.deleteImg = true;
   }
 
   addNew() {
