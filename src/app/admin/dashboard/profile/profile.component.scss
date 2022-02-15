@@ -52,6 +52,7 @@
     .delete-icon{
       color: #7a7a7a;
       float: right ;
+      margin-right: 28PX;
     }
     .add-number{
       color: #005a97;
@@ -69,7 +70,14 @@
   float: right;
   color: #005a97;
 }
-
+.Services-Offered-text{
+  font-size: 15px;
+  font-weight: bold;
+  color:#242634;
+}
+.delete-row{
+  margin-top: 13px;
+}
 .text-muted{
   color: #242634 !important;
 }
@@ -84,5 +92,8 @@
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle{
-  background-color: #005a97
+  background-color: #005a97;
+}
+::ng-deep .mat-tab-label-active{
+  color: #005a97;
 }
