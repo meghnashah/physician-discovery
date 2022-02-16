@@ -21,6 +21,9 @@ import { ChangePasswordModalComponent } from './profile/change-password-modal/ch
 import { ChangeEmailModalComponent } from './profile/change-email-modal/change-email-modal.component';
 import { ChangePasswordSuccessModalComponent } from './profile/change-password-success-modal/change-password-success-modal.component';
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatSelectModule } from "@angular/material/select";
+import { MatOptionModule } from "@angular/material/core";
+
 
 @NgModule({
   declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent],
@@ -41,7 +44,9 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatRadioModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    MatOptionModule
   ],
 
 })

@@ -17,6 +17,8 @@ export class ProfileComponent implements OnInit {
   showform : boolean = false ;
   uploadImg : boolean = false;
   deleteImg : boolean = false;
+  addInfo1 : boolean = false;
+  addInfo2 : boolean = false;
   ngOnInit(): void {
   }
 
@@ -31,6 +33,15 @@ export class ProfileComponent implements OnInit {
   deleteImageFuc(){
     this.deleteImg = true;
   }
+
+
+  profileEditInfo1() {
+    this.addInfo1 = true;
+  } 
+
+  profileEditInfo2() {
+    this.addInfo2 = true;
+  } 
 
   addNew() {
     const dialogRef = this.dialog.open(ChangePasswordModalComponent, {
