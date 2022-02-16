@@ -45,11 +45,12 @@
             </div>
           </div>
           </div>
-
+       
           <div class="col-lg-8 col-md-12">
             <div class="card">
               <mat-tab-group>
-                <mat-tab>
+                 <!-- personal information -->
+                <mat-tab>                    
                     <ng-template mat-tab-label>
                         <mat-icon class="example-tab-icon mr-2">face</mat-icon>
                         Personal Info
@@ -320,7 +321,7 @@
                           </div>
 
                     </mat-tab>
-
+                    <!-- Clinic information -->
                  <mat-tab>
                         <ng-template mat-tab-label>
                           <i class="material-icons">local_hospital</i>
@@ -485,6 +486,7 @@
 
                   </mat-tab>
 
+                  <!-- Other Info  -->
                   <mat-tab>
                     <ng-template mat-tab-label>
                       <mat-icon> insert_drive_file</mat-icon>
@@ -502,7 +504,7 @@
                             <span class="Services-Offered-text">  Educational Information</span>
                             </div>
                             </div>
-
+                              <!-- educational info row one  -->
                             <div class="row"  >  
                               <div class="col-4">
                                 <mat-form-field class="example-full-width" appearance="fill">
@@ -532,7 +534,7 @@
                             </div>
 
                             
-
+                  <!-- educational info row one  -->
                             <div class="row"  *ngIf="addInfo1">  
                               <div class="col-4">
                                 <mat-form-field class="example-full-width" appearance="fill">
@@ -567,6 +569,7 @@
                             </div>
                             </div>
 
+                            <!-- Experience -->
                             <div class="row"  >
                               <div class="col-lg-12 col-md-12 col-sm-12">
                             <span class="Services-Offered-text"> Experience</span>
@@ -679,16 +682,11 @@
                                 </div>
                                 </div>
                           
-                          </div>
-                         
-                         </div> 
-                        
-                        
+                          </div>                         
+                         </div>                                                 
                       </div>
-
-
               </mat-tab>
-          
+          <!-- payment Info  -->
               <mat-tab>
                 <ng-template mat-tab-label>
                     <mat-icon class="example-tab-icon mr-2">attach_money</mat-icon>
