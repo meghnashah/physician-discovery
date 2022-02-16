@@ -3451,7 +3451,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | doctor-doctor-module */
-            [__webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~extra-pages-extra-pages-module~patient-patient-module"), __webpack_require__.e("default~admin-admin-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~authentication-authentication-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module"), __webpack_require__.e("default~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("doctor-doctor-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~patient~d9a72e23"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~extra-pages-extra-pages-module~patient-patient-module"), __webpack_require__.e("default~admin-admin-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module"), __webpack_require__.e("default~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("doctor-doctor-module")]).then(__webpack_require__.bind(null,
             /*! ./doctor/doctor.module */
             "0Flv")).then(function (m) {
               return m.DoctorModule;
@@ -3466,7 +3466,7 @@
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() | patient-patient-module */
-            [__webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~extra-pages-extra-pages-module~patient-patient-module"), __webpack_require__.e("default~admin-admin-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~authentication-authentication-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~patient-patient-module"), __webpack_require__.e("default~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("patient-patient-module")]).then(__webpack_require__.bind(null,
+            [__webpack_require__.e("default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~patient~d9a72e23"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~extra-pages-extra-pages-module~patient-patient-module"), __webpack_require__.e("default~admin-admin-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~patient-patient-module"), __webpack_require__.e("default~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("patient-patient-module")]).then(__webpack_require__.bind(null,
             /*! ./patient/patient.module */
             "AMsP")).then(function (m) {
               return m.PatientModule;
@@ -3503,7 +3503,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | authentication-authentication-module */
-          [__webpack_require__.e("default~authentication-authentication-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("authentication-authentication-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~patient~d9a72e23"), __webpack_require__.e("authentication-authentication-module")]).then(__webpack_require__.bind(null,
           /*! ./authentication/authentication.module */
           "OpKh")).then(function (m) {
             return m.AuthenticationModule;

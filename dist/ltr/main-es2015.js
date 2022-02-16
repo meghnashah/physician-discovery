@@ -1958,7 +1958,7 @@ const routes = [
                 data: {
                     role: _core_models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].Doctor,
                 },
-                loadChildren: () => Promise.all(/*! import() | doctor-doctor-module */[__webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~extra-pages-extra-pages-module~patient-patient-module"), __webpack_require__.e("default~admin-admin-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~authentication-authentication-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module"), __webpack_require__.e("default~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("doctor-doctor-module")]).then(__webpack_require__.bind(null, /*! ./doctor/doctor.module */ "0Flv")).then((m) => m.DoctorModule),
+                loadChildren: () => Promise.all(/*! import() | doctor-doctor-module */[__webpack_require__.e("default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~patient~d9a72e23"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~extra-pages-extra-pages-module~patient-patient-module"), __webpack_require__.e("default~admin-admin-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module"), __webpack_require__.e("default~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("doctor-doctor-module")]).then(__webpack_require__.bind(null, /*! ./doctor/doctor.module */ "0Flv")).then((m) => m.DoctorModule),
             },
             {
                 path: 'patient',
@@ -1966,7 +1966,7 @@ const routes = [
                 data: {
                     role: _core_models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].Patient,
                 },
-                loadChildren: () => Promise.all(/*! import() | patient-patient-module */[__webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~extra-pages-extra-pages-module~patient-patient-module"), __webpack_require__.e("default~admin-admin-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~authentication-authentication-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~patient-patient-module"), __webpack_require__.e("default~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("patient-patient-module")]).then(__webpack_require__.bind(null, /*! ./patient/patient.module */ "AMsP")).then((m) => m.PatientModule),
+                loadChildren: () => Promise.all(/*! import() | patient-patient-module */[__webpack_require__.e("default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~patient~d9a72e23"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~extra-pages-extra-pages-module~patient-patient-module"), __webpack_require__.e("default~admin-admin-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~patient-patient-module"), __webpack_require__.e("default~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("patient-patient-module")]).then(__webpack_require__.bind(null, /*! ./patient/patient.module */ "AMsP")).then((m) => m.PatientModule),
             },
             {
                 path: 'extra-pages',
@@ -1983,7 +1983,7 @@ const routes = [
     {
         path: 'authentication',
         component: _layout_app_layout_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_5__["AuthLayoutComponent"],
-        loadChildren: () => Promise.all(/*! import() | authentication-authentication-module */[__webpack_require__.e("default~authentication-authentication-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("authentication-authentication-module")]).then(__webpack_require__.bind(null, /*! ./authentication/authentication.module */ "OpKh")).then((m) => m.AuthenticationModule),
+        loadChildren: () => Promise.all(/*! import() | authentication-authentication-module */[__webpack_require__.e("default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~patient~d9a72e23"), __webpack_require__.e("authentication-authentication-module")]).then(__webpack_require__.bind(null, /*! ./authentication/authentication.module */ "OpKh")).then((m) => m.AuthenticationModule),
     },
     { path: '**', component: _authentication_page404_page404_component__WEBPACK_IMPORTED_MODULE_2__["Page404Component"] },
 ];
