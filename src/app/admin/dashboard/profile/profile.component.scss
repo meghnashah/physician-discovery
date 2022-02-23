@@ -69,6 +69,9 @@
     margin-top: 0rem !important;
   }
   
+  .Add-Summary{
+    background-color: #005a97 ;
+  }
   .mat-tab-label, .mat-tab-link {
     color: rgba(0,0,0,.87);
 }
@@ -139,4 +142,76 @@ margin-top: 3rem;
 }
 ::ng-deep .mat-tab-label-active{
   color: #005a97;
+}
+.addDebitCard{
+  background-color: #005a97 ;
+  margin-top: 10px;
+}
+.form-check-input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+  left: 0;
+  pointer-events: none;
+
+  &:checked+.form-check-sign {
+    &:before {
+      animation: rippleOn 0.5s;
+    }
+
+    .check {
+      background: #005a97;
+
+      &:before {
+        color: #ffffff;
+    
+        animation: checkboxOn 0.3s forwards;
+      }
+    }
+  }
+}
+
+.payment-info-text{
+  font-family: RobotoSlab;
+  font-size: 14px;
+  font-weight: normal;
+  color: #242634;
+}
+
+.pay-text-margin{
+  margin-bottom: 20px;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

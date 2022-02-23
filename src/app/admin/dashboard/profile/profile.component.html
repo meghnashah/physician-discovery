@@ -692,6 +692,150 @@
                     <mat-icon class="example-tab-icon mr-2">attach_money</mat-icon>
                     Payment Information
                   </ng-template>
+
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="project_widget">
+                      <div class="header">
+                        <h2><strong>Payment Information</strong></h2>
+                      </div>
+                      <div class="body">
+
+                        <div class="col-lg-12" [hidden]="addPayment">
+                          <div class="box-part text-center">
+                            <img  src="assets/images/pages/payment-icon.webp" alt="" class="payment-icon"> 
+                            <div class="text p-b-10">
+                              <span>Currently you do not have any payment information added to your account 
+                                to book appointment your payment details.</span>
+                            </div>
+                            <div class="box-part text-center">
+                              <a routerLink="/admin/dashboard/profile">
+                                <button class="mr-3 Add-Summary"  mat-raised-button
+                                color="primary"  (click)="addPaymentFuc()">  + Add Summary</button>
+                              </a>
+                             
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                        <div class="row" *ngIf="addPayment" >
+                          <div class="col-lg-12 col-md-12 col-sm-12">
+                        <span class="payment-info-text"> Subscription amount will be deducted from the default paymode selected</span>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                          <section class="example-section">
+                            
+                            <mat-radio-group [(ngModel)]="labelPosition">
+                              <mat-radio-button class="example-margin" value="after">Debit Card</mat-radio-button>
+                              <mat-radio-button class="example-margin" value="before">Credit Card  </mat-radio-button>
+                            </mat-radio-group>
+                            </section>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                          <span class="payment-info-text pay-text-margin">Add new debit card details</span>
+                          </div>
+
+                          <div class="col-lg-12 col-md-12 col-sm-12 delete-row ">
+                            <mat-form-field   class="example-full-width" appearance="fill"> 
+                              <mat-label>Name of Card </mat-label>
+                              <input matInput #input    >
+                            
+                            </mat-form-field>
+
+                            <mat-form-field   class="example-full-width" appearance="fill"> 
+                              <mat-label>Card Number </mat-label>
+                              <input matInput #input    >
+                            
+                            </mat-form-field>
+
+                          </div>
+ 
+                        </div>
+                        <div class="row"  *ngIf="addPayment">  
+                          <div class="col-4">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                              <mat-label>Expiry MM</mat-label> 
+                              <mat-select>
+                                <mat-option value="option1">Option 1</mat-option>
+                                <mat-option value="option2">Option 2</mat-option>
+                                <mat-option value="option3">Option 3</mat-option>
+                              </mat-select> 
+                            </mat-form-field>
+                          </div>
+                          <div class="col-4">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                              <mat-label>Expiry YY</mat-label>
+                              <mat-select>
+                                <mat-option value="option1">Option 1</mat-option>
+                                <mat-option value="option2">Option 2</mat-option>
+                                <mat-option value="option3">Option 3</mat-option>
+                              </mat-select> 
+                            </mat-form-field>
+                          </div>
+                          <div class="col-4">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                              <mat-label>CVV</mat-label>
+                              <input matInput #input  >  
+                            </mat-form-field>
+                          </div> 
+                        </div>
+                        <div class="row" *ngIf="addPayment">
+                          <div class="col-lg-12 col-md-12 col-sm-12 pay-text-margin"> 
+                            <span class="payment-info-text">   <input type="checkbox" value="">Mark as a default card</span>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12"> 
+                                <button mat-flat-button color="primary" class="edit-info-btn"   >
+                                  Save  
+                                </button> 
+                            </div> 
+                        </div>
+
+                        <!-- <div class="row"  >
+                          <div class="col-6">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                              <mat-label>Expiry YY</mat-label>
+                              <mat-select>
+                                <mat-option value="option1">Option 1</mat-option>
+                                <mat-option value="option2">Option 2</mat-option>
+                                <mat-option value="option3">Option 3</mat-option>
+                              </mat-select> 
+                            </mat-form-field>
+                          </div>
+                          <div class="col-4">
+                            <button mat-flat-button color="primary" class="addDebitCard"   >
+                              + Add New Debit Card
+                            </button> 
+                          </div>
+                        </div>
+                        <div class="row"  >
+                          <img src="assets/images/pages/debit-card-bg.png"  alt="">
+                          <div class="bottom-left">   <mat-icon class="delete-icon">delete</mat-icon> </div>
+                          <div class="top-left"> 
+                            
+                            <mat-radio-group [(ngModel)]="labelPosition">
+                              <mat-radio-button class="example-margin" value="after"> </mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                          <div class="top-right">
+                            <span>Mastercard</span>
+                          </div>
+                          <div class="bottom-right">Bottom Right</div>
+                          <div class="centered">
+                            <div class="row">
+                              <h4>Ella John</h4>
+                              <h5>7854 6752 8479 6546</h5>
+                              <span>Expiry Date</span>
+                              <span>12/25</span>
+                            </div>
+                          </div>
+                        </div> -->
+
+                        </div>
+                        </div>
+                      
+
           </mat-tab>
 
 

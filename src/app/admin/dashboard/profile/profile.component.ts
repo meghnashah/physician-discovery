@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
   deleteImg : boolean = false;
   addInfo1 : boolean = false;
   addInfo2 : boolean = false;
+  addPayment : boolean = false;
   ngOnInit(): void {
   }
 
@@ -43,6 +44,11 @@ export class ProfileComponent implements OnInit {
     this.addInfo2 = true;
   } 
 
+
+  addPaymentFuc(){
+    this.addPayment = true;
+  }
+  
   addNew() {
     const dialogRef = this.dialog.open(ChangePasswordModalComponent, {
       data: {
