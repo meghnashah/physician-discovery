@@ -732,6 +732,7 @@
                             </mat-radio-group>
                             </section>
                         </div>
+                        <!--  debit card fprm  -->
                         <div class="col-lg-12 col-md-12 col-sm-12">
                           <span class="payment-info-text pay-text-margin">Add new debit card details</span>
                           </div>
@@ -786,13 +787,15 @@
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12"> 
-                                <button mat-flat-button color="primary" class="edit-info-btn"   >
+                                <button mat-flat-button color="primary" class="edit-info-btn"  (click)="creditSave()"  >
                                   Save  
                                 </button> 
                             </div> 
                         </div>
+ 
 
-                        <!-- <div class="row"  >
+
+                        <div class="row" *ngIf="credit"  >
                           <div class="col-6">
                             <mat-form-field class="example-full-width" appearance="fill">
                               <mat-label>Expiry YY</mat-label>
@@ -809,27 +812,65 @@
                             </button> 
                           </div>
                         </div>
-                        <div class="row"  >
-                          <img src="assets/images/pages/debit-card-bg.png"  alt="">
-                          <div class="bottom-left">   <mat-icon class="delete-icon">delete</mat-icon> </div>
-                          <div class="top-left"> 
-                            
-                            <mat-radio-group [(ngModel)]="labelPosition">
-                              <mat-radio-button class="example-margin" value="after"> </mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                          <div class="top-right">
-                            <span>Mastercard</span>
-                          </div>
-                          <div class="bottom-right">Bottom Right</div>
-                          <div class="centered">
-                            <div class="row">
-                              <h4>Ella John</h4>
-                              <h5>7854 6752 8479 6546</h5>
-                              <span>Expiry Date</span>
-                              <span>12/25</span>
+
+                        <!-- debit card -->
+                        <div *ngIf="credit" class="debit--wrapper"  >
+                          <div class="row">
+
+                            <div class="col-6">
+                              <mat-radio-group [(ngModel)]="labelPosition">
+                                <mat-radio-button   value="after"> </mat-radio-button>                            
+                              </mat-radio-group>
                             </div>
+                            <div class="col-6"  style="float: right;">
+                              <span class="mastercard-span">Mastercard</span>
+                            </div>
+                           
                           </div>
+                          <br>
+                          
+                           
+                          <h4 class="name"> Ella John</h4> <br>
+                          <h1 class="number">7854 6752 8479 6546</h1><br>
+                          <span class="expiry-date"> Expiry Date</span> <br>
+                          <p class="date">12/25</p> 
+
+                          <div class="row " style="float: right;">
+                          
+                            <button mat-mini-fab  class="delete-btn" >
+                              <mat-icon class="icon-white-delete" >delete</mat-icon>
+                            </button>
+                          </div> <br>
+                        </div>
+
+                        <!-- credit card -->
+                        <!-- <div  *ngIf="debit" class="credit--wrapper"  >
+                          <div class="row">
+
+                            <div class="col-6">
+                              <mat-radio-group [(ngModel)]="labelPosition">
+                                <mat-radio-button   value="after"> </mat-radio-button>                            
+                              </mat-radio-group>
+                            </div>
+                            <div class="col-6"  style="float: right;">
+                              <span class="mastercard-span">Visa</span>
+                            </div>
+                           
+                          </div>
+                          <br>
+                          
+                           
+                          <h4 class="name"> Ella John</h4> <br>
+                          <h1 class="number">7854 6752 8479 6546</h1><br>
+                          <span class="expiry-date"> Expiry Date</span> <br>
+                          <p class="date">12/25</p> 
+
+                          <div class="row " style="float: right;">
+                          
+                            <button mat-mini-fab  class="delete-btn" >
+                              <mat-icon class="icon-white-delete" >delete</mat-icon>
+                            </button>
+                          </div> <br>
                         </div> -->
 
                         </div>
@@ -837,9 +878,7 @@
                       
 
           </mat-tab>
-
-
-                </mat-tab-group>
+           </mat-tab-group>
         </div>
           </div>
 

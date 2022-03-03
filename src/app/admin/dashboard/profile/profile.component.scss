@@ -215,3 +215,48 @@ margin-top: 3rem;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.debit--wrapper{
+  background-image: linear-gradient(to bottom, #2385c8, #005a97);
+  color: #ffffff;
+  width: 401px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.credit--wrapper{
+  background-image: linear-gradient(to bottom, #57a400, #244005);
+  color: #ffffff;
+  width: 401px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.icon-white-delete{
+  color:  #7a7a7a;
+}
+
+.mastercard-span{
+  font-size: 23px;
+  font-weight: bold;
+  float: right;
+}
+
+.expiry-date{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.number{
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.name{
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.delete-btn  {
+background-color: #fff;
+}

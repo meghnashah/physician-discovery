@@ -20,6 +20,8 @@ export class ProfileComponent implements OnInit {
   addInfo1 : boolean = false;
   addInfo2 : boolean = false;
   addPayment : boolean = false;
+  credit : boolean =false;
+  debit : boolean = false;
   ngOnInit(): void {
   }
 
@@ -47,6 +49,15 @@ export class ProfileComponent implements OnInit {
 
   addPaymentFuc(){
     this.addPayment = true;
+  }
+  
+  creditSave(){
+    this.credit = true;
+  }
+  
+
+  debitSave(){
+    this.debit = true;
   }
   
   addNew() {
