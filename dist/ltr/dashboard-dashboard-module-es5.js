@@ -3929,6 +3929,132 @@
     },
 
     /***/
+    "mI2g":
+    /*!********************************************************************************************!*\
+      !*** ./src/app/admin/dashboard/profile/delete-credit-card/delete-credit-card.component.ts ***!
+      \********************************************************************************************/
+
+    /*! exports provided: DeleteCreditCardComponent */
+
+    /***/
+    function mI2g(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DeleteCreditCardComponent", function () {
+        return DeleteCreditCardComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "0IaG");
+      /* harmony import */
+
+
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/material/button */
+      "bTqV");
+
+      var DeleteCreditCardComponent = /*#__PURE__*/function () {
+        function DeleteCreditCardComponent() {
+          _classCallCheck(this, DeleteCreditCardComponent);
+        }
+
+        _createClass(DeleteCreditCardComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return DeleteCreditCardComponent;
+      }();
+
+      DeleteCreditCardComponent.ɵfac = function DeleteCreditCardComponent_Factory(t) {
+        return new (t || DeleteCreditCardComponent)();
+      };
+
+      DeleteCreditCardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: DeleteCreditCardComponent,
+        selectors: [["app-delete-credit-card"]],
+        decls: 11,
+        vars: 1,
+        consts: [[1, "container"], ["mat-dialog-title", ""], ["mat-dialog-content", ""], ["mat-dialog-actions", "", 1, "mb-1"], ["mat-flat-button", "", "color", "warn", 3, "mat-dialog-close"], ["mat-stroked-button", "", 1, "cancel-btn"]],
+        template: function DeleteCreditCardComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h3", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Are you sure?");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Do you want to delete Ella John 8975-4832-1593-6542 Credit Card?");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, " Delete ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "button", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "cancel");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("mat-dialog-close", 1);
+          }
+        },
+        directives: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogTitle"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogContent"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogActions"], _angular_material_button__WEBPACK_IMPORTED_MODULE_2__["MatButton"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogClose"]],
+        styles: [".cancel-btn[_ngcontent-%COMP%] {\n  border-color: #005a97;\n  color: #005a97;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGRlbGV0ZS1jcmVkaXQtY2FyZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHFCQUFBO0VBQ0EsY0FBQTtBQUNKIiwiZmlsZSI6ImRlbGV0ZS1jcmVkaXQtY2FyZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jYW5jZWwtYnRue1xyXG4gICAgYm9yZGVyLWNvbG9yOiAjMDA1YTk3O1xyXG4gICAgY29sb3I6ICMwMDVhOTc7XHJcbn0iXX0= */"]
+      });
+
+      (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DeleteCreditCardComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-delete-credit-card',
+            templateUrl: './delete-credit-card.component.html',
+            styleUrls: ['./delete-credit-card.component.scss']
+          }]
+        }], function () {
+          return [];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "pBKm":
     /*!*****************************************************!*\
       !*** ./src/app/admin/dashboard/dashboard.module.ts ***!
@@ -4097,6 +4223,12 @@
       var _angular_material_core__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
       /*! @angular/material/core */
       "FKr1");
+      /* harmony import */
+
+
+      var _profile_delete_credit_card_delete_credit_card_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+      /*! ./profile/delete-credit-card/delete-credit-card.component */
+      "mI2g");
 
       var DashboardModule = /*#__PURE__*/_createClass(function DashboardModule() {
         _classCallCheck(this, DashboardModule);
@@ -4115,7 +4247,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](DashboardModule, {
-          declarations: [_main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"], _dashboard2_dashboard2_component__WEBPACK_IMPORTED_MODULE_5__["Dashboard2Component"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], _profile_change_password_modal_change_password_modal_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordModalComponent"], _profile_change_email_modal_change_email_modal_component__WEBPACK_IMPORTED_MODULE_20__["ChangeEmailModalComponent"], _profile_change_password_success_modal_change_password_success_modal_component__WEBPACK_IMPORTED_MODULE_21__["ChangePasswordSuccessModalComponent"]],
+          declarations: [_main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"], _dashboard2_dashboard2_component__WEBPACK_IMPORTED_MODULE_5__["Dashboard2Component"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], _profile_change_password_modal_change_password_modal_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordModalComponent"], _profile_change_email_modal_change_email_modal_component__WEBPACK_IMPORTED_MODULE_20__["ChangeEmailModalComponent"], _profile_change_password_success_modal_change_password_success_modal_component__WEBPACK_IMPORTED_MODULE_21__["ChangePasswordSuccessModalComponent"], _profile_delete_credit_card_delete_credit_card_component__WEBPACK_IMPORTED_MODULE_25__["DeleteCreditCardComponent"]],
           imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _dashboard_routing_module__WEBPACK_IMPORTED_MODULE_3__["DashboardRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_6__["ChartsModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_11__["NgApexchartsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__["PerfectScrollbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_9__["MatMenuModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__["MatTooltipModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormFieldModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInputModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__["MatCheckboxModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_17__["MatRadioModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_23__["MatSelectModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_24__["MatOptionModule"]]
         });
       })();
@@ -4124,7 +4256,7 @@
         (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DashboardModule, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
           args: [{
-            declarations: [_main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"], _dashboard2_dashboard2_component__WEBPACK_IMPORTED_MODULE_5__["Dashboard2Component"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], _profile_change_password_modal_change_password_modal_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordModalComponent"], _profile_change_email_modal_change_email_modal_component__WEBPACK_IMPORTED_MODULE_20__["ChangeEmailModalComponent"], _profile_change_password_success_modal_change_password_success_modal_component__WEBPACK_IMPORTED_MODULE_21__["ChangePasswordSuccessModalComponent"]],
+            declarations: [_main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"], _dashboard2_dashboard2_component__WEBPACK_IMPORTED_MODULE_5__["Dashboard2Component"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], _profile_change_password_modal_change_password_modal_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordModalComponent"], _profile_change_email_modal_change_email_modal_component__WEBPACK_IMPORTED_MODULE_20__["ChangeEmailModalComponent"], _profile_change_password_success_modal_change_password_success_modal_component__WEBPACK_IMPORTED_MODULE_21__["ChangePasswordSuccessModalComponent"], _profile_delete_credit_card_delete_credit_card_component__WEBPACK_IMPORTED_MODULE_25__["DeleteCreditCardComponent"]],
             imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _dashboard_routing_module__WEBPACK_IMPORTED_MODULE_3__["DashboardRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_6__["ChartsModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_11__["NgApexchartsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__["PerfectScrollbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_9__["MatMenuModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__["MatTooltipModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormFieldModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInputModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__["MatCheckboxModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_17__["MatRadioModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_23__["MatSelectModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_24__["MatOptionModule"]]
           }]
         }], null, null);
@@ -4179,67 +4311,73 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _delete_credit_card_delete_credit_card_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./delete-credit-card/delete-credit-card.component */
+      "mI2g");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
       "tyNb");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/material/icon */
       "NFeN");
       /* harmony import */
 
 
-      var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/material/tabs */
       "wZkO");
       /* harmony import */
 
 
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/material/button */
       "bTqV");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/common */
       "ofXK");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/material/form-field */
       "kmnG");
       /* harmony import */
 
 
-      var _angular_material_input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/material/input */
       "qFsG");
       /* harmony import */
 
 
-      var _angular_material_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _angular_material_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/material/select */
       "d3UM");
       /* harmony import */
 
 
-      var _angular_material_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_material_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/material/core */
       "FKr1");
       /* harmony import */
 
 
-      var _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! @angular/material/radio */
       "QibW");
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! @angular/forms */
       "3Pt+");
 
@@ -5219,6 +5357,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "button", 101);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProfileComponent_div_366_Template_button_click_21_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r49);
+
+            var ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r50.deleteCreditCard();
+          });
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-icon", 102);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "delete");
@@ -5345,6 +5491,27 @@
             });
           }
         }, {
+          key: "deleteCreditCard",
+          value: function deleteCreditCard() {
+            var _this3 = this;
+
+            var dialogRef = this.dialog.open(_delete_credit_card_delete_credit_card_component__WEBPACK_IMPORTED_MODULE_4__["DeleteCreditCardComponent"], {
+              data: {
+                doctors: this.doctors,
+                action: "add"
+              }
+            });
+            dialogRef.afterClosed().subscribe(function (result) {
+              if (result === 1) {
+                // After dialog is closed we're doing frontend updates
+                // For add we're just pushing a new row inside DataServicex
+                _this3.exampleDatabase.dataChange.value.unshift(_this3.doctorsService.getDialogData());
+
+                _this3.showNotification("snackbar-success", "Add Record Successfully...!!!", "bottom", "center");
+              }
+            });
+          }
+        }, {
           key: "showNotification",
           value: function showNotification(arg0, arg1, arg2, arg3) {
             throw new Error('Method not implemented.');
@@ -5363,7 +5530,7 @@
         selectors: [["app-profile"]],
         decls: 367,
         vars: 11,
-        consts: [[1, "content"], [1, "container-fluid"], [1, "block-header"], [1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "breadcrumb", "breadcrumb-style"], [1, "breadcrumb-item"], [1, "page-title"], [1, "breadcrumb-item", "bcrumb-1"], ["routerLink", "/admin/dashboard/main"], [1, "fas", "fa-home"], [1, "row", "clearfix"], [1, "col-lg-4", "col-md-12"], [1, "card"], [1, "m-b-20"], [1, "contact-grid"], [1, "profile-header", "bg-profile"], [1, "user-name"], ["src", "assets/images/user/usrbig5.jpg", "alt", "", 1, "user-img"], [1, "phone"], [1, "material-icons"], [1, "password", 3, "click"], [1, "col-lg-8", "col-md-12"], ["mat-tab-label", ""], [3, "hidden"], [1, "col-lg-12", "col-md-12", "col-sm-12"], [1, "project_widget"], [1, "header"], [1, "body"], [1, "col-md-3", "col-6", "b-r"], [1, "text-muted"], [1, "col-md-3", "col-6"], [1, "col-md-6", "col-6", "b-r"], [1, "row", "license-row"], [1, "delete-icon"], [1, "change-email-text"], [1, "header", "abt-header"], [1, "body", "abt-body"], [1, "m-t-30"], ["mat-flat-button", "", "color", "primary", 1, "edit-info-btn", 3, "click"], [4, "ngIf"], [1, "col-md-2", "img-col"], ["src", "assets/images/pages/clinic-img-s@2x.png", 1, "img-thumbnail", "img-responsive"], [1, "img-name"], [1, "delete-img-icon"], ["class", "col-md-2 img-col next-col", 4, "ngIf"], [1, "col-md-2", "next-col", "upload-img", 3, "click"], [1, "file-upload-icon"], [1, "add-img-text"], [1, "col-xl-12", "col-lg-12", "col-md-12", "col-sm-12"], ["appearance", "fill", 1, "example-full-width"], ["matInput", ""], ["input", ""], [1, "Services-Offered-text"], [1, "col-md-5", "col-5", "b-r"], [1, "col-md-1", "col-1", "b-r", "delete-row"], [1, "change-email-text", 3, "click"], ["mat-flat-button", "", "color", "primary", 1, "edit-info-btn"], [1, "col-4"], [1, "col-3"], ["value", "option1"], ["value", "option2"], ["value", "option3"], [1, "col-1", "delete-row"], [1, "delete-icon-profile"], ["class", "row", 4, "ngIf"], ["matSuffix", ""], [1, "mr-2"], [1, "col-lg-12", 3, "hidden"], [1, "box-part", "text-center"], ["src", "assets/images/pages/payment-icon.webp", "alt", "", 1, "payment-icon"], [1, "text", "p-b-10"], ["routerLink", "/admin/dashboard/profile"], ["mat-raised-button", "", "color", "primary", 1, "mr-3", "Add-Summary", 3, "click"], ["class", "debit--wrapper", 4, "ngIf"], [1, "example-tab-icon", "mr-2"], [1, "example-section"], [1, "example-margin"], [3, "ngModel", "ngModelChange"], ["value", "after", 1, "example-margin"], ["value", "before", 1, "example-margin"], [1, "row", 3, "click"], [1, "col-md-2", "img-col", "next-col"], ["src", "assets/images/pages/clinic-img-r-2@2x.png", 1, "img-thumbnail", "img-responsive"], [1, "delete-img-icon", 3, "click"], [1, "payment-info-text"], [1, "payment-info-text", "pay-text-margin"], [1, "col-lg-12", "col-md-12", "col-sm-12", "delete-row"], [1, "col-lg-12", "col-md-12", "col-sm-12", "pay-text-margin"], ["type", "checkbox", "value", ""], [1, "col-6"], ["mat-flat-button", "", "color", "primary", 1, "addDebitCard"], [1, "debit--wrapper"], ["value", "after"], [1, "col-6", 2, "float", "right"], [1, "mastercard-span"], [1, "name"], [1, "number"], [1, "expiry-date"], [1, "date"], [1, "row", 2, "float", "right"], ["mat-mini-fab", "", 1, "delete-btn"], [1, "icon-white-delete"]],
+        consts: [[1, "content"], [1, "container-fluid"], [1, "block-header"], [1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "breadcrumb", "breadcrumb-style"], [1, "breadcrumb-item"], [1, "page-title"], [1, "breadcrumb-item", "bcrumb-1"], ["routerLink", "/admin/dashboard/main"], [1, "fas", "fa-home"], [1, "row", "clearfix"], [1, "col-lg-4", "col-md-12"], [1, "card"], [1, "m-b-20"], [1, "contact-grid"], [1, "profile-header", "bg-profile"], [1, "user-name"], ["src", "assets/images/user/usrbig5.jpg", "alt", "", 1, "user-img"], [1, "phone"], [1, "material-icons"], [1, "password", 3, "click"], [1, "col-lg-8", "col-md-12"], ["mat-tab-label", ""], [3, "hidden"], [1, "col-lg-12", "col-md-12", "col-sm-12"], [1, "project_widget"], [1, "header"], [1, "body"], [1, "col-md-3", "col-6", "b-r"], [1, "text-muted"], [1, "col-md-3", "col-6"], [1, "col-md-6", "col-6", "b-r"], [1, "row", "license-row"], [1, "delete-icon"], [1, "change-email-text"], [1, "header", "abt-header"], [1, "body", "abt-body"], [1, "m-t-30"], ["mat-flat-button", "", "color", "primary", 1, "edit-info-btn", 3, "click"], [4, "ngIf"], [1, "col-md-2", "img-col"], ["src", "assets/images/pages/clinic-img-s@2x.png", 1, "img-thumbnail", "img-responsive"], [1, "img-name"], [1, "delete-img-icon"], ["class", "col-md-2 img-col next-col", 4, "ngIf"], [1, "col-md-2", "next-col", "upload-img", 3, "click"], [1, "file-upload-icon"], [1, "add-img-text"], [1, "col-xl-12", "col-lg-12", "col-md-12", "col-sm-12"], ["appearance", "fill", 1, "example-full-width"], ["matInput", ""], ["input", ""], [1, "Services-Offered-text"], [1, "col-md-5", "col-5", "b-r"], [1, "col-md-1", "col-1", "b-r", "delete-row"], [1, "change-email-text", 3, "click"], ["mat-flat-button", "", "color", "primary", 1, "edit-info-btn"], [1, "col-4"], [1, "col-3"], ["value", "option1"], ["value", "option2"], ["value", "option3"], [1, "col-1", "delete-row"], [1, "delete-icon-profile"], ["class", "row", 4, "ngIf"], ["matSuffix", ""], [1, "mr-2"], [1, "col-lg-12", 3, "hidden"], [1, "box-part", "text-center"], ["src", "assets/images/pages/payment-icon.webp", "alt", "", 1, "payment-icon"], [1, "text", "p-b-10"], ["routerLink", "/admin/dashboard/profile"], ["mat-raised-button", "", "color", "primary", 1, "mr-3", "Add-Summary", 3, "click"], ["class", "debit--wrapper", 4, "ngIf"], [1, "example-tab-icon", "mr-2"], [1, "example-section"], [1, "example-margin"], [3, "ngModel", "ngModelChange"], ["value", "after", 1, "example-margin"], ["value", "before", 1, "example-margin"], [1, "row", 3, "click"], [1, "col-md-2", "img-col", "next-col"], ["src", "assets/images/pages/clinic-img-r-2@2x.png", 1, "img-thumbnail", "img-responsive"], [1, "delete-img-icon", 3, "click"], [1, "payment-info-text"], [1, "payment-info-text", "pay-text-margin"], [1, "col-lg-12", "col-md-12", "col-sm-12", "delete-row"], [1, "col-lg-12", "col-md-12", "col-sm-12", "pay-text-margin"], ["type", "checkbox", "value", ""], [1, "col-6"], ["mat-flat-button", "", "color", "primary", 1, "addDebitCard"], [1, "debit--wrapper"], ["value", "after"], [1, "col-6", 2, "float", "right"], [1, "mastercard-span"], [1, "name"], [1, "number"], [1, "expiry-date"], [1, "date"], [1, "row", 2, "float", "right"], ["mat-mini-fab", "", 1, "delete-btn", 3, "click"], [1, "icon-white-delete"]],
         template: function ProfileComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
@@ -6615,7 +6782,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.credit);
           }
         },
-        directives: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkWithHref"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__["MatTabGroup"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__["MatTab"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__["MatTabLabel"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButton"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInput"], _angular_material_select__WEBPACK_IMPORTED_MODULE_11__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_12__["MatOption"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatSuffix"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__["MatRadioGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["NgModel"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__["MatRadioButton"]],
+        directives: [_angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIcon"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_7__["MatTabGroup"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_7__["MatTab"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_7__["MatTabLabel"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButton"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInput"], _angular_material_select__WEBPACK_IMPORTED_MODULE_12__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_13__["MatOption"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatSuffix"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__["MatRadioGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NgModel"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__["MatRadioButton"]],
         styles: ["@charset \"UTF-8\";\n.page-title[_ngcontent-%COMP%] {\n  border-right: none !important;\n  padding-right: 10px;\n  font-size: 20px;\n  font-weight: 500;\n  color: #444444;\n  margin-bottom: 0px;\n}\n.page-title[_ngcontent-%COMP%]:after {\n  content: \"\uF105\";\n  font-family: \"Font Awesome 5 Free\";\n  font-size: 18px;\n  font-weight: 900;\n  padding: 0px 5px;\n}\n.page-title[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  padding: 0px 5px;\n}\n.page-title[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]:before {\n  color: #717883;\n  font-size: 20px;\n}\n.contact-grid[_ngcontent-%COMP%]   .bg-profile[_ngcontent-%COMP%] {\n  background-color: #005a97;\n}\n.contact-grid[_ngcontent-%COMP%]   .user-img[_ngcontent-%COMP%] {\n  box-shadow: none !important;\n}\n.contact-grid[_ngcontent-%COMP%]   .password[_ngcontent-%COMP%] {\n  text-align: right !important;\n  margin-right: 40px;\n  color: #005a97;\n}\n.project_widget[_ngcontent-%COMP%]   .abt-header[_ngcontent-%COMP%] {\n  padding-bottom: 0px !important;\n}\n.project_widget[_ngcontent-%COMP%]   .abt-body[_ngcontent-%COMP%] {\n  padding-top: 0px !important;\n}\n.project_widget[_ngcontent-%COMP%]   .license-row[_ngcontent-%COMP%] {\n  margin-top: 3rem !important;\n}\n.project_widget[_ngcontent-%COMP%]   .edit-info-btn[_ngcontent-%COMP%] {\n  background-color: #005a97;\n  margin-bottom: 10%;\n}\n.project_widget[_ngcontent-%COMP%]   .delete-icon[_ngcontent-%COMP%] {\n  color: #7a7a7a;\n  float: right;\n  margin-right: 28PX;\n}\n.project_widget[_ngcontent-%COMP%]   .delete-icon-profile[_ngcontent-%COMP%] {\n  color: #7a7a7a;\n  float: right;\n}\n.project_widget[_ngcontent-%COMP%]   .add-number[_ngcontent-%COMP%] {\n  color: #005a97;\n  float: right;\n}\n.hr[_ngcontent-%COMP%] {\n  margin-top: 0rem !important;\n}\n.Add-Summary[_ngcontent-%COMP%] {\n  background-color: #005a97;\n}\n.mat-tab-label[_ngcontent-%COMP%], .mat-tab-link[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.87);\n}\n.change-email-text[_ngcontent-%COMP%] {\n  float: right;\n  color: #005a97;\n}\n.Services-Offered-text[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: bold;\n  color: #242634;\n}\n.delete-row[_ngcontent-%COMP%] {\n  margin-top: 13px;\n}\n.text-muted[_ngcontent-%COMP%] {\n  color: #242634 !important;\n}\n.delete-img-icon[_ngcontent-%COMP%] {\n  float: right;\n  font-size: 17px;\n}\n.img-name[_ngcontent-%COMP%] {\n  font-size: 13px;\n  margin-top: 1rem;\n  margin-bottom: 0rem;\n  margin-top: 1rem;\n}\n.img-thumbnail[_ngcontent-%COMP%] {\n  border: none;\n  border-radius: none;\n}\n.next-col[_ngcontent-%COMP%] {\n  margin-left: 12px;\n}\n.img-col[_ngcontent-%COMP%] {\n  border-radius: 4px;\n  border: solid 1px #e0e0e0;\n  background-color: #fff;\n}\n.upload-img[_ngcontent-%COMP%] {\n  border: dotted 1px #005a97;\n  border-radius: 4px;\n  text-align: center;\n}\n.file-upload-icon[_ngcontent-%COMP%] {\n  color: #005a97;\n  font-size: 42px;\n  margin-top: 3rem;\n}\n.add-img-text[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #005a97;\n}\n  .mat-flat-button {\n  background-color: #005a97;\n}\n  .mat-tab-group.mat-primary .mat-ink-bar {\n  background-color: #005a97;\n}\n  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {\n  border-color: #005a97;\n}\n  .mat-radio-button.mat-accent .mat-radio-inner-circle {\n  background-color: #005a97;\n}\n  .mat-tab-label-active {\n  color: #005a97;\n}\n.addDebitCard[_ngcontent-%COMP%] {\n  background-color: #005a97;\n  margin-top: 10px;\n}\n.form-check-input[_ngcontent-%COMP%] {\n  opacity: 0;\n  height: 0;\n  width: 0;\n  overflow: hidden;\n  position: absolute;\n  margin: 0;\n  z-index: -1;\n  left: 0;\n  pointer-events: none;\n}\n.form-check-input[_ngcontent-%COMP%]:checked    + .form-check-sign[_ngcontent-%COMP%]:before {\n  -webkit-animation: rippleOn 0.5s;\n          animation: rippleOn 0.5s;\n}\n.form-check-input[_ngcontent-%COMP%]:checked    + .form-check-sign[_ngcontent-%COMP%]   .check[_ngcontent-%COMP%] {\n  background: #005a97;\n}\n.form-check-input[_ngcontent-%COMP%]:checked    + .form-check-sign[_ngcontent-%COMP%]   .check[_ngcontent-%COMP%]:before {\n  color: #ffffff;\n  -webkit-animation: checkboxOn 0.3s forwards;\n          animation: checkboxOn 0.3s forwards;\n}\n.payment-info-text[_ngcontent-%COMP%] {\n  font-family: RobotoSlab;\n  font-size: 14px;\n  font-weight: normal;\n  color: #242634;\n}\n.pay-text-margin[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n.bottom-left[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 8px;\n  left: 16px;\n}\n.top-left[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 8px;\n  left: 16px;\n}\n.top-right[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 8px;\n  right: 16px;\n}\n.bottom-right[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 8px;\n  right: 16px;\n}\n.centered[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.debit--wrapper[_ngcontent-%COMP%] {\n  background-image: linear-gradient(to bottom, #2385c8, #005a97);\n  color: #ffffff;\n  width: 401px;\n  padding: 30px;\n  border-radius: 10px;\n}\n.credit--wrapper[_ngcontent-%COMP%] {\n  background-image: linear-gradient(to bottom, #57a400, #244005);\n  color: #ffffff;\n  width: 401px;\n  padding: 30px;\n  border-radius: 10px;\n}\n.icon-white-delete[_ngcontent-%COMP%] {\n  color: #7a7a7a;\n}\n.mastercard-span[_ngcontent-%COMP%] {\n  font-size: 23px;\n  font-weight: bold;\n  float: right;\n}\n.expiry-date[_ngcontent-%COMP%] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.number[_ngcontent-%COMP%] {\n  font-size: 34px;\n  font-weight: 500;\n}\n.name[_ngcontent-%COMP%] {\n  font-size: 23px;\n  font-weight: 500;\n}\n.delete-btn[_ngcontent-%COMP%] {\n  background-color: #fff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxccHJvZmlsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxnQkFBZ0I7QUFBaEI7RUFDSSw2QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0FBRUo7QUFESTtFQUNFLFlBQUE7RUFDQSxrQ0FBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FBR047QUFESTtFQUNFLGdCQUFBO0FBR047QUFGTTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBSVI7QUFDSTtFQUNFLHlCQUFBO0FBRU47QUFBSTtFQUNFLDJCQUFBO0FBRU47QUFBSTtFQUNFLDRCQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0FBRU47QUFJSTtFQUNFLDhCQUFBO0FBRE47QUFHSTtFQUNFLDJCQUFBO0FBRE47QUFHSTtFQUNFLDJCQUFBO0FBRE47QUFHSTtFQUNFLHlCQUFBO0VBQ0Esa0JBQUE7QUFETjtBQUdJO0VBQ0UsY0FBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtBQUROO0FBR0k7RUFDRSxjQUFBO0VBQ0EsWUFBQTtBQUROO0FBS0k7RUFDRSxjQUFBO0VBQ0EsWUFBQTtBQUhOO0FBTUU7RUFDRSwyQkFBQTtBQUhKO0FBTUU7RUFDRSx5QkFBQTtBQUhKO0FBS0U7RUFDRSwwQkFBQTtBQUZKO0FBSUE7RUFDRSxZQUFBO0VBQ0EsY0FBQTtBQURGO0FBR0E7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0FBQUY7QUFFQTtFQUNFLGdCQUFBO0FBQ0Y7QUFDQTtFQUNFLHlCQUFBO0FBRUY7QUFBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0FBR0E7QUFEQTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7QUFJRjtBQUZBO0VBQ0UsWUFBQTtFQUNELG1CQUFBO0FBS0Q7QUFIQTtFQUNFLGlCQUFBO0FBTUY7QUFKQTtFQUNFLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSxzQkFBQTtBQU9GO0FBTEE7RUFDRSwwQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7QUFRRjtBQU5BO0VBQ0EsY0FBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtBQVNBO0FBTkE7RUFDRSxlQUFBO0VBQ0EsY0FBQTtBQVNGO0FBUEE7RUFDRSx5QkFBQTtBQVVGO0FBUkE7RUFDRSx5QkFBQTtBQVdGO0FBVEE7RUFDRSxxQkFBQTtBQVlGO0FBVEE7RUFDRSx5QkFBQTtBQVlGO0FBVkE7RUFDRSxjQUFBO0FBYUY7QUFYQTtFQUNFLHlCQUFBO0VBQ0EsZ0JBQUE7QUFjRjtBQVpBO0VBQ0UsVUFBQTtFQUNBLFNBQUE7RUFDQSxRQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EsT0FBQTtFQUNBLG9CQUFBO0FBZUY7QUFaSTtFQUNFLGdDQUFBO1VBQUEsd0JBQUE7QUFjTjtBQVhJO0VBQ0UsbUJBQUE7QUFhTjtBQVhNO0VBQ0UsY0FBQTtFQUVBLDJDQUFBO1VBQUEsbUNBQUE7QUFZUjtBQU5BO0VBQ0UsdUJBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0FBU0Y7QUFOQTtFQUNFLG1CQUFBO0FBU0Y7QUFQQTtFQUNFLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFVBQUE7QUFVRjtBQVBBO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsVUFBQTtBQVVGO0FBUEE7RUFDRSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxXQUFBO0FBVUY7QUFQQTtFQUNFLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7QUFVRjtBQVBBO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLGdDQUFBO0FBVUY7QUFQQTtFQUNFLDhEQUFBO0VBQ0EsY0FBQTtFQUNBLFlBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7QUFVRjtBQVBBO0VBQ0UsOERBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtBQVVGO0FBUEE7RUFDRSxjQUFBO0FBVUY7QUFQQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUNBLFlBQUE7QUFVRjtBQVBBO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0FBVUY7QUFQQTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtBQVVGO0FBUEE7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7QUFVRjtBQVBBO0VBQ0Esc0JBQUE7QUFVQSIsImZpbGUiOiJwcm9maWxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGNoYXJzZXQgXCJVVEYtOFwiO1xuLnBhZ2UtdGl0bGUge1xuICBib3JkZXItcmlnaHQ6IG5vbmUgIWltcG9ydGFudDtcbiAgcGFkZGluZy1yaWdodDogMTBweDtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBmb250LXdlaWdodDogNTAwO1xuICBjb2xvcjogIzQ0NDQ0NDtcbiAgbWFyZ2luLWJvdHRvbTogMHB4O1xufVxuLnBhZ2UtdGl0bGU6YWZ0ZXIge1xuICBjb250ZW50OiBcIu+EhVwiO1xuICBmb250LWZhbWlseTogXCJGb250IEF3ZXNvbWUgNSBGcmVlXCI7XG4gIGZvbnQtc2l6ZTogMThweDtcbiAgZm9udC13ZWlnaHQ6IDkwMDtcbiAgcGFkZGluZzogMHB4IDVweDtcbn1cbi5wYWdlLXRpdGxlIGkge1xuICBwYWRkaW5nOiAwcHggNXB4O1xufVxuLnBhZ2UtdGl0bGUgaTpiZWZvcmUge1xuICBjb2xvcjogIzcxNzg4MztcbiAgZm9udC1zaXplOiAyMHB4O1xufVxuXG4uY29udGFjdC1ncmlkIC5iZy1wcm9maWxlIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwNWE5Nztcbn1cbi5jb250YWN0LWdyaWQgLnVzZXItaW1nIHtcbiAgYm94LXNoYWRvdzogbm9uZSAhaW1wb3J0YW50O1xufVxuLmNvbnRhY3QtZ3JpZCAucGFzc3dvcmQge1xuICB0ZXh0LWFsaWduOiByaWdodCAhaW1wb3J0YW50O1xuICBtYXJnaW4tcmlnaHQ6IDQwcHg7XG4gIGNvbG9yOiAjMDA1YTk3O1xufVxuXG4ucHJvamVjdF93aWRnZXQgLmFidC1oZWFkZXIge1xuICBwYWRkaW5nLWJvdHRvbTogMHB4ICFpbXBvcnRhbnQ7XG59XG4ucHJvamVjdF93aWRnZXQgLmFidC1ib2R5IHtcbiAgcGFkZGluZy10b3A6IDBweCAhaW1wb3J0YW50O1xufVxuLnByb2plY3Rfd2lkZ2V0IC5saWNlbnNlLXJvdyB7XG4gIG1hcmdpbi10b3A6IDNyZW0gIWltcG9ydGFudDtcbn1cbi5wcm9qZWN0X3dpZGdldCAuZWRpdC1pbmZvLWJ0biB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDVhOTc7XG4gIG1hcmdpbi1ib3R0b206IDEwJTtcbn1cbi5wcm9qZWN0X3dpZGdldCAuZGVsZXRlLWljb24ge1xuICBjb2xvcjogIzdhN2E3YTtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBtYXJnaW4tcmlnaHQ6IDI4UFg7XG59XG4ucHJvamVjdF93aWRnZXQgLmRlbGV0ZS1pY29uLXByb2ZpbGUge1xuICBjb2xvcjogIzdhN2E3YTtcbiAgZmxvYXQ6IHJpZ2h0O1xufVxuLnByb2plY3Rfd2lkZ2V0IC5hZGQtbnVtYmVyIHtcbiAgY29sb3I6ICMwMDVhOTc7XG4gIGZsb2F0OiByaWdodDtcbn1cblxuLmhyIHtcbiAgbWFyZ2luLXRvcDogMHJlbSAhaW1wb3J0YW50O1xufVxuXG4uQWRkLVN1bW1hcnkge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA1YTk3O1xufVxuXG4ubWF0LXRhYi1sYWJlbCwgLm1hdC10YWItbGluayB7XG4gIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuODcpO1xufVxuXG4uY2hhbmdlLWVtYWlsLXRleHQge1xuICBmbG9hdDogcmlnaHQ7XG4gIGNvbG9yOiAjMDA1YTk3O1xufVxuXG4uU2VydmljZXMtT2ZmZXJlZC10ZXh0IHtcbiAgZm9udC1zaXplOiAxNXB4O1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgY29sb3I6ICMyNDI2MzQ7XG59XG5cbi5kZWxldGUtcm93IHtcbiAgbWFyZ2luLXRvcDogMTNweDtcbn1cblxuLnRleHQtbXV0ZWQge1xuICBjb2xvcjogIzI0MjYzNCAhaW1wb3J0YW50O1xufVxuXG4uZGVsZXRlLWltZy1pY29uIHtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBmb250LXNpemU6IDE3cHg7XG59XG5cbi5pbWctbmFtZSB7XG4gIGZvbnQtc2l6ZTogMTNweDtcbiAgbWFyZ2luLXRvcDogMXJlbTtcbiAgbWFyZ2luLWJvdHRvbTogMHJlbTtcbiAgbWFyZ2luLXRvcDogMXJlbTtcbn1cblxuLmltZy10aHVtYm5haWwge1xuICBib3JkZXI6IG5vbmU7XG4gIGJvcmRlci1yYWRpdXM6IG5vbmU7XG59XG5cbi5uZXh0LWNvbCB7XG4gIG1hcmdpbi1sZWZ0OiAxMnB4O1xufVxuXG4uaW1nLWNvbCB7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgYm9yZGVyOiBzb2xpZCAxcHggI2UwZTBlMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbn1cblxuLnVwbG9hZC1pbWcge1xuICBib3JkZXI6IGRvdHRlZCAxcHggIzAwNWE5NztcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5maWxlLXVwbG9hZC1pY29uIHtcbiAgY29sb3I6ICMwMDVhOTc7XG4gIGZvbnQtc2l6ZTogNDJweDtcbiAgbWFyZ2luLXRvcDogM3JlbTtcbn1cblxuLmFkZC1pbWctdGV4dCB7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgY29sb3I6ICMwMDVhOTc7XG59XG5cbjo6bmctZGVlcCAubWF0LWZsYXQtYnV0dG9uIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwNWE5Nztcbn1cblxuOjpuZy1kZWVwIC5tYXQtdGFiLWdyb3VwLm1hdC1wcmltYXJ5IC5tYXQtaW5rLWJhciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDVhOTc7XG59XG5cbjo6bmctZGVlcCAubWF0LXJhZGlvLWJ1dHRvbi5tYXQtYWNjZW50Lm1hdC1yYWRpby1jaGVja2VkIC5tYXQtcmFkaW8tb3V0ZXItY2lyY2xlIHtcbiAgYm9yZGVyLWNvbG9yOiAjMDA1YTk3O1xufVxuXG46Om5nLWRlZXAgLm1hdC1yYWRpby1idXR0b24ubWF0LWFjY2VudCAubWF0LXJhZGlvLWlubmVyLWNpcmNsZSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDVhOTc7XG59XG5cbjo6bmctZGVlcCAubWF0LXRhYi1sYWJlbC1hY3RpdmUge1xuICBjb2xvcjogIzAwNWE5Nztcbn1cblxuLmFkZERlYml0Q2FyZCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDVhOTc7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59XG5cbi5mb3JtLWNoZWNrLWlucHV0IHtcbiAgb3BhY2l0eTogMDtcbiAgaGVpZ2h0OiAwO1xuICB3aWR0aDogMDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBtYXJnaW46IDA7XG4gIHotaW5kZXg6IC0xO1xuICBsZWZ0OiAwO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cbi5mb3JtLWNoZWNrLWlucHV0OmNoZWNrZWQgKyAuZm9ybS1jaGVjay1zaWduOmJlZm9yZSB7XG4gIGFuaW1hdGlvbjogcmlwcGxlT24gMC41cztcbn1cbi5mb3JtLWNoZWNrLWlucHV0OmNoZWNrZWQgKyAuZm9ybS1jaGVjay1zaWduIC5jaGVjayB7XG4gIGJhY2tncm91bmQ6ICMwMDVhOTc7XG59XG4uZm9ybS1jaGVjay1pbnB1dDpjaGVja2VkICsgLmZvcm0tY2hlY2stc2lnbiAuY2hlY2s6YmVmb3JlIHtcbiAgY29sb3I6ICNmZmZmZmY7XG4gIGFuaW1hdGlvbjogY2hlY2tib3hPbiAwLjNzIGZvcndhcmRzO1xufVxuXG4ucGF5bWVudC1pbmZvLXRleHQge1xuICBmb250LWZhbWlseTogUm9ib3RvU2xhYjtcbiAgZm9udC1zaXplOiAxNHB4O1xuICBmb250LXdlaWdodDogbm9ybWFsO1xuICBjb2xvcjogIzI0MjYzNDtcbn1cblxuLnBheS10ZXh0LW1hcmdpbiB7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbi5ib3R0b20tbGVmdCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYm90dG9tOiA4cHg7XG4gIGxlZnQ6IDE2cHg7XG59XG5cbi50b3AtbGVmdCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiA4cHg7XG4gIGxlZnQ6IDE2cHg7XG59XG5cbi50b3AtcmlnaHQge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogOHB4O1xuICByaWdodDogMTZweDtcbn1cblxuLmJvdHRvbS1yaWdodCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYm90dG9tOiA4cHg7XG4gIHJpZ2h0OiAxNnB4O1xufVxuXG4uY2VudGVyZWQge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNTAlO1xuICBsZWZ0OiA1MCU7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xufVxuXG4uZGViaXQtLXdyYXBwZXIge1xuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQodG8gYm90dG9tLCAjMjM4NWM4LCAjMDA1YTk3KTtcbiAgY29sb3I6ICNmZmZmZmY7XG4gIHdpZHRoOiA0MDFweDtcbiAgcGFkZGluZzogMzBweDtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbn1cblxuLmNyZWRpdC0td3JhcHBlciB7XG4gIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCh0byBib3R0b20sICM1N2E0MDAsICMyNDQwMDUpO1xuICBjb2xvcjogI2ZmZmZmZjtcbiAgd2lkdGg6IDQwMXB4O1xuICBwYWRkaW5nOiAzMHB4O1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xufVxuXG4uaWNvbi13aGl0ZS1kZWxldGUge1xuICBjb2xvcjogIzdhN2E3YTtcbn1cblxuLm1hc3RlcmNhcmQtc3BhbiB7XG4gIGZvbnQtc2l6ZTogMjNweDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGZsb2F0OiByaWdodDtcbn1cblxuLmV4cGlyeS1kYXRlIHtcbiAgZm9udC1zaXplOiAxNXB4O1xuICBmb250LXdlaWdodDogNTAwO1xufVxuXG4ubnVtYmVyIHtcbiAgZm9udC1zaXplOiAzNHB4O1xuICBmb250LXdlaWdodDogNTAwO1xufVxuXG4ubmFtZSB7XG4gIGZvbnQtc2l6ZTogMjNweDtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cblxuLmRlbGV0ZS1idG4ge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xufSJdfQ== */"]
       });
 

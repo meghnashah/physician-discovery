@@ -19,7 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: 'dashboard',
-        loadChildren: () => Promise.all(/*! import() | dashboard-dashboard-module */[__webpack_require__.e("default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~patient~d9a72e23"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~extra-pages-extra-pages-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module"), __webpack_require__.e("default~dashboard-dashboard-module~patient-patient-module"), __webpack_require__.e("dashboard-dashboard-module")]).then(__webpack_require__.bind(null, /*! ./dashboard/dashboard.module */ "pBKm")).then((m) => m.DashboardModule),
+        loadChildren: () => Promise.all(/*! import() | dashboard-dashboard-module */[__webpack_require__.e("default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~extra-p~29aaadac"), __webpack_require__.e("default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~patient~d9a72e23"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module~patient-patient-module"), __webpack_require__.e("default~dashboard-dashboard-module~doctor-doctor-module"), __webpack_require__.e("default~dashboard-dashboard-module~patient-patient-module"), __webpack_require__.e("dashboard-dashboard-module")]).then(__webpack_require__.bind(null, /*! ./dashboard/dashboard.module */ "pBKm")).then((m) => m.DashboardModule),
     },
 ];
 class AdminRoutingModule {
