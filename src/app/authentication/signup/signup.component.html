@@ -9,7 +9,9 @@
       <div class="form-section">
         <div class="auth-wrapper">
           <h2 class="welcome-msg"> Sign Up </h2>
-          <p class="auth-signup-text text-muted">Please fill your details</p>
+          <p class="auth-signup-text text-muted">Please fill your details 
+             <span class="step"> Step 1 / 2</span></p> 
+         
           <form class="validate-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
@@ -78,6 +80,17 @@
                   </mat-error>
                 </mat-form-field>
               </div>
+            </div>
+
+            <div class="row radio-grp-row">
+              <div class="col-xl-12col-lg-12 col-md-12 col-sm-12 mb-2">
+
+              <mat-label class="gender-lable"> Gender:</mat-label>
+                <mat-radio-group class="radio-btn" aria-label="Select an option">
+                  <mat-radio-button value="1">Male</mat-radio-button>
+                  <mat-radio-button value="2"> Female</mat-radio-button>
+                </mat-radio-group>
+            </div>
             </div>
 
             <div class="row">
@@ -170,19 +183,27 @@
                 </mat-form-field>
               </div>
             </div>
-        
-            <div class="flex-sb-m w-full  p-b-20">
-              <div>
-                <span>By clicking continue, you agree to our <a routerLink="/authentication/signin">
-                  Terms of Service
-                  </a> and our <a routerLink="/authentication/signin"> Privacy Policy</a></span>
+           
+
+            <div class="d-flex justify-content-between align-items-center mb-5">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value=""> By clicking continue, you agree to our
+                  <span class="form-check-sign">
+                    <span class="check"></span>
+                  </span>
+                  <a routerLink="/authentication/signin">
+                    Terms of Service
+                    </a> and our <a routerLink="/authentication/signin"> Privacy Policy</a>
+                </label>
               </div>
+             
             </div>
            
             
             <div class="container-auth-form-btn">
-              <button mat-flat-button color="primary" class="auth-form-btn" [disabled]="!authForm.valid " type="submit">
-                Register
+              <button mat-flat-button  color="primary" class="auth-form-btn" [disabled]="!authForm.valid " type="submit">
+                Verify Email Address
               </button>
             </div>
 

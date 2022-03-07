@@ -16,6 +16,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { OtpModalComponent } from './otp-modal/otp-modal.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 @NgModule({
   declarations: [
     Page500Component,
@@ -36,7 +39,11 @@ import { OtpModalComponent } from './otp-modal/otp-modal.component';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRadioModule,
+    MatCheckboxModule
+
+    
   ]
 })
 export class AuthenticationModule {}

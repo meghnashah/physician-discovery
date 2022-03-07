@@ -23,10 +23,11 @@ import { ChangePasswordSuccessModalComponent } from './profile/change-password-s
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatSelectModule } from "@angular/material/select";
 import { MatOptionModule } from "@angular/material/core";
+import { DeleteCreditCardComponent } from './profile/delete-credit-card/delete-credit-card.component';
 
 
 @NgModule({
-  declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent],
+  declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent, DeleteCreditCardComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

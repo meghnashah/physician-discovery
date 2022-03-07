@@ -13,6 +13,11 @@ interface Food {
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
+  checked = false;
+  indeterminate = false;
+  labelPosition: 'before' | 'after' = 'after';
+  disabled = false;
+
   authForm: FormGroup;
   submitted = false;
   returnUrl: string;
