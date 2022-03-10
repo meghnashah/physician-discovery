@@ -1,15 +1,23 @@
 .dr-name{
     color: #005a97;
+    font-family: RobotoSlab;
+    font-size: 30px;
+    font-weight: 500;
 }
 .start-btn{
     background-color:#005a97;
 }
 
 .skip-btn{
-    border-style:  solid ;
     border-color: #005a97;
     color: #005a97;
-    box-shadow: none;
+}
+
+.tot-appoinment{
+    color: #242634;
+    font-family: RobotoSlab;
+    font-size: 20px;
+    font-weight: normal;
 }
 .calender-icon{
     width: 50% !important;
@@ -33,8 +41,9 @@
     padding-right: 10px;
     font-size: 20px;
     font-weight: 500;
-    color: #444444;
+    color: #242634;
     margin-bottom: 0px;
+    font-family: RobotoSlab;
     &:after {
       content: "\f105";
       font-family: "Font Awesome 5 Free";
@@ -50,3 +59,12 @@
       }
     }
   }
+
+  .welcome-text{
+    font-family: RobotoSlab;
+    font-size: 20px;
+    font-weight: normal;
+    color: #666666;
+  }
+
+ 

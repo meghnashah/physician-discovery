@@ -9,23 +9,28 @@
         </li>
       </ul>
 
-      <ul class="pull-left collapse-menu-icon">
+      <ul class="pull-left collapse-menu-icon home-menu-padding">
         <li>
-            <span>Home</span>
+          <span><i class="material-iconss">home</i></span>
+            <span class="header-menu">Home</span>
         </li>
       </ul>
 
 
-      <ul class="pull-left collapse-menu-icon">
+      <ul class="pull-left collapse-menu-icon home-menu-padding">
         <li>
-            <span>Appoinments</span>
+          <span><i class="material-iconss">assignment</i></span>
+            <span class="header-menu">    Appoinments</span>
         </li>
       </ul>
 
 
-      <ul class="pull-left collapse-menu-icon">
+      <ul class="pull-left collapse-menu-icon home-menu-padding">
         <li>
-            <span>Inquiry</span>
+           <span><i class="material-iconss">mail_outline</i></span>
+          
+            <span class="header-menu">Inquiry</span>
+         
         </li>
       </ul>
 
@@ -38,7 +43,7 @@
         <li class="nav-item" ngbDropdown>
           <button mat-icon-button ngbDropdownToggle class="nav-notification-icons">
             <mat-icon>notifications_active</mat-icon>
-            <span class="label-count bg-orange"></span>
+            <span class="label-count bg-red"></span>
           </button>
           <div ngbDropdownMenu class="notification-dropdown pullDown">
             <div class="noti-list" style="position: relative; max-width: 600px; max-height: 250px;" [perfectScrollbar]>
@@ -64,12 +69,12 @@
           </div>
         </li>
         <li>
-          <span>Ella John</span>
+          <span class="font-14">Ella John</span>
         </li>
         <!-- #END# Notifications-->
         <li class="nav-item user_profile" ngbDropdown>
           <a href="#" onClick="return false;" ngbDropdownToggle role="button" class="nav-notification-icons pt-0">
-            <img src={{userImg}} class="rounded-circle" width="32" height="32" alt="User">
+            <span class="dot"> EJ</span>
           </a>
           <div ngbDropdownMenu class="notification-dropdown pullDown">
             <div class="noti-list" style="position: relative; max-width: 600px; max-height: 300px;" [perfectScrollbar]>
@@ -83,13 +88,13 @@
                     </li>
                     <li class="managment">
                       <a href="#" onClick="return false;">
-                        <mat-icon aria-hidden="false" class="mr-2">calendar_today</mat-icon>Scheduler Management
+                        <mat-icon aria-hidden="false" class="mr-2">insert_invitation</mat-icon>Scheduler Management
                       </a>
                     </li>
                     
                     <li>
                       <a href="javascript:void(0);" (click)="logout()">
-                        <mat-icon aria-hidden="false" class="mr-2">power_settings_new</mat-icon>Logout
+                        <mat-icon aria-hidden="false" class="mr-2">logout</mat-icon>Logout
                       </a>
                     </li>
                   </ul>
