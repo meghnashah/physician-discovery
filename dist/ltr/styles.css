@@ -11664,7 +11664,7 @@ body,
 html {
   transition: all 0.5s;
   background-color: #ecf0f4;
-  font-family: "Roboto Slab", serif;
+  font-family:  RobotoSlab ;
   font-size: 14px;
 }
 button,
@@ -22550,7 +22550,7 @@ fieldset[disabled] .form-control {
 }
 .sidebar {
   transition: all 0.5s;
-  font-family: "Roboto Slab", sans-serif;
+  font-family:  RobotoSlab ;
   background: #ffffff;
   width: 260px;
   overflow: hidden;
@@ -23089,7 +23089,7 @@ fieldset[disabled] .form-control {
  *  Description: This scss file for navbar style classes
  */
 .navbar {
-  font-family: "Roboto Slab", sans-serif;
+  font-family: RobotoSlab ;
   border-radius: 0;
   box-shadow: none;
   border: none;

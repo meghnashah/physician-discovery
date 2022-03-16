@@ -220,6 +220,34 @@ direction: ltr;
 -webkit-font-feature-settings: 'liga';
 -webkit-font-smoothing: antialiased;
 }
+.profile-info{
+    color:#242634;
+  font-family: RobotoSlab;
+  font-size: 14px;
+}
+.profile-info-pwd{
+  color: #005a97;
+  font-family: RobotoSlab;
+  font-size: 14px;
+
+}
+
+.fa-lock{
+  padding: 8px;
+  color: #005a97;
+}
+.fa-info-circle{
+  color: #005a97;
+  margin-left: 12px;
+}
+.fa-phone{
+  padding: 8px;
+}
+
+.fa-envelope{
+  padding: 8px;
+}
+
 .payment-info-text{
   font-family: RobotoSlab;
   font-size: 14px;

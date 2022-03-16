@@ -32,16 +32,24 @@
                 <div class="photo-dot"><span class="userName">EJ</span> </div>
               
                 <p>
-                  <mat-icon> email</mat-icon> johnlorem1234@ipsumdummylorem.com
-                  
+                  <li style="list-style-type:none;" class="breadcrumb-item bcrumb-1">          
+                    <p class="profile-info"> <i class="fa fa-envelope"></i>  johnlorem1234@ipsumdummylorem.com</p>                    
                 </p>
+
                 <div>
-                  <span class="phone">
-                    <i class="material-icons">phone</i>+1 553586945</span>
+
+                  <li style="list-style-type:none;" class="breadcrumb-item bcrumb-1">          
+                    <p class="profile-info"> <i class="fa fa-phone"></i> +1 553586945</p>   
+                    </li>
+
+                   
                 </div>
+
                 <div class="password"  (click)="addNew()">
-                  <span class="phone">
-                    <i class="material-icons">lock</i>Change password</span>
+                  <li style="list-style-type:none;" class="breadcrumb-item bcrumb-1">          
+                    <p class="profile-info-pwd"> <i class="fa fa-lock"></i>Change password</p>   
+                    </li>
+ 
                 </div>
 
                 
@@ -85,21 +93,14 @@
                                 <p class="text-muted">04/19/1990</p>
                               </div>
                               <div class="col-md-3 col-6 b-r">
-                                <!-- <strong>Phone Number</strong> 
-
-                                
-                                <br>
-                                <p class="text-muted">+1 553586945</p> -->
-
-                                <ul class="breadcrumb breadcrumb-style ">
-                                  <li class="breadcrumb-item">
-                                    <strong>Phone Number</strong>
-                                  </li>
-                                  <li  >                                     
-                                    <i class="material-icons">info_outline</i>
-                                  </li>
                                  
-                                </ul>
+                                <li style="list-style-type:none;" class="breadcrumb-item bcrumb-1">          
+                                  <strong>Phone Number</strong> <i class="fa fa-info-circle"></i>  
+                                  <br>
+                                <p class="text-muted">+1 553586945</p>
+                              </li> 
+
+                                 
                               </div> 
                              
                             </div>
