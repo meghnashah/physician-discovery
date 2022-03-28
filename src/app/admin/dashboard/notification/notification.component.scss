@@ -1,0 +1,35 @@
+::ng-deep .mat-raised-button{
+    background-color:  #005a97 !important;
+}
+
+.notice-heading{
+    font-weight: bold;
+    font-size: 17px;
+}
+.booking-id{
+    font-size: 14px;
+    font-weight: bold;
+}
+.comment-date{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dateAndTime{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.comment-date-bold{
+    font-size: 14px;
+    font-weight: bold;
+}
+tr.disabled {
+     color: grey;
+}
+ 
+::ng-deep .mat-menu-item{
+    font-size: 14px !important;
+    font-weight: normal !important;
+    color: #242634 !important;
+}

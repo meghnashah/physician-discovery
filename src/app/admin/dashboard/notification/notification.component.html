@@ -36,51 +36,97 @@
           </div>
       </div>
   
-    
        
    
    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
         <div class="card">
           <div class="header">
             <h2>Notifications</h2>
+
+            <hr>
+            
+            <button mat-button [matMenuTriggerFor]="menu" class="header-dropdown">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span class="menu-dropdown">Redial</span>
+              </button>
+              <button mat-menu-item >
+                <mat-icon>delete</mat-icon>
+                <span class="menu-dropdown">Check voice mail</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>delete</mat-icon>
+                <span class="menu-dropdown">Disable alerts</span>
+              </button>
+            </mat-menu>
+
           </div>
           <div class="body">
             <div class="table-responsive">
               <table class="table table-borderless">
                 <tr>
                   <td> <div class="notice-body">
-                    <h6 class="notice-heading color-primary ">Cancelled Appointment</h6>
-                    <p>Booking ID: 458855</p>
-                    <p class="comment-date">Your appointment with David on Wednesday 02/25/2021 at 7:30 pm was cancelled by the patient.</p>
+                    <h5 class="notice-heading color-primary ">Cancelled Appointment</h5>
+                    <p class="booking-id">Booking ID: 458855</p>
+                    <p class="comment-date">Your appointment with David on <span class="comment-date-bold"> Wednesday 02/25/2021 </span>  at 7:30 pm was <span class="comment-date-bold"> cancelled by the patient.</span> </p>
                   </div></td>
                   <td class="text-right">
-                    <h6 ><i class="far fa-trash-alt"></i></h6>
-                    <p> 3 hrs ago </p>
+                    <h6 > <mat-icon>delete</mat-icon></h6>
+                    <p class="dateAndTime"> 3 hrs ago </p>
+                  </td>
+                </tr>
+                <tr class="disabled" >
+                  <td> <div class="notice-body">
+                    <h5 class="notice-heading color-primary ">Scheduled Appointment</h5>
+                    <p class="booking-id">Booking ID: 784579</p>
+                    <p class="comment-date">Your appointment with David on <span class="comment-date-bold"> Wednesday 02/25/2021 </span>  at 7:30 pm was <span class="comment-date-bold"> am is scheduled.</span> </p>
+                  </div></td>
+ 
+                  <td class="text-right">
+                    <h6 > <mat-icon>delete</mat-icon></h6>
+                    <p class="dateAndTime"> 11:30 AM</p>
                   </td>
                 </tr>
                 <tr>
                   <td> <div class="notice-body">
-                    <h6 class="notice-heading color-primary ">Cancelled Appointment</h6>
-                    <p>Booking ID: 458855</p>
-                    <p class="comment-date">Your appointment with David on Wednesday 02/25/2021 at 7:30 pm was cancelled by the patient.</p>
+                    <h6 class="notice-heading color-primary ">Reschedule Appointment</h6>
+                    <p class="booking-id">Booking ID: 784579</p>
+                    <p class="comment-date">Your appointment with David on <span class="comment-date-bold"> Wednesday 02/25/2021 </span>  at 7:30 pm was <span class="comment-date-bold">12:30 am is rescheduled.</span> </p>
                   </div></td>
                   <td class="text-right">
-                    <h6 ><i class="far fa-trash-alt"></i></h6>
-                    <p> 3 hrs ago </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td> <div class="notice-body">
-                    <h6 class="notice-heading color-primary ">Cancelled Appointment</h6>
-                    <p>Booking ID: 458855</p>
-                    <p class="comment-date">Your appointment with David on Wednesday 02/25/2021 at 7:30 pm was cancelled by the patient.</p>
-                  </div></td>
-                  <td class="text-right">
-                    <h6 ><i class="far fa-trash-alt"></i></h6>
-                    <p> 3 hrs ago </p>
+                    <h6 > <mat-icon>delete</mat-icon></h6>
+                    <p> Yesterday </p>
                   </td>
                 </tr>
           
+
+                <tr>
+                  <td> <div class="notice-body">
+                    <h5 class="notice-heading color-primary ">Cancelled Appointment</h5>
+                    <p class="booking-id">Booking ID: 458855</p>
+                    <p class="comment-date">Your appointment with David on <span class="comment-date-bold"> Wednesday 02/25/2021 </span>  at 7:30 pm was <span class="comment-date-bold"> cancelled by the patient.</span> </p>
+                  </div></td>
+                  <td class="text-right">
+                    <h6 > <mat-icon>delete</mat-icon></h6>
+                    <p class="dateAndTime"> Feb 11th 2021, 05:00 PM </p>
+                  </td>
+                </tr>
+
+                <tr class="disabled" >
+                  <td> <div class="notice-body">
+                    <h5 class="notice-heading color-primary ">Cancelled Appointment</h5>
+                    <p class="booking-id">Booking ID: 458855</p>
+                    <p class="comment-date">Your appointment with David on <span class="comment-date-bold"> Wednesday 02/25/2021 </span>  at 7:30 pm was <span class="comment-date-bold"> cancelled by the patient.</span> </p>
+                  </div></td>
+                  <td class="text-right">
+                    <h6 > <mat-icon>delete</mat-icon></h6>
+                    <p class="dateAndTime"> Feb 5th 2021, 07:00 AM</p>
+                  </td>
+                </tr>
+
               </table>
             </div>
           
