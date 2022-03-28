@@ -7,14 +7,13 @@ import { LockedComponent } from './locked/locked.component';
 import { Page404Component } from './page404/page404.component';
 import { Page500Component } from './page500/page500.component';
 import { SetPasswordComponent } from './set-password/set-password.component';
-import { OtpModalComponent } from './otp-modal/otp-modal.component';
+import { OtpModalComponent } from './otp-modal/otp-modal.component';  
+
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'signin',
-    pathMatch: 'full'
-  },
+ 
+  
+
   {
     path: 'signin',
     component: SigninComponent
@@ -46,7 +45,8 @@ const routes: Routes = [
   {
     path: 'page500',
     component: Page500Component
-  }
+  },
+   
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

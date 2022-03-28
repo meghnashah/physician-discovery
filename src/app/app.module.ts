@@ -23,7 +23,8 @@ import {
   PerfectScrollbarConfigInterface,
 } from 'ngx-perfect-scrollbar';
 import { ClickOutsideModule } from 'ng-click-outside';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LandingPageComponent } from './landing-page/landing-page.component'; 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -38,6 +39,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     RightSidebarComponent,
     AuthLayoutComponent,
     MainLayoutComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,

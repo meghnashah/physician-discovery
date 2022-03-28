@@ -24,10 +24,25 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatSelectModule } from "@angular/material/select";
 import { MatOptionModule } from "@angular/material/core";
 import { DeleteCreditCardComponent } from './profile/delete-credit-card/delete-credit-card.component';
+import { AppoinmentDashboardComponent } from './appoinment-dashboard/appoinment-dashboard.component';
+import { NgxDatatableModule } from "@swimlane/ngx-datatable";
+import { MatTableModule } from "@angular/material/table";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatCardModule } from "@angular/material/card";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MaterialFileInputModule } from "ngx-material-file-input";
+import { MatPaginatorModule } from "@angular/material/paginator";
+ 
+import { MatSortModule } from "@angular/material/sort";
+import { NotificationComponent } from './notification/notification.component';
+ 
+import { MatSnackBarModule } from "@angular/material/snack-bar"; 
+import { MatDatepickerModule } from "@angular/material/datepicker"; 
+import { AppointmentsService } from "./main/main.service";
 
 
 @NgModule({
-  declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent, DeleteCreditCardComponent],
+  declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent, DeleteCreditCardComponent, AppoinmentDashboardComponent, NotificationComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -47,8 +62,20 @@ import { DeleteCreditCardComponent } from './profile/delete-credit-card/delete-c
     ReactiveFormsModule,
     MatDialogModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatTableModule,
+    NgxDatatableModule,
+    MatProgressSpinnerModule,
+    MatToolbarModule,
+    MaterialFileInputModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSnackBarModule,
+    MatDatepickerModule
+    
   ],
+  providers: [AppointmentsService]
 
 })
 export class DashboardModule {}

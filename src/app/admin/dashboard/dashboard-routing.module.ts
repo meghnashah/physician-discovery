@@ -6,6 +6,9 @@ import { Routes, RouterModule } from "@angular/router";
 import { MainComponent } from "./main/main.component";
 import { Dashboard2Component } from "./dashboard2/dashboard2.component";
 import { ProfileComponent } from "./profile/profile.component";
+import { AppoinmentDashboardComponent } from "./appoinment-dashboard/appoinment-dashboard.component";
+import { NotificationComponent } from "./notification/notification.component";
+
 
 const routes: Routes = [
   {
@@ -33,6 +36,16 @@ const routes: Routes = [
     path: "patient-dashboard",
     component: patientDashboard,
   },
+  {
+    path: "appoinment-dashboard",
+    component: AppoinmentDashboardComponent,
+  },
+
+  {
+    path: "notification",
+    component: NotificationComponent,
+  },
+
   { path: "**", component: Page404Component },
 ];
 @NgModule({

@@ -1,481 +1,233 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  ChartComponent,
-  ApexAxisChartSeries,
-  ApexChart,
-  ApexXAxis,
-  ApexDataLabels,
-  ApexTooltip,
-  ApexYAxis,
-  ApexPlotOptions,
-  ApexStroke,
-  ApexLegend,
-  ApexFill,
-  ApexResponsive,
-} from 'ng-apexcharts';
-export type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  xaxis: ApexXAxis;
-  yaxis: ApexYAxis;
-  stroke: ApexStroke;
-  tooltip: ApexTooltip;
-  dataLabels: ApexDataLabels;
-  legend: ApexLegend;
-  responsive: ApexResponsive[];
-  plotOptions: ApexPlotOptions;
-  fill: ApexFill;
-  colors: string[];
-};
+import { Component, ElementRef,AfterViewInit, OnInit, ViewChild } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { MatDialog } from "@angular/material/dialog";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort } from "@angular/material/sort";
+
+import { DataSource } from "@angular/cdk/collections";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { BehaviorSubject, fromEvent, merge, Observable } from "rxjs";
+import { map } from "rxjs/operators"; 
+import { DateAdapter, MAT_DATE_LOCALE } from "@angular/material/core";
+import { SelectionModel } from "@angular/cdk/collections"; 
+import { AppointmentsService } from "./main.service";
+import { Appointments } from "./main.model";
+import { MatMenuTrigger } from "@angular/material/menu";
+
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
-export class MainComponent implements OnInit {
-  public cardChart1: any;
-  public cardChart1Data: any;
-  public cardChart1Label: any;
-
-  public cardChart2: any;
-  public cardChart2Data: any;
-  public cardChart2Label: any;
-
-  public cardChart3: any;
-  public cardChart3Data: any;
-  public cardChart3Label: any;
-
-  public cardChart4: any;
-  public cardChart4Data: any;
-  public cardChart4Label: any;
-
-  public areaChartOptions: Partial<ChartOptions>;
-  public barChartOptions: Partial<ChartOptions>;
-  showform : boolean = false ;
-  constructor() {}
-  ngOnInit() {
-    this.smallChart1();
-    this.smallChart2();
-    this.smallChart3();
-    this.smallChart4();
-    this.chart1();
-    this.chart2();
-  }
-
+export class MainComponent implements OnInit,AfterViewInit  {
   
+  showform : boolean = false ;
+  oppinment : boolean = false;
+
+
   skipFuction() {
     this.showform = true
   }
 
+  showAppoinment (){
+    this.oppinment = true
+  }
+  
+  filterToggle = false;
+  displayedColumns = [
+    "select",
+    "img",
+    "name",
+    "dateTime",
+    "email",
+    "mobile",
+    "disease",
+    "actions",
+  ];
+  exampleDatabase: AppointmentsService | null;
+  dataSource: ExampleDataSource | null;
+  selection = new SelectionModel<Appointments>(true, []);
+  id: number; 
+  appointments: Appointments | null;
+  constructor(
+    public httpClient: HttpClient,
+    public dialog: MatDialog,
+    public appointmentsService: AppointmentsService,
+    private snackBar: MatSnackBar
+  ) {}
+  ngAfterViewInit(): void {
+    throw new Error("Method not implemented.");
+  }
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild("filter", { static: true }) filter: ElementRef;
+  @ViewChild(MatMenuTrigger) 
+  contextMenu: MatMenuTrigger;
+  contextMenuPosition = { x: "0px", y: "0px" };
 
-  private smallChart1() {
-    this.cardChart1 = {
-      responsive: true,
-      tooltips: {
-        enabled: false,
-      },
-      legend: {
-        display: false,
-      },
-      scales: {
-        yAxes: [
-          {
-            gridLines: {
-              display: false,
-              drawBorder: false,
-            },
-            ticks: {
-              beginAtZero: true,
-              display: false,
-            },
-          },
-        ],
-        xAxes: [
-          {
-            gridLines: {
-              drawBorder: false,
-              display: false,
-            },
-            ticks: {
-              display: false,
-            },
-          },
-        ],
-      },
-      title: {
-        display: false,
-      },
-    };
-    this.cardChart1Data = [
-      {
-        label: 'New Patients',
-        data: [50, 61, 80, 50, 72, 52, 60, 41, 30, 45, 70, 40, 93, 63, 50, 62],
-        borderWidth: 4,
-        pointStyle: 'circle',
-        pointRadius: 4,
-        borderColor: 'rgba(103,119,239,.7)',
-        pointBackgroundColor: 'rgba(103,119,239,.2)',
-        backgroundColor: 'rgba(103,119,239,.2)',
-        pointBorderColor: 'transparent',
-      },
-    ];
-    this.cardChart1Label = [
-      '16-07-2018',
-      '17-07-2018',
-      '18-07-2018',
-      '19-07-2018',
-      '20-07-2018',
-      '21-07-2018',
-      '22-07-2018',
-      '23-07-2018',
-      '24-07-2018',
-      '25-07-2018',
-      '26-07-2018',
-      '27-07-2018',
-      '28-07-2018',
-      '29-07-2018',
-      '30-07-2018',
-      '31-07-2018',
-    ];
+  ngOnInit() {
+    this.loadData();
   }
-  private smallChart2() {
-    this.cardChart2 = {
-      responsive: true,
-      tooltips: {
-        enabled: false,
-      },
-      legend: {
-        display: false,
-      },
-      scales: {
-        yAxes: [
-          {
-            gridLines: {
-              display: false,
-              drawBorder: false,
-            },
-            ticks: {
-              beginAtZero: true,
-              display: false,
-            },
-          },
-        ],
-        xAxes: [
-          {
-            gridLines: {
-              drawBorder: false,
-              display: false,
-            },
-            ticks: {
-              display: false,
-            },
-          },
-        ],
-      },
-      title: {
-        display: false,
-      },
-    };
-    this.cardChart2Data = [
-      {
-        label: 'New Patients',
-        data: [50, 61, 80, 50, 40, 93, 63, 50, 62, 72, 52, 60, 41, 30, 45, 70],
-        borderWidth: 4,
-        pointStyle: 'circle',
-        pointRadius: 4,
-        borderColor: 'rgba(253,126,20,.7)',
-        pointBackgroundColor: 'rgba(253,126,20,.2)',
-        backgroundColor: 'rgba(253,126,20,.2)',
-        pointBorderColor: 'transparent',
-      },
-    ];
-    this.cardChart2Label = [
-      '16-07-2018',
-      '17-07-2018',
-      '18-07-2018',
-      '19-07-2018',
-      '20-07-2018',
-      '21-07-2018',
-      '22-07-2018',
-      '23-07-2018',
-      '24-07-2018',
-      '25-07-2018',
-      '26-07-2018',
-      '27-07-2018',
-      '28-07-2018',
-      '29-07-2018',
-      '30-07-2018',
-      '31-07-2018',
-    ];
+  refresh() {
+    this.loadData();
   }
-  private smallChart3() {
-    this.cardChart3 = {
-      responsive: true,
-      tooltips: {
-        enabled: false,
-      },
-      legend: {
-        display: false,
-      },
-      scales: {
-        yAxes: [
-          {
-            gridLines: {
-              display: false,
-              drawBorder: false,
-            },
-            ticks: {
-              beginAtZero: true,
-              display: false,
-            },
-          },
-        ],
-        xAxes: [
-          {
-            gridLines: {
-              drawBorder: false,
-              display: false,
-            },
-            ticks: {
-              display: false,
-            },
-          },
-        ],
-      },
-      title: {
-        display: false,
-      },
-    };
-    this.cardChart3Data = [
-      {
-        label: 'New Patients',
-        data: [52, 60, 41, 30, 45, 70, 50, 61, 80, 50, 72, 40, 93, 63, 50, 62],
-        borderWidth: 4,
-        pointStyle: 'circle',
-        pointRadius: 4,
-        borderColor: 'rgba(40,167,69,.7)',
-        pointBackgroundColor: 'rgba(40,167,69,.2)',
-        backgroundColor: 'rgba(40,167,69,.2)',
-        pointBorderColor: 'transparent',
-      },
-    ];
-    this.cardChart3Label = [
-      '16-07-2018',
-      '17-07-2018',
-      '18-07-2018',
-      '19-07-2018',
-      '20-07-2018',
-      '21-07-2018',
-      '22-07-2018',
-      '23-07-2018',
-      '24-07-2018',
-      '25-07-2018',
-      '26-07-2018',
-      '27-07-2018',
-      '28-07-2018',
-      '29-07-2018',
-      '30-07-2018',
-      '31-07-2018',
-    ];
+   
+  toggleStar(row) {
+    console.log(row);
   }
-  private smallChart4() {
-    this.cardChart4 = {
-      responsive: true,
-      tooltips: {
-        enabled: false,
-      },
-      legend: {
-        display: false,
-      },
-      scales: {
-        yAxes: [
-          {
-            gridLines: {
-              display: false,
-              drawBorder: false,
-            },
-            ticks: {
-              beginAtZero: true,
-              display: false,
-            },
-          },
-        ],
-        xAxes: [
-          {
-            gridLines: {
-              drawBorder: false,
-              display: false,
-            },
-            ticks: {
-              display: false,
-            },
-          },
-        ],
-      },
-      title: {
-        display: false,
-      },
-    };
-    this.cardChart4Data = [
-      {
-        label: 'New Patients',
-        data: [30, 45, 70, 40, 93, 63, 50, 62, 50, 61, 80, 50, 72, 52, 60, 41],
-        borderWidth: 4,
-        pointStyle: 'circle',
-        pointRadius: 4,
-        borderColor: 'rgba(0,123,255,.7)',
-        pointBackgroundColor: 'rgba(0,123,255,.2)',
-        backgroundColor: 'rgba(0,123,255,.2)',
-        pointBorderColor: 'transparent',
-      },
-    ];
-    this.cardChart4Label = [
-      '16-07-2018',
-      '17-07-2018',
-      '18-07-2018',
-      '19-07-2018',
-      '20-07-2018',
-      '21-07-2018',
-      '22-07-2018',
-      '23-07-2018',
-      '24-07-2018',
-      '25-07-2018',
-      '26-07-2018',
-      '27-07-2018',
-      '28-07-2018',
-      '29-07-2018',
-      '30-07-2018',
-      '31-07-2018',
-    ];
+  private refreshTable() {
+    this.paginator._changePageSize(this.paginator.pageSize);
   }
-  private chart1() {
-    this.areaChartOptions = {
-      series: [
-        {
-          name: 'New Patients',
-          data: [31, 40, 28, 51, 42, 85, 77],
-        },
-        {
-          name: 'Old Patients',
-          data: [11, 32, 45, 32, 34, 52, 41],
-        },
-      ],
-      chart: {
-        height: 350,
-        type: 'area',
-        toolbar: {
-          show: false,
-        },
-        foreColor: '#9aa0ac',
-      },
-      colors: ['#407fe4', '#908e8e'],
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: 'smooth',
-      },
-      xaxis: {
-        type: 'datetime',
-        categories: [
-          '2018-09-19',
-          '2018-09-20',
-          '2018-09-21',
-          '2018-09-22',
-          '2018-09-23',
-          '2018-09-24',
-          '2018-09-25',
-        ],
-      },
-      legend: {
-        show: true,
-        position: 'top',
-        horizontalAlign: 'center',
-        offsetX: 0,
-        offsetY: 0,
-      },
+  /** Whether the number of selected elements matches the total number of rows. */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.renderedData.length;
+    return numSelected === numRows;
+  }
 
-      tooltip: {
-        theme: 'dark',
-        marker: {
-          show: true,
-        },
-        x: {
-          show: true,
-        },
-      },
-    };
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  masterToggle() {
+    this.isAllSelected()
+      ? this.selection.clear()
+      : this.dataSource.renderedData.forEach((row) =>
+          this.selection.select(row)
+        );
   }
-  private chart2() {
-    this.barChartOptions = {
-      series: [
-        {
-          name: 'Colds and Flu',
-          data: [44, 55, 41, 67, 22, 43],
-        },
-        {
-          name: 'Headaches',
-          data: [13, 23, 20, 8, 13, 27],
-        },
-        {
-          name: 'Malaria',
-          data: [11, 17, 15, 15, 21, 14],
-        },
-        {
-          name: 'Typhoid',
-          data: [21, 7, 25, 13, 22, 8],
-        },
-      ],
-      chart: {
-        type: 'bar',
-        height: 350,
-        foreColor: '#9aa0ac',
-        stacked: true,
-        toolbar: {
-          show: false,
-        },
-      },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            legend: {
-              position: 'bottom',
-              offsetX: -10,
-              offsetY: 0,
-            },
-          },
-        },
-      ],
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          columnWidth: '30%',
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      xaxis: {
-        type: 'category',
-        categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-      },
-      legend: {
-        show: false,
-      },
-      fill: {
-        opacity: 0.8,
-        colors: ['#01B8AA', '#374649', '#FD625E', '#F2C80F'],
-      },
-      tooltip: {
-        theme: 'dark',
-        marker: {
-          show: true,
-        },
-        x: {
-          show: true,
-        },
-      },
-    };
+  removeSelectedRows() {
+    const totalSelect = this.selection.selected.length;
+    this.selection.selected.forEach((item) => {
+      const index: number = this.dataSource.renderedData.findIndex(
+        (d) => d === item
+      );
+      // console.log(this.dataSource.renderedData.findIndex((d) => d === item));
+      this.exampleDatabase.dataChange.value.splice(index, 1);
+      this.refreshTable();
+      this.selection = new SelectionModel<Appointments>(true, []);
+    });
+    this.showNotification(
+      "snackbar-danger",
+      totalSelect + " Record Delete Successfully...!!!",
+      "bottom",
+      "center"
+    );
   }
+  public loadData() {
+    this.exampleDatabase = new AppointmentsService(this.httpClient);
+    this.dataSource = new ExampleDataSource(
+      this.exampleDatabase,
+      this.paginator,
+      this.sort
+    );
+    fromEvent(this.filter.nativeElement, "keyup").subscribe(() => {
+      if (!this.dataSource) {
+        return;
+      }
+      this.dataSource.filter = this.filter.nativeElement.value;
+    });
+  }
+  showNotification(colorName, text, placementFrom, placementAlign) {
+    this.snackBar.open(text, "", {
+      duration: 2000,
+      verticalPosition: placementFrom,
+      horizontalPosition: placementAlign,
+      panelClass: colorName,
+    });
+  }
+}
+export class ExampleDataSource extends DataSource<Appointments> {
+  filterChange = new BehaviorSubject("");
+  get filter(): string {
+    return this.filterChange.value;
+  }
+  set filter(filter: string) {
+    this.filterChange.next(filter);
+  }
+  filteredData: Appointments[] = [];
+  renderedData: Appointments[] = [];
+  constructor(
+    public exampleDatabase: AppointmentsService,
+    public paginator: MatPaginator,
+    public _sort: MatSort
+  ) {
+    super();
+    // Reset to the first page when the user changes the filter.
+    this.filterChange.subscribe(() => (this.paginator.pageIndex = 0));
+  }
+  /** Connect function called by the table to retrieve one stream containing the data to render. */
+  connect(): Observable<Appointments[]> {
+    // Listen for any changes in the base data, sorting, filtering, or pagination
+    const displayDataChanges = [
+      this.exampleDatabase.dataChange,
+      this._sort.sortChange,
+      this.filterChange,
+      this.paginator.page,
+    ];
+    this.exampleDatabase.getAllAppointmentss();
+    return merge(...displayDataChanges).pipe(
+      map(() => {
+        // Filter data
+        this.filteredData = this.exampleDatabase.data
+          .slice()
+          .filter((appointments: Appointments) => {
+            const searchStr = (
+              appointments.name +
+              appointments.dateTime +
+              appointments.email +
+              appointments.mobile +
+              appointments.address
+            ).toLowerCase();
+            return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
+          });
+        // Sort filtered data
+        const sortedData = this.sortData(this.filteredData.slice());
+        // Grab the page's slice of the filtered sorted data.
+        const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
+        this.renderedData = sortedData.splice(
+          startIndex,
+          this.paginator.pageSize
+        );
+        return this.renderedData;
+      })
+    );
+  }
+  disconnect() {}
+  /** Returns a sorted copy of the database data. */
+  sortData(data: Appointments[]): Appointments[] {
+    if (!this._sort.active || this._sort.direction === "") {
+      return data;
+    }
+    return data.sort((a, b) => {
+      let propertyA: number | string = "";
+      let propertyB: number | string = "";
+      switch (this._sort.active) {
+        case "id":
+          [propertyA, propertyB] = [a.id, b.id];
+          break;
+        case "name":
+          [propertyA, propertyB] = [a.name, b.name];
+          break;
+        case "email":
+          [propertyA, propertyB] = [a.email, b.email];
+          break;
+        case "dateTime":
+          [propertyA, propertyB] = [a.dateTime, b.dateTime];
+          break;
+        case "address":
+          [propertyA, propertyB] = [a.address, b.address];
+          break;
+      }
+      const valueA = isNaN(+propertyA) ? propertyA : +propertyA;
+      const valueB = isNaN(+propertyB) ? propertyB : +propertyB;
+      return (
+        (valueA < valueB ? -1 : 1) * (this._sort.direction === "asc" ? 1 : -1)
+      );
+    });
+  }
+
+
+
+
+
+ 
 }

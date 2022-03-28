@@ -3,8 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { Page404Component } from './authentication/page404/page404.component';
 import { AuthGuard } from './core/guard/auth.guard';
 import { Role } from './core/models/role';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { LandingPageModule } from './landing-page/landing-page.module';
 import { AuthLayoutComponent } from './layout/app-layout/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './layout/app-layout/main-layout/main-layout.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -66,6 +69,16 @@ const routes: Routes = [
         (m) => m.AuthenticationModule
       ),
   },
+
+  {
+    path: 'landing-screen',
+    component: LandingPageComponent,
+    loadChildren: () =>
+      import('./landing-page/landing-page.module').then(
+        (m) => m.LandingPageModule
+      ),
+  },
+
   { path: '**', component: Page404Component },
 ];
 @NgModule({

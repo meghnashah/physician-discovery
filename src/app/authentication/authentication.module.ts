@@ -17,7 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { OtpModalComponent } from './otp-modal/otp-modal.component';
 import {MatRadioModule} from '@angular/material/radio';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCheckboxModule} from '@angular/material/checkbox'; 
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     LockedComponent,
     ForgotPasswordComponent,
     SetPasswordComponent,
-    OtpModalComponent
+    OtpModalComponent, 
   ],
   imports: [
     CommonModule, 
