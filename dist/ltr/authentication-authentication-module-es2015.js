@@ -339,7 +339,7 @@ AuthenticationModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
                     _locked_locked_component__WEBPACK_IMPORTED_MODULE_8__["LockedComponent"],
                     _forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_9__["ForgotPasswordComponent"],
                     _set_password_set_password_component__WEBPACK_IMPORTED_MODULE_15__["SetPasswordComponent"],
-                    _otp_modal_otp_modal_component__WEBPACK_IMPORTED_MODULE_16__["OtpModalComponent"]
+                    _otp_modal_otp_modal_component__WEBPACK_IMPORTED_MODULE_16__["OtpModalComponent"],
                 ],
                 imports: [
                     _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
@@ -625,11 +625,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: '',
-        redirectTo: 'signin',
-        pathMatch: 'full'
-    },
-    {
         path: 'signin',
         component: _signin_signin_component__WEBPACK_IMPORTED_MODULE_2__["SigninComponent"]
     },
@@ -660,7 +655,7 @@ const routes = [
     {
         path: 'page500',
         component: _page500_page500_component__WEBPACK_IMPORTED_MODULE_7__["Page500Component"]
-    }
+    },
 ];
 class AuthenticationRoutingModule {
 }

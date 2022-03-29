@@ -1182,10 +1182,6 @@
       "v7+Q");
 
       var routes = [{
-        path: '',
-        redirectTo: 'signin',
-        pathMatch: 'full'
-      }, {
         path: 'signin',
         component: _signin_signin_component__WEBPACK_IMPORTED_MODULE_2__["SigninComponent"]
       }, {

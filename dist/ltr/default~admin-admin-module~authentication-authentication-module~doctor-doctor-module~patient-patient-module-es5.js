@@ -35,7 +35,7 @@
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~patient~d9a72e23"], {
+  (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~admin-admin-module~authentication-authentication-module~doctor-doctor-module~patient-patient-module"], {
     /***/
     "QibW":
     /*!***********************************************************************!*\
@@ -3907,4 +3907,4 @@
     }
   }]);
 })();
-//# sourceMappingURL=default~authentication-authentication-module~dashboard-dashboard-module~doctor-doctor-module~patient~d9a72e23-es5.js.map
+//# sourceMappingURL=default~admin-admin-module~authentication-authentication-module~doctor-doctor-module~patient-patient-module-es5.js.map
