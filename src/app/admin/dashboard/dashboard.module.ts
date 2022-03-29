@@ -38,8 +38,7 @@ import { NotificationComponent } from './notification/notification.component';
  
 import { MatSnackBarModule } from "@angular/material/snack-bar"; 
 import { MatDatepickerModule } from "@angular/material/datepicker"; 
-import { AppointmentsService } from "./main/main.service"; 
-
+import { AppointmentsService } from "./main/main.service";  
 @NgModule({
   declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent, DeleteCreditCardComponent, AppoinmentDashboardComponent, NotificationComponent],
   imports: [

@@ -36,6 +36,7 @@
 .summary-icon{
     width: 7% !important;
 }
+
 .page-title {
     border-right: none !important;
     padding-right: 10px;
@@ -67,4 +68,24 @@
     color: #666666;
   }
 
- 
+  ::ng-deep .mat-flat-button.mat-primary{
+    background-color:#005a97 !important;
+  }
+
+  .btn-tbl-confirm{
+    background-color: #57a400;
+  }
+  .appoinments-txt{
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 10px;
+  }
+  .ml{
+    margin-bottom: 2rem !important;
+  }
+
+  
+ .paginator{
+  margin-top: -31px;
+  border-radius: 6px;
+ }

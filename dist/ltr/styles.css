@@ -612,7 +612,7 @@ mat-row,mat-header-row,mat-footer-row,th.mat-header-cell,td.mat-cell,td.mat-foot
 .mat-tree{background:#fff}
 .mat-tree-node,.mat-nested-tree-node{color:rgba(0,0,0,.87)}
 .mat-tree-node{min-height:48px}
-.mat-snack-bar-container{color:rgba(255,255,255,.7);background:#323232;box-shadow:0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0, 0, 0, 0.12)}
+.mat-snack-bar-container{color:rgba(255,255,255,.7);background:#f44336;box-shadow:0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0, 0, 0, 0.12)}
 .mat-simple-snackbar-action{color:#ff4081}
 /* Importing Bootstrap SCSS file. */
 /*!
@@ -31656,4 +31656,10 @@ html.ie11 .bs-searchbox .form-control {
 .dark .auth-form-section {
   background-color: #11141b;
 }
+
+
+.blue-snackbar {
+  background: #2196F3;
+}
+
 /* You can add global styles to this file, and also import other style files */
