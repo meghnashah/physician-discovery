@@ -17,8 +17,7 @@ export class NotificationComponent implements OnInit {
 
   clearAllNotification(){
     this.clearNotification = true ;
-  }
-  durationInSeconds = 5;
+  } 
 
   constructor(private _snackBar: MatSnackBar) {}
 

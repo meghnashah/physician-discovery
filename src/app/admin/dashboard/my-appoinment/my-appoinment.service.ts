@@ -1,9 +1,8 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs"; 
+import { BehaviorSubject } from "rxjs";
 
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { MainComponent } from "./main.component";
-import { Appointments } from "./main.model";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http"; 
+import { Appointments } from "./my-appoinment.model";
 @Injectable()
 export class AppointmentsService {
   private readonly API_URL = "assets/data/doc-appointments.json";

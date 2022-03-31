@@ -3,22 +3,22 @@ export class Appointments {
   id: number;
   img: string;
   name: string;
-  email: string;
   dateTime: string;
-  mobile: string;
-  address: string;
-  disease: string;
-
+  type : string;
+  status : String;
+  action : String;
+  details : String;
+  
   constructor(appointments) {
     {
       this.id = appointments.id || this.getRandomID();
       this.img = appointments.avatar || 'assets/images/user/usrbig1.jpg';
       this.name = appointments.name || '';
-      this.email = appointments.email || '';
-      this.dateTime = formatDate(new Date(), 'yyyy-MM-dd', 'en') || '';
-      this.address = appointments.address || '';
-      this.mobile = appointments.mobile || '';
-      this.disease = appointments.disease || '';
+       this.dateTime = formatDate(new Date(), 'yyyy-MM-dd', 'en') || '';
+      this.type = appointments.type || '';
+      this.status = appointments.status || '';
+      this.action = appointments.action || '';
+      this.details = appointments.details || '';
     }
   }
   public getRandomID(): string {

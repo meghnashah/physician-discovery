@@ -23,8 +23,7 @@ import { ChangePasswordSuccessModalComponent } from './profile/change-password-s
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatSelectModule } from "@angular/material/select";
 import { MatOptionModule } from "@angular/material/core";
-import { DeleteCreditCardComponent } from './profile/delete-credit-card/delete-credit-card.component';
-import { AppoinmentDashboardComponent } from './appoinment-dashboard/appoinment-dashboard.component';
+import { DeleteCreditCardComponent } from './profile/delete-credit-card/delete-credit-card.component'; 
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { MatTableModule } from "@angular/material/table";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
@@ -32,15 +31,18 @@ import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MaterialFileInputModule } from "ngx-material-file-input";
 import { MatPaginatorModule } from "@angular/material/paginator";
- 
 import { MatSortModule } from "@angular/material/sort";
 import { NotificationComponent } from './notification/notification.component';
- 
 import { MatSnackBarModule } from "@angular/material/snack-bar"; 
-import { MatDatepickerModule } from "@angular/material/datepicker"; 
-import { AppointmentsService } from "./main/main.service";  
+import { MatDatepickerModule } from "@angular/material/datepicker";  
+import { MyAppoinmentComponent } from './my-appoinment/my-appoinment.component';
+import { ViewDetailsComponent } from './view-details/view-details.component';   
+import { AppointmentsService } from "./my-appoinment/my-appoinment.service";
+import { RejectAppoinmentComponent } from './my-appoinment/reject-appoinment/reject-appoinment.component';
+
+ 
 @NgModule({
-  declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent, DeleteCreditCardComponent, AppoinmentDashboardComponent, NotificationComponent],
+  declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent, DeleteCreditCardComponent, NotificationComponent, MyAppoinmentComponent, ViewDetailsComponent, RejectAppoinmentComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
