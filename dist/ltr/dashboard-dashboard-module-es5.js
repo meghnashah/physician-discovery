@@ -549,7 +549,6 @@
           this._snackBar = _snackBar;
           this.showNotification = false;
           this.clearNotification = false;
-          this.durationInSeconds = 5;
         }
 
         _createClass(NotificationComponent, [{
@@ -1103,15 +1102,15 @@
       /* harmony import */
 
 
-      var _appoinment_dashboard_appoinment_dashboard_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-      /*! ./appoinment-dashboard/appoinment-dashboard.component */
-      "ywU/");
+      var _notification_notification_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ./notification/notification.component */
+      "/MsJ");
       /* harmony import */
 
 
-      var _notification_notification_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
-      /*! ./notification/notification.component */
-      "/MsJ");
+      var _my_appoinment_my_appoinment_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ./my-appoinment/my-appoinment.component */
+      "X0ix");
 
       var routes = [{
         path: "",
@@ -1133,11 +1132,11 @@
         path: "patient-dashboard",
         component: _patient_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_0__["DashboardComponent"]
       }, {
-        path: "appoinment-dashboard",
-        component: _appoinment_dashboard_appoinment_dashboard_component__WEBPACK_IMPORTED_MODULE_8__["AppoinmentDashboardComponent"]
+        path: "my-Appoinment",
+        component: _my_appoinment_my_appoinment_component__WEBPACK_IMPORTED_MODULE_9__["MyAppoinmentComponent"]
       }, {
         path: "notification",
-        component: _notification_notification_component__WEBPACK_IMPORTED_MODULE_9__["NotificationComponent"]
+        component: _notification_notification_component__WEBPACK_IMPORTED_MODULE_8__["NotificationComponent"]
       }, {
         path: "**",
         component: _authentication_page404_page404_component__WEBPACK_IMPORTED_MODULE_2__["Page404Component"]
@@ -1179,12 +1178,148 @@
     },
 
     /***/
+    "MbcO":
+    /*!************************************************************************!*\
+      !*** ./src/app/admin/dashboard/my-appoinment/my-appoinment.service.ts ***!
+      \************************************************************************/
+
+    /*! exports provided: AppointmentsService */
+
+    /***/
+    function MbcO(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "AppointmentsService", function () {
+        return AppointmentsService;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! rxjs */
+      "qCKp");
+      /* harmony import */
+
+
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common/http */
+      "tk/3");
+
+      var AppointmentsService = /*#__PURE__*/function () {
+        function AppointmentsService(httpClient) {
+          _classCallCheck(this, AppointmentsService);
+
+          this.httpClient = httpClient;
+          this.API_URL = "assets/data/doc-appointments.json";
+          this.isTblLoading = true;
+          this.dataChange = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]([]);
+        }
+
+        _createClass(AppointmentsService, [{
+          key: "data",
+          get: function get() {
+            return this.dataChange.value;
+          }
+        }, {
+          key: "getDialogData",
+          value: function getDialogData() {
+            return this.dialogData;
+          }
+          /** CRUD METHODS */
+
+        }, {
+          key: "getAllAppointmentss",
+          value: function getAllAppointmentss() {
+            var _this = this;
+
+            this.httpClient.get(this.API_URL).subscribe(function (data) {
+              _this.isTblLoading = false;
+
+              _this.dataChange.next(data);
+            }, function (error) {
+              _this.isTblLoading = false;
+              console.log(error.name + " " + error.message);
+            });
+          }
+        }, {
+          key: "addAppointments",
+          value: function addAppointments(appointments) {
+            this.dialogData = appointments;
+            /*  this.httpClient.post(this.API_URL, appointments).subscribe(data => {
+              this.dialogData = appointments;
+              },
+              (err: HttpErrorResponse) => {
+             // error code here
+            });*/
+          }
+        }, {
+          key: "updateAppointments",
+          value: function updateAppointments(appointments) {
+            this.dialogData = appointments;
+            /* this.httpClient.put(this.API_URL + appointments.id, appointments).subscribe(data => {
+              this.dialogData = appointments;
+            },
+            (err: HttpErrorResponse) => {
+              // error code here
+            }
+            );*/
+          }
+        }, {
+          key: "deleteAppointments",
+          value: function deleteAppointments(id) {
+            console.log(id);
+            /*  this.httpClient.delete(this.API_URL + id).subscribe(data => {
+              console.log(id);
+              },
+              (err: HttpErrorResponse) => {
+                 // error code here
+              }
+            );*/
+          }
+        }]);
+
+        return AppointmentsService;
+      }();
+
+      AppointmentsService.ɵfac = function AppointmentsService_Factory(t) {
+        return new (t || AppointmentsService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]));
+      };
+
+      AppointmentsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: AppointmentsService,
+        factory: AppointmentsService.ɵfac
+      });
+
+      (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppointmentsService, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+        }], function () {
+          return [{
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "QLu+":
     /*!********************************************************!*\
       !*** ./src/app/admin/dashboard/main/main.component.ts ***!
       \********************************************************/
 
-    /*! exports provided: MainComponent, ExampleDataSource */
+    /*! exports provided: MainComponent */
 
     /***/
     function QLu(module, __webpack_exports__, __webpack_require__) {
@@ -1196,12 +1331,6 @@
 
       __webpack_require__.d(__webpack_exports__, "MainComponent", function () {
         return MainComponent;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ExampleDataSource", function () {
-        return ExampleDataSource;
       });
       /* harmony import */
 
@@ -1224,95 +1353,57 @@
       /* harmony import */
 
 
-      var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/material/paginator */
-      "M9IT");
-      /* harmony import */
-
-
-      var _angular_material_sort__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! @angular/material/sort */
-      "Dh3D");
-      /* harmony import */
-
-
-      var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! @angular/cdk/collections */
-      "0EQZ");
-      /* harmony import */
-
-
-      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/material/snack-bar */
       "dNgK");
       /* harmony import */
 
 
-      var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! rxjs */
-      "qCKp");
-      /* harmony import */
-
-
-      var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-      /*! rxjs/operators */
-      "kU1M");
-      /* harmony import */
-
-
-      var _main_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
-      /*! ./main.service */
-      "ZGSa");
-      /* harmony import */
-
-
-      var _angular_material_menu__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
-      /*! @angular/material/menu */
-      "STbY");
-      /* harmony import */
-
-
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/material/button */
       "bTqV");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common */
       "ofXK");
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/router */
       "tyNb");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/material/icon */
       "NFeN");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/material/form-field */
       "kmnG");
       /* harmony import */
 
 
-      var _angular_material_select__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      var _angular_material_select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/material/select */
       "d3UM");
       /* harmony import */
 
 
-      var _angular_material_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      var _angular_material_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/material/core */
       "FKr1");
+      /* harmony import */
 
-      var _c0 = ["filter"];
+
+      var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      /*! @angular/material/paginator */
+      "M9IT");
 
       function MainComponent_div_31_Template(rf, ctx) {
         if (rf & 1) {
@@ -1526,7 +1617,7 @@
         }
       }
 
-      var _c1 = function _c1() {
+      var _c0 = function _c0() {
         return [5, 10, 25, 100];
       };
 
@@ -2160,27 +2251,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](161);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("length", 100)("pageSize", 10)("pageSizeOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](5, _c1));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("length", 100)("pageSize", 10)("pageSizeOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](5, _c0));
         }
       }
 
       var MainComponent = /*#__PURE__*/function () {
-        function MainComponent(httpClient, dialog, appointmentsService, snackBar) {
+        function MainComponent(httpClient, dialog, snackBar) {
           _classCallCheck(this, MainComponent);
 
           this.httpClient = httpClient;
           this.dialog = dialog;
-          this.appointmentsService = appointmentsService;
           this.snackBar = snackBar;
           this.showform = false;
           this.oppinment = false;
-          this.filterToggle = false;
-          this.displayedColumns = ["select", "img", "name", "dateTime", "email", "mobile", "disease", "actions"];
-          this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_5__["SelectionModel"](true, []);
-          this.contextMenuPosition = {
-            x: "0px",
-            y: "0px"
-          };
         }
 
         _createClass(MainComponent, [{
@@ -2200,121 +2283,19 @@
           }
         }, {
           key: "ngOnInit",
-          value: function ngOnInit() {
-            this.loadData();
-          }
-        }, {
-          key: "refresh",
-          value: function refresh() {
-            this.loadData();
-          }
-        }, {
-          key: "toggleStar",
-          value: function toggleStar(row) {
-            console.log(row);
-          }
-        }, {
-          key: "refreshTable",
-          value: function refreshTable() {
-            this.paginator._changePageSize(this.paginator.pageSize);
-          }
-          /** Whether the number of selected elements matches the total number of rows. */
-
-        }, {
-          key: "isAllSelected",
-          value: function isAllSelected() {
-            var numSelected = this.selection.selected.length;
-            var numRows = this.dataSource.renderedData.length;
-            return numSelected === numRows;
-          }
-          /** Selects all rows if they are not all selected; otherwise clear selection. */
-
-        }, {
-          key: "masterToggle",
-          value: function masterToggle() {
-            var _this = this;
-
-            this.isAllSelected() ? this.selection.clear() : this.dataSource.renderedData.forEach(function (row) {
-              return _this.selection.select(row);
-            });
-          }
-        }, {
-          key: "removeSelectedRows",
-          value: function removeSelectedRows() {
-            var _this2 = this;
-
-            var totalSelect = this.selection.selected.length;
-            this.selection.selected.forEach(function (item) {
-              var index = _this2.dataSource.renderedData.findIndex(function (d) {
-                return d === item;
-              }); // console.log(this.dataSource.renderedData.findIndex((d) => d === item));
-
-
-              _this2.exampleDatabase.dataChange.value.splice(index, 1);
-
-              _this2.refreshTable();
-
-              _this2.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_5__["SelectionModel"](true, []);
-            });
-            this.showNotification("snackbar-danger", totalSelect + " Record Delete Successfully...!!!", "bottom", "center");
-          }
-        }, {
-          key: "loadData",
-          value: function loadData() {
-            var _this3 = this;
-
-            this.exampleDatabase = new _main_service__WEBPACK_IMPORTED_MODULE_9__["AppointmentsService"](this.httpClient);
-            this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator, this.sort);
-            Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["fromEvent"])(this.filter.nativeElement, "keyup").subscribe(function () {
-              if (!_this3.dataSource) {
-                return;
-              }
-
-              _this3.dataSource.filter = _this3.filter.nativeElement.value;
-            });
-          }
-        }, {
-          key: "showNotification",
-          value: function showNotification(colorName, text, placementFrom, placementAlign) {
-            this.snackBar.open(text, "", {
-              duration: 2000,
-              verticalPosition: placementFrom,
-              horizontalPosition: placementAlign,
-              panelClass: colorName
-            });
-          }
+          value: function ngOnInit() {}
         }]);
 
         return MainComponent;
       }();
 
       MainComponent.ɵfac = function MainComponent_Factory(t) {
-        return new (t || MainComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_main_service__WEBPACK_IMPORTED_MODULE_9__["AppointmentsService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"]));
+        return new (t || MainComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"]));
       };
 
       MainComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: MainComponent,
         selectors: [["app-main"]],
-        viewQuery: function MainComponent_Query(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"], 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_angular_material_sort__WEBPACK_IMPORTED_MODULE_4__["MatSort"], 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_angular_material_menu__WEBPACK_IMPORTED_MODULE_10__["MatMenuTrigger"], 1);
-          }
-
-          if (rf & 2) {
-            var _t;
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.paginator = _t.first);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.sort = _t.first);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.filter = _t.first);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.contextMenu = _t.first);
-          }
-        },
         decls: 35,
         vars: 5,
         consts: [[1, "content"], [1, "container-fluid"], [1, "block-header"], [1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "breadcrumb", "breadcrumb-style"], [1, "breadcrumb-item"], [1, "page-title"], [1, "row", 3, "hidden"], [1, "col-lg-12"], [1, "card"], [1, "body"], [1, "row", "align-items-center"], [1, "col-md-4"], ["src", "assets/images/pages/welcome.png", "alt", "", 1, "w-100"], [1, "col-md-8"], [1, "font-20", "welcome-text", "mb-2"], [1, "pt-1", "dr-name"], [1, "tot-appoinment"], [1, "font-16"], [1, "col-xl-12", "col-lg-12", "col-md-12", "col-sm-12", "mb-3"], ["mat-raised-button", "", "color", "primary", 1, "mr-3", "start-btn"], ["mat-stroked-button", "", 1, "skip-btn", 3, "click"], ["class", "row", 4, "ngIf"], ["class", "row clearfix", 4, "ngIf"], ["class", "row clearfix ml", 4, "ngIf"], [1, "col-md-1", "calender-icon-alignment"], ["src", "assets/images/pages/calender-icon.webp", "alt", "", 1, "calender-icon"], [1, "col-md-9"], [1, "font-20", "mb-2", "welcome-text"], [1, "weight-600", "font-30", "pt-1", "dr-name"], [1, "col-md-2"], ["mat-raised-button", "", "color", "primary", 1, "mr-3", "Schedule-btn"], [1, "row", "clearfix"], [1, "col-xs-12", "col-sm-12", "col-md-6", "col-lg-6"], [1, "box-part", "text-center"], ["src", "assets/images/pages/summary-icon.webp", "alt", "", 1, "summary-icon"], [1, "title", "p-t-15"], [1, "text", "p-b-10"], ["routerLink", "/admin/dashboard/profile"], ["src", "assets/images/pages/payment-icon.webp", "alt", "", 1, "payment-icon"], [3, "click"], [1, "row", "clearfix", "ml"], [1, "col-lg-12", "col-md-12", "col-sm-12", "col-xs-12"], [1, "header"], [3, "value", "valueChange"], ["value", "option1"], ["value", "option2"], [1, "appoinments-txt"], [2, "float", "right"], [1, "tableBody"], [1, "table-responsive"], [1, "table", "table-hover"], [1, "table-img"], ["src", "assets/images/user/user1img.png", "alt", ""], [1, "media-title", "font-16"], [1, "text-job", "text-muted", "mb-0"], ["mat-icon-button", "", 1, "btn-tbl-confirm"], ["mat-icon-button", "", 1, "btn-tbl-reject"], ["mat-flat-button", "", "color", "primary"], ["src", "assets/images/user/user2img.png", "alt", ""], ["src", "assets/images/user/user3img.png", "alt", ""], ["src", "assets/images/user/user4img.png", "alt", ""], ["src", "assets/images/user/user5img.png", "alt", ""], [1, "col-lg-12", "col-md-12", "col-sm-12", "col-xs-12", "paginator"], ["aria-label", "Select page", 3, "length", "pageSize", "pageSizeOptions"]],
@@ -2463,7 +2444,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.oppinment);
           }
         },
-        directives: [_angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatButton"], _angular_common__WEBPACK_IMPORTED_MODULE_12__["NgIf"], _angular_router__WEBPACK_IMPORTED_MODULE_13__["RouterLinkWithHref"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_14__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatOption"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"]],
+        directives: [_angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButton"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterLinkWithHref"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_9__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_10__["MatOption"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_11__["MatPaginator"]],
         styles: ["@charset \"UTF-8\";\n.dr-name[_ngcontent-%COMP%] {\n  color: #005a97;\n  font-family: RobotoSlab;\n  font-size: 30px;\n  font-weight: 500;\n}\n.start-btn[_ngcontent-%COMP%] {\n  background-color: #005a97;\n}\n.skip-btn[_ngcontent-%COMP%] {\n  border-color: #005a97;\n  color: #005a97;\n}\n.tot-appoinment[_ngcontent-%COMP%] {\n  color: #242634;\n  font-family: RobotoSlab;\n  font-size: 20px;\n  font-weight: normal;\n}\n.calender-icon[_ngcontent-%COMP%] {\n  width: 50% !important;\n  height: 50% !important;\n}\n.calender-icon-alignment[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.Schedule-btn[_ngcontent-%COMP%] {\n  background-color: #005a97;\n  float: right;\n}\n.payment-icon[_ngcontent-%COMP%] {\n  width: 9% !important;\n}\n.summary-icon[_ngcontent-%COMP%] {\n  width: 7% !important;\n}\n.page-title[_ngcontent-%COMP%] {\n  border-right: none !important;\n  padding-right: 10px;\n  font-size: 20px;\n  font-weight: 500;\n  color: #242634;\n  margin-bottom: 0px;\n  font-family: RobotoSlab;\n}\n.page-title[_ngcontent-%COMP%]:after {\n  content: \"\uF105\";\n  font-family: \"Font Awesome 5 Free\";\n  font-size: 18px;\n  font-weight: 900;\n  padding: 0px 5px;\n}\n.page-title[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  padding: 0px 5px;\n}\n.page-title[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]:before {\n  color: #717883;\n  font-size: 20px;\n}\n.welcome-text[_ngcontent-%COMP%] {\n  font-family: RobotoSlab;\n  font-size: 20px;\n  font-weight: normal;\n  color: #666666;\n}\n  .mat-flat-button.mat-primary {\n  background-color: #005a97 !important;\n}\n.btn-tbl-confirm[_ngcontent-%COMP%] {\n  background-color: #57a400;\n}\n.appoinments-txt[_ngcontent-%COMP%] {\n  font-size: 14px;\n  font-weight: normal;\n  margin-left: 10px;\n}\n.ml[_ngcontent-%COMP%] {\n  margin-bottom: 2rem !important;\n}\n.paginator[_ngcontent-%COMP%] {\n  margin-top: -31px;\n  border-radius: 6px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcbWFpbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxnQkFBZ0I7QUFBaEI7RUFDSSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7QUFFSjtBQUFBO0VBQ0kseUJBQUE7QUFHSjtBQUFBO0VBQ0kscUJBQUE7RUFDQSxjQUFBO0FBR0o7QUFBQTtFQUNJLGNBQUE7RUFDQSx1QkFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtBQUdKO0FBREE7RUFDSSxxQkFBQTtFQUNBLHNCQUFBO0FBSUo7QUFGQTtFQUNJLGtCQUFBO0FBS0o7QUFIQTtFQUNJLHlCQUFBO0VBQ0EsWUFBQTtBQU1KO0FBSkE7RUFDSSxvQkFBQTtBQU9KO0FBTEE7RUFDSSxvQkFBQTtBQVFKO0FBTEE7RUFDSSw2QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsdUJBQUE7QUFRSjtBQVBJO0VBQ0UsWUFBQTtFQUNBLGtDQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7QUFTTjtBQVBJO0VBQ0UsZ0JBQUE7QUFTTjtBQVJNO0VBQ0UsY0FBQTtFQUNBLGVBQUE7QUFVUjtBQUxFO0VBQ0UsdUJBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0FBUUo7QUFMRTtFQUNFLG9DQUFBO0FBUUo7QUFMRTtFQUNFLHlCQUFBO0FBUUo7QUFORTtFQUNFLGVBQUE7RUFDQSxtQkFBQTtFQUNBLGlCQUFBO0FBU0o7QUFQRTtFQUNFLDhCQUFBO0FBVUo7QUFOQztFQUNDLGlCQUFBO0VBQ0Esa0JBQUE7QUFTRiIsImZpbGUiOiJtYWluLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGNoYXJzZXQgXCJVVEYtOFwiO1xuLmRyLW5hbWUge1xuICBjb2xvcjogIzAwNWE5NztcbiAgZm9udC1mYW1pbHk6IFJvYm90b1NsYWI7XG4gIGZvbnQtc2l6ZTogMzBweDtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cblxuLnN0YXJ0LWJ0biB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDVhOTc7XG59XG5cbi5za2lwLWJ0biB7XG4gIGJvcmRlci1jb2xvcjogIzAwNWE5NztcbiAgY29sb3I6ICMwMDVhOTc7XG59XG5cbi50b3QtYXBwb2lubWVudCB7XG4gIGNvbG9yOiAjMjQyNjM0O1xuICBmb250LWZhbWlseTogUm9ib3RvU2xhYjtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBmb250LXdlaWdodDogbm9ybWFsO1xufVxuXG4uY2FsZW5kZXItaWNvbiB7XG4gIHdpZHRoOiA1MCUgIWltcG9ydGFudDtcbiAgaGVpZ2h0OiA1MCUgIWltcG9ydGFudDtcbn1cblxuLmNhbGVuZGVyLWljb24tYWxpZ25tZW50IHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4uU2NoZWR1bGUtYnRuIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwNWE5NztcbiAgZmxvYXQ6IHJpZ2h0O1xufVxuXG4ucGF5bWVudC1pY29uIHtcbiAgd2lkdGg6IDklICFpbXBvcnRhbnQ7XG59XG5cbi5zdW1tYXJ5LWljb24ge1xuICB3aWR0aDogNyUgIWltcG9ydGFudDtcbn1cblxuLnBhZ2UtdGl0bGUge1xuICBib3JkZXItcmlnaHQ6IG5vbmUgIWltcG9ydGFudDtcbiAgcGFkZGluZy1yaWdodDogMTBweDtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBmb250LXdlaWdodDogNTAwO1xuICBjb2xvcjogIzI0MjYzNDtcbiAgbWFyZ2luLWJvdHRvbTogMHB4O1xuICBmb250LWZhbWlseTogUm9ib3RvU2xhYjtcbn1cbi5wYWdlLXRpdGxlOmFmdGVyIHtcbiAgY29udGVudDogXCLvhIVcIjtcbiAgZm9udC1mYW1pbHk6IFwiRm9udCBBd2Vzb21lIDUgRnJlZVwiO1xuICBmb250LXNpemU6IDE4cHg7XG4gIGZvbnQtd2VpZ2h0OiA5MDA7XG4gIHBhZGRpbmc6IDBweCA1cHg7XG59XG4ucGFnZS10aXRsZSBpIHtcbiAgcGFkZGluZzogMHB4IDVweDtcbn1cbi5wYWdlLXRpdGxlIGk6YmVmb3JlIHtcbiAgY29sb3I6ICM3MTc4ODM7XG4gIGZvbnQtc2l6ZTogMjBweDtcbn1cblxuLndlbGNvbWUtdGV4dCB7XG4gIGZvbnQtZmFtaWx5OiBSb2JvdG9TbGFiO1xuICBmb250LXNpemU6IDIwcHg7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIGNvbG9yOiAjNjY2NjY2O1xufVxuXG46Om5nLWRlZXAgLm1hdC1mbGF0LWJ1dHRvbi5tYXQtcHJpbWFyeSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDVhOTcgIWltcG9ydGFudDtcbn1cblxuLmJ0bi10YmwtY29uZmlybSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM1N2E0MDA7XG59XG5cbi5hcHBvaW5tZW50cy10eHQge1xuICBmb250LXNpemU6IDE0cHg7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIG1hcmdpbi1sZWZ0OiAxMHB4O1xufVxuXG4ubWwge1xuICBtYXJnaW4tYm90dG9tOiAycmVtICFpbXBvcnRhbnQ7XG59XG5cbi5wYWdpbmF0b3Ige1xuICBtYXJnaW4tdG9wOiAtMzFweDtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xufSJdfQ== */"]
       });
 
@@ -2481,153 +2462,10 @@
           }, {
             type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]
           }, {
-            type: _main_service__WEBPACK_IMPORTED_MODULE_9__["AppointmentsService"]
-          }, {
-            type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"]
+            type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"]
           }];
-        }, {
-          paginator: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-            args: [_angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"], {
-              "static": true
-            }]
-          }],
-          sort: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-            args: [_angular_material_sort__WEBPACK_IMPORTED_MODULE_4__["MatSort"], {
-              "static": true
-            }]
-          }],
-          filter: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-            args: ["filter", {
-              "static": true
-            }]
-          }],
-          contextMenu: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-            args: [_angular_material_menu__WEBPACK_IMPORTED_MODULE_10__["MatMenuTrigger"]]
-          }]
-        });
+        }, null);
       })();
-
-      var ExampleDataSource = /*#__PURE__*/function (_angular_cdk_collecti) {
-        _inherits(ExampleDataSource, _angular_cdk_collecti);
-
-        var _super = _createSuper(ExampleDataSource);
-
-        function ExampleDataSource(exampleDatabase, paginator, _sort) {
-          var _this4;
-
-          _classCallCheck(this, ExampleDataSource);
-
-          _this4 = _super.call(this);
-          _this4.exampleDatabase = exampleDatabase;
-          _this4.paginator = paginator;
-          _this4._sort = _sort;
-          _this4.filterChange = new rxjs__WEBPACK_IMPORTED_MODULE_7__["BehaviorSubject"]("");
-          _this4.filteredData = [];
-          _this4.renderedData = []; // Reset to the first page when the user changes the filter.
-
-          _this4.filterChange.subscribe(function () {
-            return _this4.paginator.pageIndex = 0;
-          });
-
-          return _this4;
-        }
-
-        _createClass(ExampleDataSource, [{
-          key: "filter",
-          get: function get() {
-            return this.filterChange.value;
-          },
-          set: function set(filter) {
-            this.filterChange.next(filter);
-          }
-          /** Connect function called by the table to retrieve one stream containing the data to render. */
-
-        }, {
-          key: "connect",
-          value: function connect() {
-            var _this5 = this;
-
-            // Listen for any changes in the base data, sorting, filtering, or pagination
-            var displayDataChanges = [this.exampleDatabase.dataChange, this._sort.sortChange, this.filterChange, this.paginator.page];
-            this.exampleDatabase.getAllAppointmentss();
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["merge"]).apply(void 0, displayDataChanges).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function () {
-              // Filter data
-              _this5.filteredData = _this5.exampleDatabase.data.slice().filter(function (appointments) {
-                var searchStr = (appointments.name + appointments.dateTime + appointments.email + appointments.mobile + appointments.address).toLowerCase();
-                return searchStr.indexOf(_this5.filter.toLowerCase()) !== -1;
-              }); // Sort filtered data
-
-              var sortedData = _this5.sortData(_this5.filteredData.slice()); // Grab the page's slice of the filtered sorted data.
-
-
-              var startIndex = _this5.paginator.pageIndex * _this5.paginator.pageSize;
-              _this5.renderedData = sortedData.splice(startIndex, _this5.paginator.pageSize);
-              return _this5.renderedData;
-            }));
-          }
-        }, {
-          key: "disconnect",
-          value: function disconnect() {}
-          /** Returns a sorted copy of the database data. */
-
-        }, {
-          key: "sortData",
-          value: function sortData(data) {
-            var _this6 = this;
-
-            if (!this._sort.active || this._sort.direction === "") {
-              return data;
-            }
-
-            return data.sort(function (a, b) {
-              var propertyA = "";
-              var propertyB = "";
-
-              switch (_this6._sort.active) {
-                case "id":
-                  var _ref = [a.id, b.id];
-                  propertyA = _ref[0];
-                  propertyB = _ref[1];
-                  break;
-
-                case "name":
-                  var _ref2 = [a.name, b.name];
-                  propertyA = _ref2[0];
-                  propertyB = _ref2[1];
-                  break;
-
-                case "email":
-                  var _ref3 = [a.email, b.email];
-                  propertyA = _ref3[0];
-                  propertyB = _ref3[1];
-                  break;
-
-                case "dateTime":
-                  var _ref4 = [a.dateTime, b.dateTime];
-                  propertyA = _ref4[0];
-                  propertyB = _ref4[1];
-                  break;
-
-                case "address":
-                  var _ref5 = [a.address, b.address];
-                  propertyA = _ref5[0];
-                  propertyB = _ref5[1];
-                  break;
-              }
-
-              var valueA = isNaN(+propertyA) ? propertyA : +propertyA;
-              var valueB = isNaN(+propertyB) ? propertyB : +propertyB;
-              return (valueA < valueB ? -1 : 1) * (_this6._sort.direction === "asc" ? 1 : -1);
-            });
-          }
-        }]);
-
-        return ExampleDataSource;
-      }(_angular_cdk_collections__WEBPACK_IMPORTED_MODULE_5__["DataSource"]);
       /***/
 
     },
@@ -2757,23 +2595,29 @@
     },
 
     /***/
-    "ZGSa":
-    /*!******************************************************!*\
-      !*** ./src/app/admin/dashboard/main/main.service.ts ***!
-      \******************************************************/
+    "X0ix":
+    /*!**************************************************************************!*\
+      !*** ./src/app/admin/dashboard/my-appoinment/my-appoinment.component.ts ***!
+      \**************************************************************************/
 
-    /*! exports provided: AppointmentsService */
+    /*! exports provided: MyAppoinmentComponent, ExampleDataSource */
 
     /***/
-    function ZGSa(module, __webpack_exports__, __webpack_require__) {
+    function X0ix(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
 
 
-      __webpack_require__.d(__webpack_exports__, "AppointmentsService", function () {
-        return AppointmentsService;
+      __webpack_require__.d(__webpack_exports__, "MyAppoinmentComponent", function () {
+        return MyAppoinmentComponent;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ExampleDataSource", function () {
+        return ExampleDataSource;
       });
       /* harmony import */
 
@@ -2784,110 +2628,1172 @@
       /* harmony import */
 
 
-      var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/common/http */
+      "tk/3");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "0IaG");
+      /* harmony import */
+
+
+      var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/material/paginator */
+      "M9IT");
+      /* harmony import */
+
+
+      var _angular_material_sort__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/material/sort */
+      "Dh3D");
+      /* harmony import */
+
+
+      var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/cdk/collections */
+      "0EQZ");
+      /* harmony import */
+
+
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/material/snack-bar */
+      "dNgK");
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! rxjs */
       "qCKp");
       /* harmony import */
 
 
-      var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/common/http */
-      "tk/3");
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! rxjs/operators */
+      "kU1M");
+      /* harmony import */
 
-      var AppointmentsService = /*#__PURE__*/function () {
-        function AppointmentsService(httpClient) {
-          _classCallCheck(this, AppointmentsService);
 
-          this.httpClient = httpClient;
-          this.API_URL = "assets/data/doc-appointments.json";
-          this.isTblLoading = true;
-          this.dataChange = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]([]);
+      var _angular_material_menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! @angular/material/menu */
+      "STbY");
+      /* harmony import */
+
+
+      var _my_appoinment_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! ./my-appoinment.service */
+      "MbcO");
+      /* harmony import */
+
+
+      var _reject_appoinment_reject_appoinment_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      /*! ./reject-appoinment/reject-appoinment.component */
+      "e57E");
+      /* harmony import */
+
+
+      var _cancel_appoinment_cancel_appoinment_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! ./cancel-appoinment/cancel-appoinment.component */
+      "h8e+");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! @angular/router */
+      "tyNb");
+      /* harmony import */
+
+
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! @angular/material/form-field */
+      "kmnG");
+      /* harmony import */
+
+
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! @angular/material/input */
+      "qFsG");
+      /* harmony import */
+
+
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      /*! @angular/material/icon */
+      "NFeN");
+      /* harmony import */
+
+
+      var _angular_material_select__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      /*! @angular/material/select */
+      "d3UM");
+      /* harmony import */
+
+
+      var _angular_material_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      /*! @angular/material/core */
+      "FKr1");
+      /* harmony import */
+
+
+      var _angular_material_table__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      /*! @angular/material/table */
+      "+0xr");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /* harmony import */
+
+
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      /*! @angular/material/button */
+      "bTqV");
+      /* harmony import */
+
+
+      var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+      /*! @angular/material/tooltip */
+      "Qu3c");
+      /* harmony import */
+
+
+      var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+      /*! @angular/material/progress-spinner */
+      "Xa2L");
+
+      var _c0 = ["filter"];
+
+      function MyAppoinmentComponent_mat_header_cell_62_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-header-cell", 48);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " # ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
 
-        _createClass(AppointmentsService, [{
-          key: "data",
-          get: function get() {
-            return this.dataChange.value;
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", "tbl-col-width-per-6");
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_63_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-cell", 49);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 50);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var row_r20 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", row_r20.img, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        }
+      }
+
+      function MyAppoinmentComponent_mat_header_cell_65_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-header-cell", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Patient Info ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_66_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-cell");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var row_r21 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r21.name, " ");
+        }
+      }
+
+      function MyAppoinmentComponent_mat_header_cell_68_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-header-cell", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Scheduled on ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_69_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-cell");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](2, "date");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var row_r22 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](2, 1, row_r22.date, "MM/dd/yyyy, HH:mm"), "");
+        }
+      }
+
+      function MyAppoinmentComponent_mat_header_cell_71_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-header-cell", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Type ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_72_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 54);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "upcoming");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_72_div_2_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 55);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Completed");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_72_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-cell");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, MyAppoinmentComponent_mat_cell_72_div_1_Template, 2, 0, "div", 52);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, MyAppoinmentComponent_mat_cell_72_div_2_Template, 2, 0, "div", 53);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var row_r23 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", row_r23.type == "upcoming");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", row_r23.type == "Completed");
+        }
+      }
+
+      function MyAppoinmentComponent_mat_header_cell_74_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-header-cell", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Status ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_75_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 59);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Accepted");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_75_div_2_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 60);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Cancelled");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_75_div_3_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 61);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "pending");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_75_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-cell");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, MyAppoinmentComponent_mat_cell_75_div_1_Template, 2, 0, "div", 56);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, MyAppoinmentComponent_mat_cell_75_div_2_Template, 2, 0, "div", 57);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, MyAppoinmentComponent_mat_cell_75_div_3_Template, 2, 0, "div", 58);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var row_r26 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", row_r26.status == "Accepted");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", row_r26.status == "Cancelled");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", row_r26.status == "pending");
+        }
+      }
+
+      function MyAppoinmentComponent_mat_header_cell_77_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-header-cell", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Actions ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_78_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 64);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-icon");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "done");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 65);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MyAppoinmentComponent_mat_cell_78_div_1_Template_button_click_4_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r34);
+
+            var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+            return ctx_r33.rejectAppoinment();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "close");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_78_div_2_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 66);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-icon");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "calendar_today");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 65);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MyAppoinmentComponent_mat_cell_78_div_2_Template_button_click_4_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r36);
+
+            var ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+            return ctx_r35.cancelAppoinment();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "close");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_78_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-cell", 62);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, MyAppoinmentComponent_mat_cell_78_div_1_Template, 7, 0, "div", 63);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, MyAppoinmentComponent_mat_cell_78_div_2_Template, 7, 0, "div", 63);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var row_r30 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", row_r30.action == "appoinment");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", row_r30.action == "calender");
+        }
+      }
+
+      function MyAppoinmentComponent_mat_header_cell_80_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-header-cell", 51);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Details ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function MyAppoinmentComponent_mat_cell_81_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-cell", 62);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 67);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var row_r37 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r37.details, "");
+        }
+      }
+
+      function MyAppoinmentComponent_mat_header_row_82_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "mat-header-row");
+        }
+      }
+
+      function MyAppoinmentComponent_mat_row_83_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-row", 68);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MyAppoinmentComponent_mat_row_83_Template_mat_row_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r40);
+
+            var row_r38 = ctx.$implicit;
+
+            var ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r39.detailsCall(row_r38);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("cursor", "pointer");
+        }
+      }
+
+      function MyAppoinmentComponent_div_84_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 69);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "mat-progress-spinner", 70);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("diameter", 40);
+        }
+      }
+
+      function MyAppoinmentComponent_div_85_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 71);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " No results ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("display", ctx_r18.dataSource.renderedData.length == 0 ? "" : "none");
+        }
+      }
+
+      var _c1 = function _c1() {
+        return [5, 10, 25, 100];
+      };
+
+      var MyAppoinmentComponent = /*#__PURE__*/function () {
+        function MyAppoinmentComponent(httpClient, dialog, appointmentsService, _snackBar) {
+          _classCallCheck(this, MyAppoinmentComponent);
+
+          this.httpClient = httpClient;
+          this.dialog = dialog;
+          this.appointmentsService = appointmentsService;
+          this._snackBar = _snackBar;
+          this.filterToggle = false;
+          this.displayedColumns = ["img", "name", "date", "type", "status", "action", "details"];
+          this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_5__["SelectionModel"](true, []);
+          this.contextMenuPosition = {
+            x: "0px",
+            y: "0px"
+          };
+        }
+
+        _createClass(MyAppoinmentComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            this.loadData();
           }
         }, {
-          key: "getDialogData",
-          value: function getDialogData() {
-            return this.dialogData;
+          key: "refresh",
+          value: function refresh() {
+            this.loadData();
           }
-          /** CRUD METHODS */
+        }, {
+          key: "rejectAppoinment",
+          value: function rejectAppoinment() {
+            var dialogRef = this.dialog.open(_reject_appoinment_reject_appoinment_component__WEBPACK_IMPORTED_MODULE_11__["RejectAppoinmentComponent"], {
+              width: '476px'
+            });
+            dialogRef.afterClosed().subscribe(function (result) {});
+          }
+        }, {
+          key: "cancelAppoinment",
+          value: function cancelAppoinment() {
+            var dialogRef = this.dialog.open(_cancel_appoinment_cancel_appoinment_component__WEBPACK_IMPORTED_MODULE_12__["CancelAppoinmentComponent"], {
+              width: '476px'
+            });
+            dialogRef.afterClosed().subscribe(function (result) {});
+          }
+        }, {
+          key: "toggleStar",
+          value: function toggleStar(row) {
+            console.log(row);
+          }
+        }, {
+          key: "refreshTable",
+          value: function refreshTable() {
+            this.paginator._changePageSize(this.paginator.pageSize);
+          }
+          /** Whether the number of selected elements matches the total number of rows. */
 
         }, {
-          key: "getAllAppointmentss",
-          value: function getAllAppointmentss() {
-            var _this7 = this;
+          key: "isAllSelected",
+          value: function isAllSelected() {
+            var numSelected = this.selection.selected.length;
+            var numRows = this.dataSource.renderedData.length;
+            return numSelected === numRows;
+          }
+          /** Selects all rows if they are not all selected; otherwise clear selection. */
 
-            this.httpClient.get(this.API_URL).subscribe(function (data) {
-              _this7.isTblLoading = false;
+        }, {
+          key: "masterToggle",
+          value: function masterToggle() {
+            var _this2 = this;
 
-              _this7.dataChange.next(data);
-            }, function (error) {
-              _this7.isTblLoading = false;
-              console.log(error.name + " " + error.message);
+            this.isAllSelected() ? this.selection.clear() : this.dataSource.renderedData.forEach(function (row) {
+              return _this2.selection.select(row);
             });
           }
         }, {
-          key: "addAppointments",
-          value: function addAppointments(appointments) {
-            this.dialogData = appointments;
-            /*  this.httpClient.post(this.API_URL, appointments).subscribe(data => {
-              this.dialogData = appointments;
-              },
-              (err: HttpErrorResponse) => {
-             // error code here
-            });*/
+          key: "removeSelectedRows",
+          value: function removeSelectedRows() {
+            var _this3 = this;
+
+            var totalSelect = this.selection.selected.length;
+            this.selection.selected.forEach(function (item) {
+              var index = _this3.dataSource.renderedData.findIndex(function (d) {
+                return d === item;
+              }); // console.log(this.dataSource.renderedData.findIndex((d) => d === item));
+
+
+              _this3.exampleDatabase.dataChange.value.splice(index, 1);
+
+              _this3.refreshTable();
+
+              _this3.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_5__["SelectionModel"](true, []);
+            });
+            this.showNotification("snackbar-danger", totalSelect + " Record Delete Successfully...!!!", "bottom", "center");
           }
         }, {
-          key: "updateAppointments",
-          value: function updateAppointments(appointments) {
-            this.dialogData = appointments;
-            /* this.httpClient.put(this.API_URL + appointments.id, appointments).subscribe(data => {
-              this.dialogData = appointments;
-            },
-            (err: HttpErrorResponse) => {
-              // error code here
-            }
-            );*/
-          }
-        }, {
-          key: "deleteAppointments",
-          value: function deleteAppointments(id) {
-            console.log(id);
-            /*  this.httpClient.delete(this.API_URL + id).subscribe(data => {
-              console.log(id);
-              },
-              (err: HttpErrorResponse) => {
-                 // error code here
+          key: "loadData",
+          value: function loadData() {
+            var _this4 = this;
+
+            this.exampleDatabase = new _my_appoinment_service__WEBPACK_IMPORTED_MODULE_10__["AppointmentsService"](this.httpClient);
+            this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator, this.sort);
+            Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["fromEvent"])(this.filter.nativeElement, "keyup").subscribe(function () {
+              if (!_this4.dataSource) {
+                return;
               }
-            );*/
+
+              _this4.dataSource.filter = _this4.filter.nativeElement.value;
+            });
+          }
+        }, {
+          key: "showNotification",
+          value: function showNotification(colorName, text, placementFrom, placementAlign) {
+            this._snackBar.open(text, "", {
+              duration: 2000,
+              verticalPosition: placementFrom,
+              horizontalPosition: placementAlign,
+              panelClass: colorName
+            });
           }
         }]);
 
-        return AppointmentsService;
+        return MyAppoinmentComponent;
       }();
 
-      AppointmentsService.ɵfac = function AppointmentsService_Factory(t) {
-        return new (t || AppointmentsService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]));
+      MyAppoinmentComponent.ɵfac = function MyAppoinmentComponent_Factory(t) {
+        return new (t || MyAppoinmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_my_appoinment_service__WEBPACK_IMPORTED_MODULE_10__["AppointmentsService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"]));
       };
 
-      AppointmentsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: AppointmentsService,
-        factory: AppointmentsService.ɵfac
+      MyAppoinmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: MyAppoinmentComponent,
+        selectors: [["app-my-appoinment"]],
+        viewQuery: function MyAppoinmentComponent_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"], 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_angular_material_sort__WEBPACK_IMPORTED_MODULE_4__["MatSort"], 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_angular_material_menu__WEBPACK_IMPORTED_MODULE_9__["MatMenuTrigger"], 1);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.paginator = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.sort = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.filter = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.contextMenu = _t.first);
+          }
+        },
+        decls: 88,
+        vars: 10,
+        consts: [[1, "content"], [1, "container-fluid"], [1, "block-header"], [1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "breadcrumb", "breadcrumb-style"], [1, "breadcrumb-item"], [1, "page-title"], [1, "breadcrumb-item", "bcrumb-1"], ["routerLink", "/admin/dashboard/main"], [1, "fas", "fa-home"], [1, "col-md-12"], [1, "tabbable-line"], [1, "col-lg-12", "col-md-12", "col-sm-12", "col-xs-12"], [1, "card"], [1, "body"], [1, "table-responsive"], [1, "header"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "placeholder", "Search by patient name"], ["matPrefix", ""], ["value", "option1"], ["value", "option2"], [1, "distacnce"], ["appearance", "legacy", 1, "distacnce"], ["matInput", ""], ["matSuffix", ""], [1, "appoinments-txt"], ["matSort", "", 1, "mat-cell", 3, "dataSource"], ["table", ""], ["matColumnDef", "img"], ["mat-header-cell", "", 3, "ngClass", 4, "matHeaderCellDef"], ["mat-cell", "", "class", "table-img tbl-col-width-per-6", 4, "matCellDef"], ["matColumnDef", "name"], ["mat-sort-header", "", 4, "matHeaderCellDef"], [4, "matCellDef"], ["matColumnDef", "date"], ["matColumnDef", "type"], ["matColumnDef", "status"], ["matColumnDef", "action"], ["class", "column-nowrap", 4, "matCellDef"], ["matColumnDef", "details"], [4, "matHeaderRowDef"], ["matRipple", "", 3, "cursor", "click", 4, "matRowDef", "matRowDefColumns"], ["class", "tbl-spinner", 4, "ngIf"], ["class", "no-results", 3, "display", 4, "ngIf"], [3, "length", "pageIndex", "pageSize", "pageSizeOptions"], ["paginator", ""], ["mat-header-cell", "", 3, "ngClass"], ["mat-cell", "", 1, "table-img", "tbl-col-width-per-6"], [3, "src"], ["mat-sort-header", ""], ["class", "badge col-orange", 4, "ngIf"], ["class", "badge col-blue", 4, "ngIf"], [1, "badge", "col-orange"], [1, "badge", "col-blue"], ["class", "badge  badge-solid-green", 4, "ngIf"], ["class", "badge badge-solid-red", 4, "ngIf"], ["class", "badge badge-solid-orange", 4, "ngIf"], [1, "badge", "badge-solid-green"], [1, "badge", "badge-solid-red"], [1, "badge", "badge-solid-orange"], [1, "column-nowrap"], [4, "ngIf"], ["mat-icon-button", "", 1, "btn-tbl-confirm"], ["mat-icon-button", "", 1, "btn-tbl-reject", 3, "click"], ["mat-icon-button", "", "matTooltip", "Reschedule", "aria-label", "Button that displays a tooltip when focused or hovered over", 1, "btn-tbl-calender"], ["mat-flat-button", "", "color", "primary"], ["matRipple", "", 3, "click"], [1, "tbl-spinner"], ["color", "primary", "mode", "indeterminate", 3, "diameter"], [1, "no-results"]],
+        template: function MyAppoinmentComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "ul", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "li", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "h4", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, " Appointments");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "li", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "a", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "i", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, " Appointments");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "mat-form-field", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "input", 19);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-icon", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "search");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Type");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "mat-select");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "mat-option", 21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "All");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "mat-option", 22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36, "selected ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "mat-form-field", 23);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "Staus");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "mat-select");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "mat-option", 21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "All");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "mat-option", 22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "Selected ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "mat-form-field", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "From");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](48, "input", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "mat-icon", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "calendar_today");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "mat-form-field", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](53, "To");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "input", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "mat-icon", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56, "calendar_today");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "span", 27);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](58, "121 Appointments");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "mat-table", 28, 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](61, 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](62, MyAppoinmentComponent_mat_header_cell_62_Template, 2, 1, "mat-header-cell", 31);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](63, MyAppoinmentComponent_mat_cell_63_Template, 2, 1, "mat-cell", 32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](64, 33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](65, MyAppoinmentComponent_mat_header_cell_65_Template, 2, 0, "mat-header-cell", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](66, MyAppoinmentComponent_mat_cell_66_Template, 2, 1, "mat-cell", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](67, 36);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](68, MyAppoinmentComponent_mat_header_cell_68_Template, 2, 0, "mat-header-cell", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](69, MyAppoinmentComponent_mat_cell_69_Template, 3, 4, "mat-cell", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](70, 37);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](71, MyAppoinmentComponent_mat_header_cell_71_Template, 2, 0, "mat-header-cell", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](72, MyAppoinmentComponent_mat_cell_72_Template, 3, 2, "mat-cell", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](73, 38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](74, MyAppoinmentComponent_mat_header_cell_74_Template, 2, 0, "mat-header-cell", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](75, MyAppoinmentComponent_mat_cell_75_Template, 4, 3, "mat-cell", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](76, 39);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](77, MyAppoinmentComponent_mat_header_cell_77_Template, 2, 0, "mat-header-cell", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](78, MyAppoinmentComponent_mat_cell_78_Template, 3, 2, "mat-cell", 40);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](79, 41);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](80, MyAppoinmentComponent_mat_header_cell_80_Template, 2, 0, "mat-header-cell", 34);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](81, MyAppoinmentComponent_mat_cell_81_Template, 3, 1, "mat-cell", 40);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](82, MyAppoinmentComponent_mat_header_row_82_Template, 1, 0, "mat-header-row", 42);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](83, MyAppoinmentComponent_mat_row_83_Template, 1, 2, "mat-row", 43);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](84, MyAppoinmentComponent_div_84_Template, 2, 1, "div", 44);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](85, MyAppoinmentComponent_div_85_Template, 2, 2, "div", 45);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](86, "mat-paginator", 46, 47);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](59);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.dataSource);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](23);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matHeaderRowDef", ctx.displayedColumns);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matRowDefColumns", ctx.displayedColumns);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.exampleDatabase.isTblLoading);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.exampleDatabase.isTblLoading);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("length", ctx.dataSource.filteredData.length)("pageIndex", 0)("pageSize", 10)("pageSizeOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](9, _c1));
+          }
+        },
+        directives: [_angular_router__WEBPACK_IMPORTED_MODULE_13__["RouterLinkWithHref"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatFormField"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInput"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_16__["MatIcon"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatPrefix"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_17__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_18__["MatOption"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__["MatSuffix"], _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatTable"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_4__["MatSort"], _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatColumnDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatHeaderCellDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatCellDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatHeaderRowDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatRowDef"], _angular_common__WEBPACK_IMPORTED_MODULE_20__["NgIf"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"], _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatHeaderCell"], _angular_common__WEBPACK_IMPORTED_MODULE_20__["NgClass"], _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatCell"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_4__["MatSortHeader"], _angular_material_button__WEBPACK_IMPORTED_MODULE_21__["MatButton"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_22__["MatTooltip"], _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatHeaderRow"], _angular_material_table__WEBPACK_IMPORTED_MODULE_19__["MatRow"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_23__["MatProgressSpinner"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_20__["DatePipe"]],
+        styles: ["@charset \"UTF-8\";\n.page-title[_ngcontent-%COMP%] {\n  border-right: none !important;\n  padding-right: 10px;\n  font-size: 20px;\n  font-weight: 500;\n  color: #242634;\n  margin-bottom: 0px;\n  font-family: RobotoSlab;\n}\n.page-title[_ngcontent-%COMP%]:after {\n  content: \"\uF105\";\n  font-family: \"Font Awesome 5 Free\";\n  font-size: 18px;\n  font-weight: 900;\n  padding: 0px 5px;\n}\n.page-title[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  padding: 0px 5px;\n}\n.page-title[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]:before {\n  color: #717883;\n  font-size: 20px;\n}\n.breadcrumb[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%]    + li[_ngcontent-%COMP%]:before {\n  content: none !important;\n  color: #444444;\n  padding-left: 5px;\n}\n.appoinments-txt[_ngcontent-%COMP%] {\n  font-size: 14px;\n  font-weight: normal;\n  margin-left: 20px;\n}\n.distacnce[_ngcontent-%COMP%] {\n  margin-left: 20px;\n}\n  .mat-flat-button.mat-primary {\n  background-color: #005a97 !important;\n}\n.btn-tbl-calender[_ngcontent-%COMP%] {\n  background-color: #005a97;\n  height: 30px !important;\n  width: 30px !important;\n  margin: 2px !important;\n  line-height: 30px !important;\n  color: #fff;\n}\n.btn-tbl-calender[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 16px !important;\n}\n.btn-tbl-calender[_ngcontent-%COMP%]:hover {\n  background-color: #005a97;\n  color: #fff;\n}\n.btn-tbl-calender[_ngcontent-%COMP%]:focus {\n  background-color: #005a97;\n}\n.col-blue[_ngcontent-%COMP%] {\n  color: #005a97 !important;\n}\n.badge-solid-green[_ngcontent-%COMP%] {\n  color: #198754;\n  background-color: rgba(25, 135, 84, 0.15);\n  border: none;\n  padding: 5px 12px;\n  font-weight: 500;\n  line-height: 1.2;\n}\n.badge-solid-orange[_ngcontent-%COMP%] {\n  color: #fd7e14;\n  background-color: rgba(253, 126, 20, 0.15);\n  border: none;\n  padding: 5px 12px;\n  font-weight: 500;\n  line-height: 1.2;\n}\n.badge-solid-red[_ngcontent-%COMP%] {\n  color: #f44336;\n  background-color: #fae9e7;\n  border: none;\n  padding: 5px 12px;\n  font-weight: 500;\n  line-height: 1.2;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcbXktYXBwb2lubWVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxnQkFBZ0I7QUFBaEI7RUFDSSw2QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsdUJBQUE7QUFFSjtBQURJO0VBQ0UsWUFBQTtFQUNBLGtDQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7QUFHTjtBQURJO0VBQ0UsZ0JBQUE7QUFHTjtBQUZNO0VBQ0UsY0FBQTtFQUNBLGVBQUE7QUFJUjtBQUFFO0VBQ0Usd0JBQUE7RUFDQSxjQUFBO0VBQ0EsaUJBQUE7QUFHSjtBQURBO0VBQ0UsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsaUJBQUE7QUFJRjtBQURBO0VBQ0UsaUJBQUE7QUFJRjtBQURBO0VBQ0Usb0NBQUE7QUFJRjtBQUFBO0VBQ0UseUJBQUE7RUFDQSx1QkFBQTtFQUNBLHNCQUFBO0VBQ0Esc0JBQUE7RUFDQSw0QkFBQTtFQUNBLFdBQUE7QUFHRjtBQUZFO0VBQ0UsMEJBQUE7QUFJSjtBQURFO0VBQ0UseUJBQUE7RUFDQSxXQUFBO0FBR0o7QUFBRTtFQUNFLHlCQUFBO0FBRUo7QUFDQTtFQUNFLHlCQUFBO0FBRUY7QUFDQTtFQUNFLGNBQUE7RUFDRSx5Q0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7QUFFSjtBQUVBO0VBQ0UsY0FBQTtFQUNBLDBDQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtBQUNGO0FBRUE7RUFDRSxjQUFBO0VBQ0UseUJBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FBQ0oiLCJmaWxlIjoibXktYXBwb2lubWVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBjaGFyc2V0IFwiVVRGLThcIjtcbi5wYWdlLXRpdGxlIHtcbiAgYm9yZGVyLXJpZ2h0OiBub25lICFpbXBvcnRhbnQ7XG4gIHBhZGRpbmctcmlnaHQ6IDEwcHg7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgY29sb3I6ICMyNDI2MzQ7XG4gIG1hcmdpbi1ib3R0b206IDBweDtcbiAgZm9udC1mYW1pbHk6IFJvYm90b1NsYWI7XG59XG4ucGFnZS10aXRsZTphZnRlciB7XG4gIGNvbnRlbnQ6IFwi74SFXCI7XG4gIGZvbnQtZmFtaWx5OiBcIkZvbnQgQXdlc29tZSA1IEZyZWVcIjtcbiAgZm9udC1zaXplOiAxOHB4O1xuICBmb250LXdlaWdodDogOTAwO1xuICBwYWRkaW5nOiAwcHggNXB4O1xufVxuLnBhZ2UtdGl0bGUgaSB7XG4gIHBhZGRpbmc6IDBweCA1cHg7XG59XG4ucGFnZS10aXRsZSBpOmJlZm9yZSB7XG4gIGNvbG9yOiAjNzE3ODgzO1xuICBmb250LXNpemU6IDIwcHg7XG59XG5cbi5icmVhZGNydW1iID4gbGkgKyBsaTpiZWZvcmUge1xuICBjb250ZW50OiBub25lICFpbXBvcnRhbnQ7XG4gIGNvbG9yOiAjNDQ0NDQ0O1xuICBwYWRkaW5nLWxlZnQ6IDVweDtcbn1cblxuLmFwcG9pbm1lbnRzLXR4dCB7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcbiAgbWFyZ2luLWxlZnQ6IDIwcHg7XG59XG5cbi5kaXN0YWNuY2Uge1xuICBtYXJnaW4tbGVmdDogMjBweDtcbn1cblxuOjpuZy1kZWVwIC5tYXQtZmxhdC1idXR0b24ubWF0LXByaW1hcnkge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA1YTk3ICFpbXBvcnRhbnQ7XG59XG5cbi5idG4tdGJsLWNhbGVuZGVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwNWE5NztcbiAgaGVpZ2h0OiAzMHB4ICFpbXBvcnRhbnQ7XG4gIHdpZHRoOiAzMHB4ICFpbXBvcnRhbnQ7XG4gIG1hcmdpbjogMnB4ICFpbXBvcnRhbnQ7XG4gIGxpbmUtaGVpZ2h0OiAzMHB4ICFpbXBvcnRhbnQ7XG4gIGNvbG9yOiAjZmZmO1xufVxuLmJ0bi10YmwtY2FsZW5kZXIgLm1hdGVyaWFsLWljb25zIHtcbiAgZm9udC1zaXplOiAxNnB4ICFpbXBvcnRhbnQ7XG59XG4uYnRuLXRibC1jYWxlbmRlcjpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDVhOTc7XG4gIGNvbG9yOiAjZmZmO1xufVxuLmJ0bi10YmwtY2FsZW5kZXI6Zm9jdXMge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA1YTk3O1xufVxuXG4uY29sLWJsdWUge1xuICBjb2xvcjogIzAwNWE5NyAhaW1wb3J0YW50O1xufVxuXG4uYmFkZ2Utc29saWQtZ3JlZW4ge1xuICBjb2xvcjogIzE5ODc1NDtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNSwgMTM1LCA4NCwgMC4xNSk7XG4gIGJvcmRlcjogbm9uZTtcbiAgcGFkZGluZzogNXB4IDEycHg7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGxpbmUtaGVpZ2h0OiAxLjI7XG59XG5cbi5iYWRnZS1zb2xpZC1vcmFuZ2Uge1xuICBjb2xvcjogI2ZkN2UxNDtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTMsIDEyNiwgMjAsIDAuMTUpO1xuICBib3JkZXI6IG5vbmU7XG4gIHBhZGRpbmc6IDVweCAxMnB4O1xuICBmb250LXdlaWdodDogNTAwO1xuICBsaW5lLWhlaWdodDogMS4yO1xufVxuXG4uYmFkZ2Utc29saWQtcmVkIHtcbiAgY29sb3I6ICNmNDQzMzY7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmYWU5ZTc7XG4gIGJvcmRlcjogbm9uZTtcbiAgcGFkZGluZzogNXB4IDEycHg7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGxpbmUtaGVpZ2h0OiAxLjI7XG59Il19 */"]
       });
 
       (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppointmentsService, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MyAppoinmentComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-my-appoinment',
+            templateUrl: './my-appoinment.component.html',
+            styleUrls: ['./my-appoinment.component.scss']
+          }]
         }], function () {
           return [{
-            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+          }, {
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]
+          }, {
+            type: _my_appoinment_service__WEBPACK_IMPORTED_MODULE_10__["AppointmentsService"]
+          }, {
+            type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"]
           }];
-        }, null);
+        }, {
+          paginator: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+            args: [_angular_material_paginator__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"], {
+              "static": true
+            }]
+          }],
+          sort: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+            args: [_angular_material_sort__WEBPACK_IMPORTED_MODULE_4__["MatSort"], {
+              "static": true
+            }]
+          }],
+          filter: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+            args: ["filter", {
+              "static": true
+            }]
+          }],
+          contextMenu: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+            args: [_angular_material_menu__WEBPACK_IMPORTED_MODULE_9__["MatMenuTrigger"]]
+          }]
+        });
       })();
+
+      var ExampleDataSource = /*#__PURE__*/function (_angular_cdk_collecti) {
+        _inherits(ExampleDataSource, _angular_cdk_collecti);
+
+        var _super = _createSuper(ExampleDataSource);
+
+        function ExampleDataSource(exampleDatabase, paginator, _sort) {
+          var _this5;
+
+          _classCallCheck(this, ExampleDataSource);
+
+          _this5 = _super.call(this);
+          _this5.exampleDatabase = exampleDatabase;
+          _this5.paginator = paginator;
+          _this5._sort = _sort;
+          _this5.filterChange = new rxjs__WEBPACK_IMPORTED_MODULE_7__["BehaviorSubject"]("");
+          _this5.filteredData = [];
+          _this5.renderedData = []; // Reset to the first page when the user changes the filter.
+
+          _this5.filterChange.subscribe(function () {
+            return _this5.paginator.pageIndex = 0;
+          });
+
+          return _this5;
+        }
+
+        _createClass(ExampleDataSource, [{
+          key: "filter",
+          get: function get() {
+            return this.filterChange.value;
+          },
+          set: function set(filter) {
+            this.filterChange.next(filter);
+          }
+          /** Connect function called by the table to retrieve one stream containing the data to render. */
+
+        }, {
+          key: "connect",
+          value: function connect() {
+            var _this6 = this;
+
+            // Listen for any changes in the base data, sorting, filtering, or pagination
+            var displayDataChanges = [this.exampleDatabase.dataChange, this._sort.sortChange, this.filterChange, this.paginator.page];
+            this.exampleDatabase.getAllAppointmentss();
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["merge"]).apply(void 0, displayDataChanges).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function () {
+              // Filter data
+              _this6.filteredData = _this6.exampleDatabase.data.slice().filter(function (appointments) {
+                var searchStr = (appointments.name + appointments.dateTime + appointments.type + appointments.status + appointments.action + appointments.details).toLowerCase();
+                return searchStr.indexOf(_this6.filter.toLowerCase()) !== -1;
+              }); // Sort filtered data
+
+              var sortedData = _this6.sortData(_this6.filteredData.slice()); // Grab the page's slice of the filtered sorted data.
+
+
+              var startIndex = _this6.paginator.pageIndex * _this6.paginator.pageSize;
+              _this6.renderedData = sortedData.splice(startIndex, _this6.paginator.pageSize);
+              return _this6.renderedData;
+            }));
+          }
+        }, {
+          key: "disconnect",
+          value: function disconnect() {}
+          /** Returns a sorted copy of the database data. */
+
+        }, {
+          key: "sortData",
+          value: function sortData(data) {
+            var _this7 = this;
+
+            if (!this._sort.active || this._sort.direction === "") {
+              return data;
+            }
+
+            return data.sort(function (a, b) {
+              var propertyA = "";
+              var propertyB = "";
+
+              switch (_this7._sort.active) {
+                case "id":
+                  var _ref = [a.id, b.id];
+                  propertyA = _ref[0];
+                  propertyB = _ref[1];
+                  break;
+
+                case "name":
+                  var _ref2 = [a.name, b.name];
+                  propertyA = _ref2[0];
+                  propertyB = _ref2[1];
+                  break;
+
+                case "dateTime":
+                  var _ref3 = [a.dateTime, b.dateTime];
+                  propertyA = _ref3[0];
+                  propertyB = _ref3[1];
+                  break;
+              }
+
+              var valueA = isNaN(+propertyA) ? propertyA : +propertyA;
+              var valueB = isNaN(+propertyB) ? propertyB : +propertyB;
+              return (valueA < valueB ? -1 : 1) * (_this7._sort.direction === "asc" ? 1 : -1);
+            });
+          }
+        }]);
+
+        return ExampleDataSource;
+      }(_angular_cdk_collections__WEBPACK_IMPORTED_MODULE_5__["DataSource"]);
       /***/
 
     },
@@ -3237,6 +4143,208 @@
             type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialog"]
           }];
         }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
+    "e57E":
+    /*!************************************************************************************************!*\
+      !*** ./src/app/admin/dashboard/my-appoinment/reject-appoinment/reject-appoinment.component.ts ***!
+      \************************************************************************************************/
+
+    /*! exports provided: RejectAppoinmentComponent, deleteMsgComponent */
+
+    /***/
+    function e57E(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RejectAppoinmentComponent", function () {
+        return RejectAppoinmentComponent;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "deleteMsgComponent", function () {
+        return deleteMsgComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "0IaG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/material/snack-bar */
+      "dNgK");
+      /* harmony import */
+
+
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/material/button */
+      "bTqV");
+
+      var RejectAppoinmentComponent = /*#__PURE__*/function () {
+        function RejectAppoinmentComponent(dialogRef, _snackBar) {
+          _classCallCheck(this, RejectAppoinmentComponent);
+
+          this.dialogRef = dialogRef;
+          this._snackBar = _snackBar;
+        }
+
+        _createClass(RejectAppoinmentComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }, {
+          key: "onNoClick",
+          value: function onNoClick() {
+            this.dialogRef.close();
+          }
+        }, {
+          key: "openSnackBar",
+          value: function openSnackBar() {
+            this._snackBar.openFromComponent(deleteMsgComponent, {
+              duration: 2000
+            });
+          }
+        }]);
+
+        return RejectAppoinmentComponent;
+      }();
+
+      RejectAppoinmentComponent.ɵfac = function RejectAppoinmentComponent_Factory(t) {
+        return new (t || RejectAppoinmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]));
+      };
+
+      RejectAppoinmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+        type: RejectAppoinmentComponent,
+        selectors: [["app-reject-appoinment"]],
+        decls: 11,
+        vars: 1,
+        consts: [[1, "addContainer"], ["mat-dialog-title", ""], ["mat-dialog-content", ""], ["mat-dialog-actions", "", 1, "mb-1"], ["mat-flat-button", "", "color", "warn", 3, "mat-dialog-close", "click"], ["mat-stroked-button", "", "tabindex", "-1", 1, "Cancel-btn", 3, "click"]],
+        template: function RejectAppoinmentComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "h3", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Are you sure to reject this appointment?");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "Do you want to reject John Doe 20 Sep 12:30 appointment?");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "button", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function RejectAppoinmentComponent_Template_button_click_7_listener() {
+              return ctx.openSnackBar();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, " Yes, reject it ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "button", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function RejectAppoinmentComponent_Template_button_click_9_listener() {
+              return ctx.onNoClick();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "Cancel");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("mat-dialog-close", 1);
+          }
+        },
+        directives: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogTitle"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogContent"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogActions"], _angular_material_button__WEBPACK_IMPORTED_MODULE_3__["MatButton"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogClose"]],
+        styles: [".mat-dialog-title {\n  font-size: 18px;\n  font-weight: 500;\n  color: #242634;\n}\n\n  .mat-flat-button {\n  font-weight: 500;\n}\n\n  .mat-snack-bar-container {\n  background-color: #f44336 !important;\n}\n\n.Cancel-btn[_ngcontent-%COMP%] {\n  border-color: #005a97;\n  color: #005a97;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXHJlamVjdC1hcHBvaW5tZW50LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQUNKOztBQUVBO0VBQ0ksZ0JBQUE7QUFDSjs7QUFFQTtFQUNJLG9DQUFBO0FBQ0o7O0FBRUE7RUFDSSxxQkFBQTtFQUNBLGNBQUE7QUFDSiIsImZpbGUiOiJyZWplY3QtYXBwb2lubWVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjo6bmctZGVlcCAubWF0LWRpYWxvZy10aXRsZXtcclxuICAgIGZvbnQtc2l6ZTogMThweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICBjb2xvcjogIzI0MjYzNDtcclxufVxyXG5cclxuOjpuZy1kZWVwIC5tYXQtZmxhdC1idXR0b257XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG59XHJcblxyXG46Om5nLWRlZXAgLm1hdC1zbmFjay1iYXItY29udGFpbmVye1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y0NDMzNiAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uQ2FuY2VsLWJ0bnsgXHJcbiAgICBib3JkZXItY29sb3I6ICMwMDVhOTc7XHJcbiAgICBjb2xvcjogIzAwNWE5NztcclxufSJdfQ== */"]
+      });
+
+      (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](RejectAppoinmentComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
+          args: [{
+            selector: 'app-reject-appoinment',
+            templateUrl: './reject-appoinment.component.html',
+            styleUrls: ['./reject-appoinment.component.scss']
+          }]
+        }], function () {
+          return [{
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogRef"]
+          }, {
+            type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]
+          }];
+        }, null);
+      })();
+
+      var deleteMsgComponent = /*#__PURE__*/_createClass(function deleteMsgComponent() {
+        _classCallCheck(this, deleteMsgComponent);
+      });
+
+      deleteMsgComponent.ɵfac = function deleteMsgComponent_Factory(t) {
+        return new (t || deleteMsgComponent)();
+      };
+
+      deleteMsgComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+        type: deleteMsgComponent,
+        selectors: [["ssnack-bar-component-reject-snack"]],
+        decls: 2,
+        vars: 0,
+        consts: [[1, "delete-msg"]],
+        template: function deleteMsgComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Appointment rejected successfully...!!! ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          }
+        },
+        styles: [".delete-msg[_ngcontent-%COMP%] { \n      color: #ffffff;\n      font-size: 14px;\n      font-weight: normal;\n    }"]
+      });
+
+      (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](deleteMsgComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
+          args: [{
+            selector: 'ssnack-bar-component-reject-snack',
+            templateUrl: 'snack-bar-component-reject-snack.html',
+            styles: ["\n    .delete-msg { \n      color: #ffffff;\n      font-size: 14px;\n      font-weight: normal;\n    }\n  "]
+          }]
+        }], null, null);
       })();
       /***/
 
@@ -5521,6 +6629,208 @@
     },
 
     /***/
+    "h8e+":
+    /*!************************************************************************************************!*\
+      !*** ./src/app/admin/dashboard/my-appoinment/cancel-appoinment/cancel-appoinment.component.ts ***!
+      \************************************************************************************************/
+
+    /*! exports provided: CancelAppoinmentComponent, deleteMsgComponent */
+
+    /***/
+    function h8e(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "CancelAppoinmentComponent", function () {
+        return CancelAppoinmentComponent;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "deleteMsgComponent", function () {
+        return deleteMsgComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "0IaG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/material/snack-bar */
+      "dNgK");
+      /* harmony import */
+
+
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/material/button */
+      "bTqV");
+
+      var CancelAppoinmentComponent = /*#__PURE__*/function () {
+        function CancelAppoinmentComponent(dialogRef, _snackBar) {
+          _classCallCheck(this, CancelAppoinmentComponent);
+
+          this.dialogRef = dialogRef;
+          this._snackBar = _snackBar;
+        }
+
+        _createClass(CancelAppoinmentComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }, {
+          key: "onNoClick",
+          value: function onNoClick() {
+            this.dialogRef.close();
+          }
+        }, {
+          key: "openSnackBar",
+          value: function openSnackBar() {
+            this._snackBar.openFromComponent(deleteMsgComponent, {
+              duration: 2000
+            });
+          }
+        }]);
+
+        return CancelAppoinmentComponent;
+      }();
+
+      CancelAppoinmentComponent.ɵfac = function CancelAppoinmentComponent_Factory(t) {
+        return new (t || CancelAppoinmentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]));
+      };
+
+      CancelAppoinmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+        type: CancelAppoinmentComponent,
+        selectors: [["app-cancel-appoinment"]],
+        decls: 11,
+        vars: 1,
+        consts: [[1, "addContainer"], ["mat-dialog-title", ""], ["mat-dialog-content", ""], ["mat-dialog-actions", "", 1, "mb-1"], ["mat-flat-button", "", "color", "warn", 3, "mat-dialog-close", "click"], ["mat-stroked-button", "", "tabindex", "-1", 1, "back-btn", 3, "click"]],
+        template: function CancelAppoinmentComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "h3", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Are you sure to cancel this appointment?");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "Do you want to cancel Cara Stevens 16 Sep 01:30 appointment?");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "button", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CancelAppoinmentComponent_Template_button_click_7_listener() {
+              return ctx.openSnackBar();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, " Yes, cancel it ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "button", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CancelAppoinmentComponent_Template_button_click_9_listener() {
+              return ctx.onNoClick();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "Back");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("mat-dialog-close", 1);
+          }
+        },
+        directives: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogTitle"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogContent"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogActions"], _angular_material_button__WEBPACK_IMPORTED_MODULE_3__["MatButton"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogClose"]],
+        styles: [".mat-dialog-title {\n  font-size: 18px;\n  font-weight: 500;\n  color: #242634;\n}\n\n  .mat-flat-button {\n  font-weight: 500;\n}\n\n  .mat-snack-bar-container {\n  background-color: #f44336 !important;\n}\n\n.back-btn[_ngcontent-%COMP%] {\n  border-color: #005a97;\n  color: #005a97;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXGNhbmNlbC1hcHBvaW5tZW50LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQUNKOztBQUVBO0VBQ0ksZ0JBQUE7QUFDSjs7QUFFQTtFQUNJLG9DQUFBO0FBQ0o7O0FBRUE7RUFDSSxxQkFBQTtFQUNBLGNBQUE7QUFDSiIsImZpbGUiOiJjYW5jZWwtYXBwb2lubWVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjo6bmctZGVlcCAubWF0LWRpYWxvZy10aXRsZXtcclxuICAgIGZvbnQtc2l6ZTogMThweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICBjb2xvcjogIzI0MjYzNDtcclxufVxyXG5cclxuOjpuZy1kZWVwIC5tYXQtZmxhdC1idXR0b257XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG59XHJcblxyXG46Om5nLWRlZXAgLm1hdC1zbmFjay1iYXItY29udGFpbmVye1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y0NDMzNiAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uYmFjay1idG57IFxyXG4gICAgYm9yZGVyLWNvbG9yOiAjMDA1YTk3O1xyXG4gICAgY29sb3I6ICMwMDVhOTc7XHJcbn1cclxuIl19 */"]
+      });
+
+      (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](CancelAppoinmentComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
+          args: [{
+            selector: 'app-cancel-appoinment',
+            templateUrl: './cancel-appoinment.component.html',
+            styleUrls: ['./cancel-appoinment.component.scss']
+          }]
+        }], function () {
+          return [{
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_0__["MatDialogRef"]
+          }, {
+            type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]
+          }];
+        }, null);
+      })();
+
+      var deleteMsgComponent = /*#__PURE__*/_createClass(function deleteMsgComponent() {
+        _classCallCheck(this, deleteMsgComponent);
+      });
+
+      deleteMsgComponent.ɵfac = function deleteMsgComponent_Factory(t) {
+        return new (t || deleteMsgComponent)();
+      };
+
+      deleteMsgComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+        type: deleteMsgComponent,
+        selectors: [["ssnack-bar-component-cancel-snack"]],
+        decls: 2,
+        vars: 0,
+        consts: [[1, "Cancel-msg"]],
+        template: function deleteMsgComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Appointment rejected successfully...!!! ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          }
+        },
+        styles: [".Cancel-msg[_ngcontent-%COMP%] { \n      color: #ffffff;\n      font-size: 14px;\n      font-weight: normal;\n    }"]
+      });
+
+      (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](deleteMsgComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
+          args: [{
+            selector: 'ssnack-bar-component-cancel-snack',
+            templateUrl: 'snack-bar-component-cancel-snack.html',
+            styles: ["\n    .Cancel-msg { \n      color: #ffffff;\n      font-size: 14px;\n      font-weight: normal;\n    }\n  "]
+          }]
+        }], null, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "mI2g":
     /*!********************************************************************************************!*\
       !*** ./src/app/admin/dashboard/profile/delete-credit-card/delete-credit-card.component.ts ***!
@@ -5824,81 +7134,99 @@
       /* harmony import */
 
 
-      var _appoinment_dashboard_appoinment_dashboard_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
-      /*! ./appoinment-dashboard/appoinment-dashboard.component */
-      "ywU/");
-      /* harmony import */
-
-
-      var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+      var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
       /*! @swimlane/ngx-datatable */
       "lDzL");
       /* harmony import */
 
 
-      var _angular_material_table__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
+      var _angular_material_table__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
       /*! @angular/material/table */
       "+0xr");
       /* harmony import */
 
 
-      var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
+      var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
       /*! @angular/material/progress-spinner */
       "Xa2L");
       /* harmony import */
 
 
-      var _angular_material_card__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
       /*! @angular/material/card */
       "Wp6s");
       /* harmony import */
 
 
-      var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
+      var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
       /*! @angular/material/toolbar */
       "/t3+");
       /* harmony import */
 
 
-      var ngx_material_file_input__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(
+      var ngx_material_file_input__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
       /*! ngx-material-file-input */
       "7ZcW");
       /* harmony import */
 
 
-      var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(
+      var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(
       /*! @angular/material/paginator */
       "M9IT");
       /* harmony import */
 
 
-      var _angular_material_sort__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(
+      var _angular_material_sort__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(
       /*! @angular/material/sort */
       "Dh3D");
       /* harmony import */
 
 
-      var _notification_notification_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(
+      var _notification_notification_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(
       /*! ./notification/notification.component */
       "/MsJ");
       /* harmony import */
 
 
-      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(
       /*! @angular/material/snack-bar */
       "dNgK");
       /* harmony import */
 
 
-      var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(
+      var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(
       /*! @angular/material/datepicker */
       "iadO");
       /* harmony import */
 
 
-      var _main_main_service__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(
-      /*! ./main/main.service */
-      "ZGSa");
+      var _my_appoinment_my_appoinment_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(
+      /*! ./my-appoinment/my-appoinment.component */
+      "X0ix");
+      /* harmony import */
+
+
+      var _view_details_view_details_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(
+      /*! ./view-details/view-details.component */
+      "wYuO");
+      /* harmony import */
+
+
+      var _my_appoinment_my_appoinment_service__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(
+      /*! ./my-appoinment/my-appoinment.service */
+      "MbcO");
+      /* harmony import */
+
+
+      var _my_appoinment_reject_appoinment_reject_appoinment_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(
+      /*! ./my-appoinment/reject-appoinment/reject-appoinment.component */
+      "e57E");
+      /* harmony import */
+
+
+      var _my_appoinment_cancel_appoinment_cancel_appoinment_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(
+      /*! ./my-appoinment/cancel-appoinment/cancel-appoinment.component */
+      "h8e+");
 
       var DashboardModule = /*#__PURE__*/_createClass(function DashboardModule() {
         _classCallCheck(this, DashboardModule);
@@ -5912,14 +7240,14 @@
         type: DashboardModule
       });
       DashboardModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-        providers: [_main_main_service__WEBPACK_IMPORTED_MODULE_38__["AppointmentsService"]],
-        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _dashboard_routing_module__WEBPACK_IMPORTED_MODULE_3__["DashboardRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_6__["ChartsModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_11__["NgApexchartsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__["PerfectScrollbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_9__["MatMenuModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__["MatTooltipModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormFieldModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInputModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__["MatCheckboxModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_17__["MatRadioModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_23__["MatSelectModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_24__["MatOptionModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_28__["MatTableModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_27__["NgxDatatableModule"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_29__["MatProgressSpinnerModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_31__["MatToolbarModule"], ngx_material_file_input__WEBPACK_IMPORTED_MODULE_32__["MaterialFileInputModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_30__["MatCardModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_33__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_34__["MatSortModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_36__["MatSnackBarModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_37__["MatDatepickerModule"]]]
+        providers: [_my_appoinment_my_appoinment_service__WEBPACK_IMPORTED_MODULE_39__["AppointmentsService"]],
+        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _dashboard_routing_module__WEBPACK_IMPORTED_MODULE_3__["DashboardRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_6__["ChartsModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_11__["NgApexchartsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__["PerfectScrollbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_9__["MatMenuModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__["MatTooltipModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormFieldModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInputModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__["MatCheckboxModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_17__["MatRadioModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_23__["MatSelectModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_24__["MatOptionModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_27__["MatTableModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_26__["NgxDatatableModule"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_28__["MatProgressSpinnerModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_30__["MatToolbarModule"], ngx_material_file_input__WEBPACK_IMPORTED_MODULE_31__["MaterialFileInputModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_29__["MatCardModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_32__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_33__["MatSortModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_35__["MatSnackBarModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_36__["MatDatepickerModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](DashboardModule, {
-          declarations: [_main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"], _dashboard2_dashboard2_component__WEBPACK_IMPORTED_MODULE_5__["Dashboard2Component"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], _profile_change_password_modal_change_password_modal_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordModalComponent"], _profile_change_email_modal_change_email_modal_component__WEBPACK_IMPORTED_MODULE_20__["ChangeEmailModalComponent"], _profile_change_password_success_modal_change_password_success_modal_component__WEBPACK_IMPORTED_MODULE_21__["ChangePasswordSuccessModalComponent"], _profile_delete_credit_card_delete_credit_card_component__WEBPACK_IMPORTED_MODULE_25__["DeleteCreditCardComponent"], _appoinment_dashboard_appoinment_dashboard_component__WEBPACK_IMPORTED_MODULE_26__["AppoinmentDashboardComponent"], _notification_notification_component__WEBPACK_IMPORTED_MODULE_35__["NotificationComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _dashboard_routing_module__WEBPACK_IMPORTED_MODULE_3__["DashboardRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_6__["ChartsModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_11__["NgApexchartsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__["PerfectScrollbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_9__["MatMenuModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__["MatTooltipModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormFieldModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInputModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__["MatCheckboxModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_17__["MatRadioModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_23__["MatSelectModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_24__["MatOptionModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_28__["MatTableModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_27__["NgxDatatableModule"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_29__["MatProgressSpinnerModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_31__["MatToolbarModule"], ngx_material_file_input__WEBPACK_IMPORTED_MODULE_32__["MaterialFileInputModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_30__["MatCardModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_33__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_34__["MatSortModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_36__["MatSnackBarModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_37__["MatDatepickerModule"]]
+          declarations: [_main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"], _dashboard2_dashboard2_component__WEBPACK_IMPORTED_MODULE_5__["Dashboard2Component"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], _profile_change_password_modal_change_password_modal_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordModalComponent"], _profile_change_email_modal_change_email_modal_component__WEBPACK_IMPORTED_MODULE_20__["ChangeEmailModalComponent"], _profile_change_password_success_modal_change_password_success_modal_component__WEBPACK_IMPORTED_MODULE_21__["ChangePasswordSuccessModalComponent"], _profile_delete_credit_card_delete_credit_card_component__WEBPACK_IMPORTED_MODULE_25__["DeleteCreditCardComponent"], _notification_notification_component__WEBPACK_IMPORTED_MODULE_34__["NotificationComponent"], _my_appoinment_my_appoinment_component__WEBPACK_IMPORTED_MODULE_37__["MyAppoinmentComponent"], _view_details_view_details_component__WEBPACK_IMPORTED_MODULE_38__["ViewDetailsComponent"], _my_appoinment_reject_appoinment_reject_appoinment_component__WEBPACK_IMPORTED_MODULE_40__["RejectAppoinmentComponent"], _my_appoinment_cancel_appoinment_cancel_appoinment_component__WEBPACK_IMPORTED_MODULE_41__["CancelAppoinmentComponent"]],
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _dashboard_routing_module__WEBPACK_IMPORTED_MODULE_3__["DashboardRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_6__["ChartsModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_11__["NgApexchartsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__["PerfectScrollbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_9__["MatMenuModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__["MatTooltipModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormFieldModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInputModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__["MatCheckboxModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_17__["MatRadioModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_23__["MatSelectModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_24__["MatOptionModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_27__["MatTableModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_26__["NgxDatatableModule"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_28__["MatProgressSpinnerModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_30__["MatToolbarModule"], ngx_material_file_input__WEBPACK_IMPORTED_MODULE_31__["MaterialFileInputModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_29__["MatCardModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_32__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_33__["MatSortModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_35__["MatSnackBarModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_36__["MatDatepickerModule"]]
         });
       })();
 
@@ -5927,9 +7255,9 @@
         (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DashboardModule, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
           args: [{
-            declarations: [_main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"], _dashboard2_dashboard2_component__WEBPACK_IMPORTED_MODULE_5__["Dashboard2Component"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], _profile_change_password_modal_change_password_modal_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordModalComponent"], _profile_change_email_modal_change_email_modal_component__WEBPACK_IMPORTED_MODULE_20__["ChangeEmailModalComponent"], _profile_change_password_success_modal_change_password_success_modal_component__WEBPACK_IMPORTED_MODULE_21__["ChangePasswordSuccessModalComponent"], _profile_delete_credit_card_delete_credit_card_component__WEBPACK_IMPORTED_MODULE_25__["DeleteCreditCardComponent"], _appoinment_dashboard_appoinment_dashboard_component__WEBPACK_IMPORTED_MODULE_26__["AppoinmentDashboardComponent"], _notification_notification_component__WEBPACK_IMPORTED_MODULE_35__["NotificationComponent"]],
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _dashboard_routing_module__WEBPACK_IMPORTED_MODULE_3__["DashboardRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_6__["ChartsModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_11__["NgApexchartsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__["PerfectScrollbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_9__["MatMenuModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__["MatTooltipModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormFieldModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInputModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__["MatCheckboxModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_17__["MatRadioModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_23__["MatSelectModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_24__["MatOptionModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_28__["MatTableModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_27__["NgxDatatableModule"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_29__["MatProgressSpinnerModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_31__["MatToolbarModule"], ngx_material_file_input__WEBPACK_IMPORTED_MODULE_32__["MaterialFileInputModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_30__["MatCardModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_33__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_34__["MatSortModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_36__["MatSnackBarModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_37__["MatDatepickerModule"]],
-            providers: [_main_main_service__WEBPACK_IMPORTED_MODULE_38__["AppointmentsService"]]
+            declarations: [_main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"], _dashboard2_dashboard2_component__WEBPACK_IMPORTED_MODULE_5__["Dashboard2Component"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], _profile_change_password_modal_change_password_modal_component__WEBPACK_IMPORTED_MODULE_19__["ChangePasswordModalComponent"], _profile_change_email_modal_change_email_modal_component__WEBPACK_IMPORTED_MODULE_20__["ChangeEmailModalComponent"], _profile_change_password_success_modal_change_password_success_modal_component__WEBPACK_IMPORTED_MODULE_21__["ChangePasswordSuccessModalComponent"], _profile_delete_credit_card_delete_credit_card_component__WEBPACK_IMPORTED_MODULE_25__["DeleteCreditCardComponent"], _notification_notification_component__WEBPACK_IMPORTED_MODULE_34__["NotificationComponent"], _my_appoinment_my_appoinment_component__WEBPACK_IMPORTED_MODULE_37__["MyAppoinmentComponent"], _view_details_view_details_component__WEBPACK_IMPORTED_MODULE_38__["ViewDetailsComponent"], _my_appoinment_reject_appoinment_reject_appoinment_component__WEBPACK_IMPORTED_MODULE_40__["RejectAppoinmentComponent"], _my_appoinment_cancel_appoinment_cancel_appoinment_component__WEBPACK_IMPORTED_MODULE_41__["CancelAppoinmentComponent"]],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _dashboard_routing_module__WEBPACK_IMPORTED_MODULE_3__["DashboardRoutingModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_6__["ChartsModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_11__["NgApexchartsModule"], ngx_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__["PerfectScrollbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_9__["MatMenuModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__["MatTooltipModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormFieldModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_15__["MatInputModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__["MatCheckboxModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_17__["MatRadioModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__["MatDialogModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_23__["MatSelectModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_24__["MatOptionModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_27__["MatTableModule"], _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_26__["NgxDatatableModule"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_28__["MatProgressSpinnerModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_30__["MatToolbarModule"], ngx_material_file_input__WEBPACK_IMPORTED_MODULE_31__["MaterialFileInputModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_29__["MatCardModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_32__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_33__["MatSortModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_35__["MatSnackBarModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_36__["MatDatepickerModule"]],
+            providers: [_my_appoinment_my_appoinment_service__WEBPACK_IMPORTED_MODULE_39__["AppointmentsService"]]
           }]
         }], null, null);
       })();
@@ -8505,23 +9833,23 @@
     },
 
     /***/
-    "ywU/":
-    /*!****************************************************************************************!*\
-      !*** ./src/app/admin/dashboard/appoinment-dashboard/appoinment-dashboard.component.ts ***!
-      \****************************************************************************************/
+    "wYuO":
+    /*!************************************************************************!*\
+      !*** ./src/app/admin/dashboard/view-details/view-details.component.ts ***!
+      \************************************************************************/
 
-    /*! exports provided: AppoinmentDashboardComponent */
+    /*! exports provided: ViewDetailsComponent */
 
     /***/
-    function ywU(module, __webpack_exports__, __webpack_require__) {
+    function wYuO(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
 
 
-      __webpack_require__.d(__webpack_exports__, "AppoinmentDashboardComponent", function () {
-        return AppoinmentDashboardComponent;
+      __webpack_require__.d(__webpack_exports__, "ViewDetailsComponent", function () {
+        return ViewDetailsComponent;
       });
       /* harmony import */
 
@@ -8530,47 +9858,47 @@
       /*! @angular/core */
       "fXoL");
 
-      var AppoinmentDashboardComponent = /*#__PURE__*/function () {
-        function AppoinmentDashboardComponent() {
-          _classCallCheck(this, AppoinmentDashboardComponent);
+      var ViewDetailsComponent = /*#__PURE__*/function () {
+        function ViewDetailsComponent() {
+          _classCallCheck(this, ViewDetailsComponent);
         }
 
-        _createClass(AppoinmentDashboardComponent, [{
+        _createClass(ViewDetailsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {}
         }]);
 
-        return AppoinmentDashboardComponent;
+        return ViewDetailsComponent;
       }();
 
-      AppoinmentDashboardComponent.ɵfac = function AppoinmentDashboardComponent_Factory(t) {
-        return new (t || AppoinmentDashboardComponent)();
+      ViewDetailsComponent.ɵfac = function ViewDetailsComponent_Factory(t) {
+        return new (t || ViewDetailsComponent)();
       };
 
-      AppoinmentDashboardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-        type: AppoinmentDashboardComponent,
-        selectors: [["app-appoinment-dashboard"]],
+      ViewDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: ViewDetailsComponent,
+        selectors: [["app-view-details"]],
         decls: 2,
         vars: 0,
-        template: function AppoinmentDashboardComponent_Template(rf, ctx) {
+        template: function ViewDetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "appoinment-dashboard works!");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "view-details works!");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
         },
-        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHBvaW5tZW50LWRhc2hib2FyZC5jb21wb25lbnQuc2FzcyJ9 */"]
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ2aWV3LWRldGFpbHMuY29tcG9uZW50LnNhc3MifQ== */"]
       });
 
       (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppoinmentDashboardComponent, [{
+        (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ViewDetailsComponent, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
           args: [{
-            selector: 'app-appoinment-dashboard',
-            templateUrl: './appoinment-dashboard.component.html',
-            styleUrls: ['./appoinment-dashboard.component.sass']
+            selector: 'app-view-details',
+            templateUrl: './view-details.component.html',
+            styleUrls: ['./view-details.component.sass']
           }]
         }], function () {
           return [];

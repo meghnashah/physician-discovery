@@ -25487,10 +25487,10 @@ tr:first-child > td > .fc-day-grid-event {
 
       -------------------------------- */
 header {
-  height: 200px;
+  height: 1px;
   line-height: 200px;
   text-align: center;
-  background: #303e49;
+  background: #ffffff;
 }
 header h1 {
   color: #ffffff;
@@ -25502,7 +25502,7 @@ header h1 {
 }
 @media only screen and (min-width: 1170px) {
   header {
-    height: 300px;
+    height: 1px;
     line-height: 300px;
   }
 
@@ -27333,7 +27333,7 @@ That's all.
   background-color: #ff9600;
 }
 .btn-tbl-confirm {
-  background-color: #3fa3f3;
+  background-color: #57a400;
   height: 30px !important;
   width: 30px !important;
   margin: 2px !important;
@@ -27344,14 +27344,14 @@ That's all.
   font-size: 16px !important;
 }
 .btn-tbl-confirm:hover {
-  background-color: #62b5f8;
+  background-color: #57a400;
   color: #fff;
 }
 .btn-tbl-confirm:focus {
-  background-color: #62b5f8;
+  background-color: #57a400;
 }
 .btn-tbl-reject {
-  background-color: #f96333;
+  background-color: #f44336;
   height: 30px !important;
   width: 30px !important;
   margin: 2px !important;
@@ -27362,11 +27362,11 @@ That's all.
   font-size: 16px !important;
 }
 .btn-tbl-reject:hover {
-  background-color: #f87346;
+  background-color: #f44336;
   color: #fff;
 }
 .btn-tbl-reject:focus {
-  background-color: #f87346;
+  background-color: #f44336;
 }
 .avatar {
   position: relative;
