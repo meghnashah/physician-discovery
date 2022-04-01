@@ -92,8 +92,7 @@
                         <ng-container matColumnDef="name">
                           <mat-header-cell *matHeaderCellDef mat-sort-header>Patient Info
                           </mat-header-cell>
-                          <mat-cell *matCellDef="let row"> {{row.name}}
-                          </mat-cell>
+                          <mat-cell  *matCellDef="let row" >   {{row.name}}   </mat-cell>
                         </ng-container>
                         <ng-container matColumnDef="date">
                           <mat-header-cell *matHeaderCellDef mat-sort-header>Scheduled on
@@ -105,39 +104,64 @@
                         <ng-container matColumnDef="type">
                           <mat-header-cell *matHeaderCellDef mat-sort-header>Type
                           </mat-header-cell>
-                          <mat-cell *matCellDef="let row">   <div class="badge col-orange">{{row.type}}</div>  
+                          <mat-cell *matCellDef="let row">                              
+                            <div *ngIf ="row.type == 'upcoming'"  class="badge col-orange">upcoming</div>  
+                            <div *ngIf ="row.type == 'Completed'"  class="badge col-blue">Completed</div>  
                           </mat-cell>
                         </ng-container>
 
                         <ng-container matColumnDef="status">
                           <mat-header-cell *matHeaderCellDef mat-sort-header>Status
                           </mat-header-cell>
-                          <mat-cell *matCellDef="let row"> <div class="badge col-green"> {{row.status}}</div> 
+                          <mat-cell *matCellDef="let row">                                 
+                            <div *ngIf ="row.status == 'Accepted'"  class="badge  badge-solid-green">Accepted</div>   
+                            <div *ngIf ="row.status == 'Cancelled'"  class="badge badge-solid-red">Cancelled</div>   
+                            <div *ngIf ="row.status == 'pending'"  class="badge badge-solid-orange">pending</div>   
                           </mat-cell>
                         </ng-container>
 
 
                       
 
-                        <ng-container matColumnDef="action">
+                        <ng-container    matColumnDef="action">
                           <mat-header-cell *matHeaderCellDef mat-sort-header>Actions
                           </mat-header-cell>
-                          <mat-cell *matCellDef="let row" class="column-nowrap"> 
+                          <mat-cell *matCellDef="let row" class="column-nowrap"  > 
                             
-                            <button mat-icon-button class="btn-tbl-confirm">
-                              <mat-icon>done</mat-icon>
-                            </button>
-                            <button mat-icon-button class="btn-tbl-reject" (click)="openDialog()">
-                              <mat-icon>close</mat-icon>
-                            </button>
+
+                          
+                            <div *ngIf ="row.action == 'appoinment'">
+                              <button mat-icon-button class="btn-tbl-confirm">
+                                <mat-icon>done</mat-icon>
+                              </button>
+                              <button mat-icon-button class="btn-tbl-reject" (click)="rejectAppoinment()">
+                                <mat-icon>close</mat-icon>
+                              </button>
+                            </div>
+
+                            <div *ngIf ="row.action == 'calender'">
+                              <button mat-icon-button class="btn-tbl-calender"  
+                              matTooltip="Reschedule"
+                              aria-label="Button that displays a tooltip when focused or hovered over">
+                                <mat-icon>calendar_today</mat-icon>
+                              </button>
+                              <button mat-icon-button class="btn-tbl-reject" (click)="cancelAppoinment()" >
+                                <mat-icon>close</mat-icon>
+                              </button>
+                            </div>
+
+                            
                             
                           </mat-cell>
+
+
+
                         </ng-container>
 
                         <ng-container matColumnDef="details">
                           <mat-header-cell *matHeaderCellDef mat-sort-header>Details
                           </mat-header-cell>
-                          <mat-cell *matCellDef="let row" class="column-nowrap">      <button mat-flat-button color="primary"> {{row.details}}</button>
+                          <mat-cell *matCellDef="let row" class="column-nowrap">  <button mat-flat-button color="primary"> {{row.details}}</button>
                           </mat-cell>
                         </ng-container>
                     

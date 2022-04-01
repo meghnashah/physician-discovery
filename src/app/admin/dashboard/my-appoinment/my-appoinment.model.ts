@@ -8,6 +8,7 @@ export class Appointments {
   status : String;
   action : String;
   details : String;
+
   
   constructor(appointments) {
     {

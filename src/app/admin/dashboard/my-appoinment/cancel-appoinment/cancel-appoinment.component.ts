@@ -4,12 +4,12 @@ import { DeleteDialogComponent } from "src/app/patient/appointments/upcoming-app
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
-  selector: 'app-reject-appoinment',
-  templateUrl: './reject-appoinment.component.html',
-  styleUrls: ['./reject-appoinment.component.scss']
+  selector: 'app-cancel-appoinment',
+  templateUrl: './cancel-appoinment.component.html',
+  styleUrls: ['./cancel-appoinment.component.scss']
 })
-export class RejectAppoinmentComponent implements OnInit {
-  
+export class CancelAppoinmentComponent implements OnInit {
+
   constructor(public dialogRef: MatDialogRef<DeleteDialogComponent>, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -28,12 +28,13 @@ export class RejectAppoinmentComponent implements OnInit {
 
 }
 
+
 @Component({
-  selector: 'ssnack-bar-component-reject-snack',
-  templateUrl: 'snack-bar-component-reject-snack.html',
+  selector: 'ssnack-bar-component-cancel-snack',
+  templateUrl: 'snack-bar-component-cancel-snack.html',
   styles: [
     `
-    .delete-msg { 
+    .Cancel-msg { 
       color: #ffffff;
       font-size: 14px;
       font-weight: normal;

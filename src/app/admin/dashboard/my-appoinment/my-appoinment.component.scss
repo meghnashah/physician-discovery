@@ -40,4 +40,57 @@
   background-color:#005a97 !important;
 }
  
+
+.btn-tbl-calender {
+  background-color: #005a97;
+  height: 30px !important;
+  width: 30px !important;
+  margin: 2px !important;
+  line-height: 30px !important;
+  color: #fff; 
+  .material-icons {
+    font-size: 16px !important;
+  }
+
+  &:hover {
+    background-color: #005a97;
+    color: #fff;
+  }
+
+  &:focus {
+    background-color: #005a97;
+  }
+}
+.col-blue{
+  color: #005a97  !important;
+}
+
+.badge-solid-green{
+  color: #198754;
+    background-color: rgba(25, 135, 84, 0.15);
+    border: none;
+    padding: 5px 12px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+.badge-solid-orange{
+  color: #fd7e14;
+  background-color: rgba(253, 126, 20, 0.15);
+  border: none;
+  padding: 5px 12px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.badge-solid-red{
+  color: #f44336;
+    background-color: #fae9e7;
+    border: none;
+    padding: 5px 12px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
  

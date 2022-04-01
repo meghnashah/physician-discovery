@@ -39,10 +39,10 @@ import { MyAppoinmentComponent } from './my-appoinment/my-appoinment.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';   
 import { AppointmentsService } from "./my-appoinment/my-appoinment.service";
 import { RejectAppoinmentComponent } from './my-appoinment/reject-appoinment/reject-appoinment.component';
-
+import { CancelAppoinmentComponent } from './my-appoinment/cancel-appoinment/cancel-appoinment.component'; 
  
 @NgModule({
-  declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent, DeleteCreditCardComponent, NotificationComponent, MyAppoinmentComponent, ViewDetailsComponent, RejectAppoinmentComponent],
+  declarations: [MainComponent, Dashboard2Component, ProfileComponent, ChangePasswordModalComponent, ChangeEmailModalComponent, ChangePasswordSuccessModalComponent, DeleteCreditCardComponent, NotificationComponent, MyAppoinmentComponent, ViewDetailsComponent, RejectAppoinmentComponent, CancelAppoinmentComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

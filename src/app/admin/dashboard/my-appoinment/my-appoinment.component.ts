@@ -13,6 +13,8 @@ import { SelectionModel } from "@angular/cdk/collections";
 import { AppointmentsService } from './my-appoinment.service';
 import { Appointments } from './my-appoinment.model';
 import { RejectAppoinmentComponent } from './reject-appoinment/reject-appoinment.component';
+import { CancelAppoinmentComponent } from './cancel-appoinment/cancel-appoinment.component';
+
 
 @Component({
   selector: 'app-my-appoinment',
@@ -60,18 +62,23 @@ export class MyAppoinmentComponent implements OnInit {
     this.loadData();
   }
   
-  openDialog(): void {
+  rejectAppoinment(): void {
     const dialogRef = this.dialog.open( RejectAppoinmentComponent, {
-      width: '476px',
-    
+      width: '476px', 
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-       
-    });
+    dialogRef.afterClosed().subscribe(result => {   });
   }
 
+
+
+  cancelAppoinment(): void {
+    const dialogRef = this.dialog.open( CancelAppoinmentComponent, {
+      width: '476px', 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {   });
+  }
 
 
     

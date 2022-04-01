@@ -1,0 +1,14 @@
+<div class="addContainer">
+    <h3 mat-dialog-title>Are you sure to cancel this appointment?</h3>
+    <div mat-dialog-content>
+       <p>Do you want to cancel Cara Stevens 16 Sep 01:30 appointment?</p>
+    </div>
+    <div mat-dialog-actions class="mb-1">
+      <button mat-flat-button color="warn" [mat-dialog-close]="1"  (click)="openSnackBar()" >
+        Yes, cancel it
+      </button>
+  
+      <button  mat-stroked-button  class="back-btn"  (click)="onNoClick()" tabindex="-1">Back</button>
+    </div>
+  </div>
+  

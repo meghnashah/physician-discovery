@@ -1,22 +1,79 @@
-<app-header></app-header>
-
  
+ 
+ <html>
+ <header>
+  
 
-    <section class="content">
+  <nav #navbar class="navbar active">
+ 
+    <div class="container-fluid">
+     
+      <div class="collapse navbar-collapse"  >
+        <ul class="pull-left collapse-menu-icon">
+          <li>
+            <img src="assets/images/pages/full-logo.png" />
+          </li>
+        </ul>
+  
+        <ul class="pull-left collapse-menu-icon home-menu-padding">
+          <li class="breadcrumb-item bcrumb-1">
+            
+            <a style="color: #242634;"> <i class="fas fa-home"  routerLink="/admin/dashboard/main"><span class="header-menu" > Home </span> </i>   </a>
+          </li>
+        </ul>
+  
+        <ul class="pull-left collapse-menu-icon home-menu-padding">
+          <li class="breadcrumb-item bcrumb-1">          
+              <i class="fas fa-calendar-alt"><span class="header-menu" > Our Features </span> </i>  
+          </li>        
+        </ul>
+   
+  
+        <ul class="pull-left collapse-menu-icon home-menu-padding">
+          <li class="breadcrumb-item bcrumb-1" >          
+              <i class="fas fa-home"><span class="header-menu"  > How it works </span> </i>  
+          </li>        
+        </ul>
+  
+  
+        <ul class="pull-left collapse-menu-icon home-menu-padding">
+          <li class="breadcrumb-item bcrumb-1">          
+             <i class="fa fa-envelope"><span class="header-menu"> Experts Says   </span> </i>   
+      </li>
+        </ul> 
+
+        <ul class="pull-left collapse-menu-icon home-menu-padding">
+          <li class="breadcrumb-item bcrumb-1">         
+             <button mat-stroked-button  class="login-btn"   routerLink="/authentication/signin"> Login </button>
+      </li>
+        </ul> 
+
+  
+      </div>
+    </div>
+  </nav> 
+</header>
+
+
+<body>
+
+
+  <section class="content">
        
        
     <div class="row"  >
         <div class="col-lg-12">
           <div class="card">
             <div class="body">
-              <div class="row align-items-center">
+              <!-- Box one -->
+              <div class="row align-items-center"  style="background-image: url(assets/images/pages/bannerblue-bg.png);">
              
-                <div class="col-md-6">
+                <div class="col-md-6 left-side" >
                   <h4 class="font-20  welcome-text mb-2">
-                    Welcome   
+                    Physician Discovery 
                   </h4>
-                  <h1>Be  part of next generation healthcare</h1>  
-                  <h5 class="tot-appoinment">We're super excited to have you on board.</h5>
+                  <h1 class="welcome-header font-40">Be  part of next generation healthcare</h1>  
+                
                   <p class="font-16 ">Includes 30 days of free trial and unlimited appointment</p>                                    
                   <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
@@ -26,87 +83,73 @@
                   </div>
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <img src="assets/images/pages/top-banner-img.png" alt="" class="w-100">
+                   
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-1"> <img src="assets/images/pages/banner-img-dots.png" alt="" class="w-10">
                 </div>
+                <div class="col-md-1"></div>
               </div>
-              
-            </div>
-          </div>
-        </div>
 
 
-        
-      </div>
-
-
-
-
-      <div class="row clearfix"  >
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <div class="card">
-            <div class="box-part text-center">
+              <!-- box 2 -->
+              <div class="box-part text-center">
              
-              <div class="title p-t-15">
-                <h3>Our Feature</h3>
-              </div>
-              <div class="text p-b-10">
-                <h1>An all inclusive practice managment platform with features to help you deliver great patience experiance </h1>
-              </div> 
-
-              <div class="row clearfix"  >
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                  
-                    <div class="box-part text-center">
-                        <img  src="assets/images/pages/more-patient-1.png" alt="" class="payment-icon">
-                      <div class="title p-t-15">
-                        <h3>Attend more Patients</h3>
-                      </div>
-                      <div class="text p-b-10">
-                        <span>Enables you to attend more 
-                            patients in our platform. </span>
-                      </div>                                       
-                    </div> 
-                    </div>
-          
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                  
-                        <div class="box-part text-center">
-                            <img  src="assets/images/pages/data-security-2.png" alt="" class="payment-icon">
-                          <div class="title p-t-15">
-                            <h3>Data Security</h3>
-                          </div>
-                          <div class="text p-b-10">
-                            <span>End to end data security is available security feature. </span>
-                          </div>                                       
-                        </div> 
-                        </div>
-
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                  
-                            <div class="box-part text-center">
-                                <img  src="assets/images/pages/faster-information-3.png" alt="" class="payment-icon">
-                              <div class="title p-t-15">
-                                <h3> Faster Information</h3>
-                              </div>
-                              <div class="text p-b-10">
-                                <span> Access patient information faster than other websites. </span>
-                              </div>                                       
-                            </div> 
-                            </div>
-                  </div>                
-            </div>
-            </div>
-            </div>
+                <div class="title p-t-15">
+                  <h3>Our Feature</h3>
+                </div>
+                <div class="text p-b-10">
+                  <h1>An all inclusive practice managment platform with features to help you deliver great patience experiance </h1>
+                </div> 
   
-   
-        </div>
+                <div class="row clearfix"  >
+                  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    
+                      <div class="box-part text-center">
+                          <img  src="assets/images/pages/more-patient-1.png" alt="" class="payment-icon">
+                        <div class="title p-t-15">
+                          <h3>Attend more Patients</h3>
+                        </div>
+                        <div class="text p-b-10">
+                          <span>Enables you to attend more 
+                              patients in our platform. </span>
+                        </div>                                       
+                      </div> 
+                      </div>
+            
+                      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    
+                          <div class="box-part text-center">
+                              <img  src="assets/images/pages/data-security-2.png" alt="" class="payment-icon">
+                            <div class="title p-t-15">
+                              <h3>Data Security</h3>
+                            </div>
+                            <div class="text p-b-10">
+                              <span>End to end data security is available security feature. </span>
+                            </div>                                       
+                          </div> 
+                          </div>
+  
+                          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    
+                              <div class="box-part text-center">
+                                  <img  src="assets/images/pages/faster-information-3.png" alt="" class="payment-icon">
+                                <div class="title p-t-15">
+                                  <h3> Faster Information</h3>
+                                </div>
+                                <div class="text p-b-10">
+                                  <span> Access patient information faster than other websites. </span>
+                                </div>                                       
+                              </div> 
+                              </div>
+                    </div>                
+              </div>
 
 
-        <div class="row clearfix"  >
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <!-- box three -->
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="card">
                     <div class="box-part text-center">
                      
@@ -166,46 +209,141 @@
 
 
             </div>
-        </div>
 
-        
+            <!-- four  -->
+            
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bg-c-green">
-                     
-                                          
-                          <p  >“Lorem Ipsum is simply dummy 
-                            text of the printing and  industry. 
-                            Lorem Ipsum has been the 
-                            industry's standard dummy text 
-                            ever since the 1500s, when an 
-                            unknown printer took a galley of 
-                            type and scrambled.”</p>                        
-                      
-                     
+              <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 bg-c-green">
+                   
+                                        
+                        <p  >“Lorem Ipsum is simply dummy 
+                          text of the printing and  industry. 
+                          Lorem Ipsum has been the 
+                          industry's standard dummy text 
+                          ever since the 1500s, when an 
+                          unknown printer took a galley of 
+                          type and scrambled.”</p>                        
+                    
+                   
 
-                 </div>
+               </div>
 
-                 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                    <div class="box-part text-center">
-                        <img  src="assets/images/pages/expert-square-img.png" alt="" class="payment-icon">
-                      <div class="title p-t-15">
-                        <h3>Dr. John Barley</h3>
-                      </div>
-                      <div class="text p-b-10">
-                        <span>MBBS, USA</span>
-                      </div>                                       
-                    </div> 
+               <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                  <div class="box-part text-center">
+                      <img  src="assets/images/pages/expert-square-img.png" alt="" class="payment-icon">
+                    <div class="title p-t-15">
+                      <h3>Dr. John Barley</h3>
+                    </div>
+                    <div class="text p-b-10">
+                      <span>MBBS, USA</span>
+                    </div>                                       
+                  </div> 
 
-                </div>
+              </div>
+
+          </div>
 
             </div>
+          </div>
+        </div>
+
+
+        
+      </div>
+
+
+
+ 
+ 
+        
         
 
 
         
  </section>
 
+</body>
 
- <footer>
-     
- </footer>
+<footer class="footer">
+  <div class="container-fluid tg-container">
+      <div class="row">
+          <div class="col-lg-5 col-md-3 col-sm-6">
+              <div class="d-block d-sm-none tg-footinfo-sm">
+                  <p class="tg-site-status"><a href="#">ToyGeek Mobile Site.</a></p>
+                  <p>© 2021 ToyGeek All Rights Reserved.</p>
+              </div>
+              <div class="tg-footer-logo">
+                  <a href="#">
+                      <img src="assets/images/tg-small-logo.svg" alt="toygeek">
+                  </a>
+              </div>
+
+              <div class="mt-5 d-none d-lg-block">
+                  <div class="tg-sec-title">Payment Options</div>
+                  <ul class="tg-footer-list">
+                      <li><img class="img-fluid" src="assets/images/visa.webp" alt="visa"></li>
+                      <li><img class="img-fluid" src="assets/images/master-card.webp" alt="master-card"></li>
+                      <li><img class="img-fluid" src="assets/images/discover.webp" alt="discover"></li>
+                      <li><img class="img-fluid" src="assets/images/american-express.webp" alt="american-express"></li>
+                      <li><img class="img-fluid" src="assets/images/paypal.webp" alt="paypal"></li>
+                  </ul>
+              </div>
+
+              <div class="mt-2 d-none d-lg-block">
+                  <a href="#"><img src="assets/images/secured.webp" alt="VeriSign Secured"></a>
+              </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6  d-none d-md-block">
+              <div class="tg-sec-title">Support</div>
+              <ul class="tg-footer-vList">
+                  <li><a href="#">FAQ’s</a></li>
+                  <li><a href="#">Stack FAQ’s</a></li>
+                  <li><a href="#">Shipping Options</a></li>
+                  <li><a href="#">Global Shipping</a></li>
+                  <li><a href="#">Source Points</a></li>
+                  <li><a href="#">Sell us your Collection</a></li>
+                  <li><a href="#">ToyGeek Gift Cards</a></li>
+              </ul>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 d-none d-md-block">
+              <div class="tg-sec-title">Policies</div>
+              <ul class="tg-footer-vList">
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms &amp; Conditions of Sale</a></li>
+                  <li><a href="#">Wholesale Club</a></li>
+              </ul>
+
+              <div class="mt-5">
+                  <div class="tg-sec-title">Account</div>
+                  <ul class="tg-footer-vList">
+                      <li><a href="#">Sign In</a></li>
+                      <li><a href="#">Create Account</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6 d-none d-md-block">
+              <div class="tg-sec-title">About</div>
+              <ul class="tg-footer-vList">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">TFSource Blog</a></li>
+                  <li><a href="#">Promotions</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="tg-footer-note d-none d-md-block">
+      <div class="container-fluid tg-container">
+          <div class="row">
+              <div class="col-sm-6">© 2021 ToyGeek All Rights Reserved.</div>
+              <div class="col-sm-6 text-end">ToyGeek Mobile Site.</div>
+          </div>
+      </div>
+  </div>
+</footer> 
+
+</html>
+
+
+
+ 

@@ -4,17 +4,20 @@
     "name": "John Deo",
     "date": "2018-02-25T14:22:18Z",
     "type": "upcoming",
-    "status": "pending ", 
-    "details": "View Details"
+    "status": "pending", 
+    "details": "View Details",
+    "action" : "appoinment"
+
   } ,
   {
     "id": "001",   
     "img": "assets/images/user/user2img.png",
-    "name": "John Deo",
+    "name": "gayu",
     "date": "2018-02-25T14:22:18Z",
     "type": "upcoming",
-    "status": "Accepted ", 
-    "details": "View Details"
+    "status": "Accepted", 
+    "details": "View Details",
+    "action" : "calender"
   } ,
   {
     "id": "001",   
@@ -22,8 +25,9 @@
     "name": "Ashton Cox ",
     "date": "2018-02-25T14:22:18Z",
     "type": "upcoming",
-    "status": "pending ", 
+    "status": "pending", 
     "details": "View Details"
+    
   } ,
   {
     "id": "001",   
@@ -31,8 +35,8 @@
     "name": "JCara Stevens ",
     "date": "2018-02-25T14:22:18Z",
     "type": "upcoming",
-    "status": "Accepted ", 
-    "details": "View Details"
+    "status": "Accepted", 
+    "details": "View Details" 
   } ,
 
   {
@@ -41,17 +45,19 @@
     "name": "John Deo",
     "date": "2018-02-25T14:22:18Z",
     "type": "upcoming",
-    "status": "Accepted ", 
-    "details": "View Details"
+    "status": "Accepted", 
+    "details": "View Details",
+    "action" : "calender"
   } ,
   {
     "id": "001",   
     "img": "assets/images/user/user3img.png",
     "name": "John Deo",
     "date": "2018-02-25T14:22:18Z",
-    "type": "upcoming",
-    "status": "Completed ", 
-    "details": "View Details"
+    "type": "Completed",
+    "status": "Cancelled", 
+    "details": "View Details",
+    "action" : "appoinment"
   } ,
 
   {
@@ -59,8 +65,8 @@
     "img": "assets/images/user/user2img.png",
     "name": "John Deo",
     "date": "2018-02-25T14:22:18Z",
-    "type": "upcoming",
-    "status": "Completed ", 
+    "type": "Completed",
+    "status": "Cancelled", 
     "details": "View Details"
   } ,
   {
@@ -68,8 +74,8 @@
     "img": "assets/images/user/user4img.png",
     "name": "John Deo",
     "date": "2018-02-25T14:22:18Z",
-    "type": "upcoming",
-    "status": "Accepted ", 
+    "type": "Completed",
+    "status": "Accepted", 
     "details": "View Details"
   } ,
 
@@ -79,7 +85,7 @@
     "name": "John Deo",
     "date": "2018-02-25T14:22:18Z",
     "type": "Completed",
-    "status": "pending ", 
+    "status": "pending", 
     "details": "View Details"
   } 
 
